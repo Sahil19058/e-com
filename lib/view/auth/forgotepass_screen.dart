@@ -1,0 +1,102 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:untitled7/utils/appcolor/appcolor.dart';
+import '../../constant/routes_name.dart';
+import '../../controller/auth/signup_controller.dart';
+import '../../widgets/common_button.dart';
+import '../../widgets/common_textfield.dart';
+
+class ForgatepassScreen extends StatefulWidget {
+  const ForgatepassScreen({super.key});
+
+  @override
+  State<ForgatepassScreen> createState() => ForgatepassScreenState();
+}
+
+class ForgatepassScreenState extends State<ForgatepassScreen> {
+  final SignUpController controller = SignUpController();
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () => Get.back(), // or Navigator.pop(context)
+            child: Card(
+              color: AppColor.fontWhite,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                height: 36,
+                width: 36,
+                decoration: BoxDecoration(shape: BoxShape.circle),
+                child: const Icon(Icons.arrow_back_ios_new, size: 16),
+              ),
+            ),
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Form(
+            key: controller.formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 60),
+
+                Text(
+                  "Forgot password?",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Enter email associated with your account and we’ll send and email with intructions to reset your password",
+                  style: TextStyle(fontSize: 14, color: AppColor.buttonColor),
+                ),
+
+                SizedBox(height: 32),
+
+                CommonTextField(
+                  controller: controller.emailController,
+                  hintText: 'Email address',
+                  validator: controller.validateEmail,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+
+                SizedBox(height: 250),
+
+                Center(
+                  child: CommonOutlineButton(
+                    text: "SEND CODE",
+                    backgroundColor: AppColor.primaryButtonColor,
+                    width: 147,
+                    height: 51,
+                    textColor: AppColor.fontWhite,
+                    onTap: () {
+                      if (!controller.formKey.currentState!.validate()) {
+                        Get.toNamed(RouteName.otpScreen);
+                      }
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

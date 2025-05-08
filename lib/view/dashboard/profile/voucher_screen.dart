@@ -1,0 +1,89 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ticket_clippers/ticket_clippers.dart';
+import 'package:untitled7/utils/appcolor/appcolor.dart';
+import 'package:untitled7/utils/appimage/appimage.dart';
+
+import '../../../utils/apptextstyle/apptextstyle.dart';
+
+class VoucherScreen extends StatelessWidget {
+  const VoucherScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColor.fontWhite,
+      appBar: AppBar(
+        scrolledUnderElevation: 0.0,
+        title: Text("Voucher", style: AppTextStyles.drawerSubText),
+        centerTitle: true,
+        backgroundColor: AppColor.fontWhite,
+        elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () => Get.back(), // or Navigator.pop(context)
+            child: Card(
+              color: AppColor.fontWhite,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Container(
+                height: 36,
+                width: 36,
+                decoration: BoxDecoration(shape: BoxShape.circle),
+                child: const Icon(Icons.arrow_back_ios_new, size: 16),
+              ),
+            ),
+          ),
+        ),
+      ),
+      // body: Center(
+      //   child: ListView(
+      //     padding: const EdgeInsets.all(20),
+      //     shrinkWrap: true,
+      //     children: [
+      //       Align(
+      //         child: TicketClipper(
+      //           clipper: RoundedEdgeClipper(
+      //             edge: Edge.left,
+      //             points: 5,
+      //             depth: 20,
+      //           ),
+      //           child: Container(
+      //             height: 150,
+      //             width: 300,
+      //             decoration: const BoxDecoration(
+      //                 color: Colors.purple,
+      //               borderRadius: BorderRadius.only(topRight:  Radius.circular(20),bottomRight: Radius.circular(20))
+      //             ),
+      //             child: const Center(
+      //               child: Text(
+      //                 'Rounded Edge Clipper',
+      //                 textAlign: TextAlign.center,
+      //                 style: TextStyle(
+      //                   fontSize: 22,
+      //                   fontWeight: FontWeight.w500,
+      //                   color: Colors.white,
+      //                 ),
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      
+      body: Column(
+        children: [
+          Image(image: AssetImage(AppImage.voucher1Image)),
+
+          Image(image: AssetImage(AppImage.voucher2Image)),
+
+          Image(image: AssetImage(AppImage.voucher3Image)),
+        ],
+      ),
+    );
+  }
+}

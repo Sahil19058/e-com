@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:get/get.dart';
+import '../../utils/appcolor/appcolor.dart';
+import '../../utils/appimage/appimage.dart';
+import '../../utils/apptextstyle/apptextstyle.dart';
+import '../../widgets/common_button.dart';
+
+class ShowBottomSheet {
+  get context => null;
+
+  showbottomsheet() {
+    return showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Card(
+          child: SizedBox(
+            height: 373,
+            width: Get.width,
+            child: Column(
+              children: [
+                Card(
+                  color: AppColor.circleColor,
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: Svg(AppImage.bottomSheetIcon),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                Text(
+                  "Your password has been changed",
+                  style: AppTextStyles.onBoardingTitle,
+                ),
+                SizedBox(height: 20),
+                Text("Welcome back! Discover now!"),
+                SizedBox(height: 20),
+                CommonOutlineButton(
+                  text: "Browse home",
+                  onTap: () {},
+                  backgroundColor: AppColor.fontBlack,
+                  textColor: AppColor.fontWhite,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
