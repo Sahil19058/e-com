@@ -9,6 +9,7 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 import '../../../controller/review_controller.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../widgets/common_appbar.dart';
 
 class RateThisAppScreen extends StatelessWidget {
   const RateThisAppScreen({super.key});
@@ -19,31 +20,7 @@ class RateThisAppScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        title: Text("Share Your Feedback", style: AppTextStyles.drawerSubText),
-        centerTitle: true,
-        backgroundColor: AppColor.fontWhite,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () => Get.back(), // or Navigator.pop(context)
-            child: Card(
-              color: AppColor.fontWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_back_ios_new, size: 16),
-              ),
-            ),
-          ),
-        ),
-      ),
+      appBar: commonAppBar(title: "Share Your Feedback",center: true),
 
       body: SingleChildScrollView(
         child: Column(
@@ -149,10 +126,10 @@ class RateThisAppScreen extends StatelessWidget {
                         shape: Shape.box,
                         color: AppColor.feedbackStarUnselectColor,
                       ),
-                      child: Center(
+                      child: Obx(() => Center(
                         child:
                         reviewController.selectedImage.value == null
-                            ? Image(image: Svg(AppImage.reviewCameraIcon))
+                            ? Image(image: Svg(AppImage.reviewGalleryIcon))
                             : ClipRRect(
                           borderRadius: BorderRadius.circular(12),
                           child: Image.file(
@@ -162,7 +139,7 @@ class RateThisAppScreen extends StatelessWidget {
                             height: 64,
                           ),
                         ),
-                      ),
+                      ),),
                     ),
                   ),
 
@@ -184,20 +161,20 @@ class RateThisAppScreen extends StatelessWidget {
                         shape: Shape.box,
                         color: AppColor.feedbackStarUnselectColor,
                       ),
-                      child: Center(
+                      child: Obx(() => Center(
                         child:
-                            reviewController.selectedImage.value == null
-                                ? Image(image: Svg(AppImage.reviewCameraIcon))
-                                : ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: Image.file(
-                                    reviewController.selectedImage.value!,
-                                    fit: BoxFit.cover,
-                                    width: 64,
-                                    height: 64,
-                                  ),
-                                ),
-                      ),
+                        reviewController.selectedImage.value == null
+                            ? Image(image: Svg(AppImage.reviewCameraIcon))
+                            : ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.file(
+                            reviewController.selectedImage.value!,
+                            fit: BoxFit.cover,
+                            width: 64,
+                            height: 64,
+                          ),
+                        ),
+                      ),)
                     ),
                   ),
                 ],

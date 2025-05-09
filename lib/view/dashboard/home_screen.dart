@@ -121,14 +121,21 @@ class HomeScreen extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: controller.menuItems.length,
                     itemBuilder: (context, index) {
-                      return ListTile(
-                        leading: Image(
-                          image: Svg(controller.menuItems[index]['icon']),
-                          color: AppColor.secondaryTextColor,
-                        ),
-                        title: Text(
-                          controller.menuItems[index]['title'],
-                          style: AppTextStyles.drawerMenuText,
+                      return GestureDetector(
+                        // onTap: (){
+                        //   if(index == 0){
+                        //     Get.toNamed(RouteName.myWishlistScreen);
+                        //   }
+                        // },
+                        child: ListTile(
+                          leading: Image(
+                            image: Svg(controller.menuItems[index]['icon']),
+                            color: AppColor.secondaryTextColor,
+                          ),
+                          title: Text(
+                            controller.menuItems[index]['title'],
+                            style: AppTextStyles.drawerMenuText,
+                          ),
                         ),
                       );
                     },
@@ -151,14 +158,25 @@ class HomeScreen extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: otherItem.length,
                     itemBuilder: (context, index) {
-                      return ListTile(
-                        leading: Image(
-                          image: Svg(otherItem[index]['icon']),
-                          color: AppColor.secondaryTextColor,
-                        ),
-                        title: Text(
-                          otherItem[index]['title'],
-                          style: AppTextStyles.drawerMenuText,
+                      return GestureDetector(
+                        onTap: () {
+                          if(index == 0){
+                            Get.toNamed(RouteName.settingScreen);
+                          }else if(index == 1){
+
+                          }else if(index == 2){
+
+                          }
+                        },
+                        child: ListTile(
+                          leading: Image(
+                            image: Svg(otherItem[index]['icon']),
+                            color: AppColor.secondaryTextColor,
+                          ),
+                          title: Text(
+                            otherItem[index]['title'],
+                            style: AppTextStyles.drawerMenuText,
+                          ),
                         ),
                       );
                     },

@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import '../../../../controller/my_wishlist_controller.dart';
 import '../../../../utils/appcolor/appcolor.dart';
 import '../../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../../widgets/common_appbar.dart';
 import 'all_items_screen.dart';
+import 'board_screen.dart';
 
 class MyWishlistScreen extends StatelessWidget {
   const MyWishlistScreen({super.key});
@@ -15,43 +17,19 @@ class MyWishlistScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final screenWidth = size.width;
     final screenHeight = size.height;
-    final List<String> tabs = ["All items", "Boards"];
+
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        title: Text("My Wishlist", style: AppTextStyles.drawerSubText),
-        centerTitle: true,
-        backgroundColor: AppColor.fontWhite,
-        elevation: 0,
-        leading: Padding(
-          padding: EdgeInsets.all(screenWidth * 0.02),
-          child: GestureDetector(
-            onTap: () => Get.back(),
-            child: Card(
-              color: AppColor.fontWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: screenWidth * 0.09,
-                width: screenWidth * 0.09,
-                decoration: const BoxDecoration(shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_back_ios_new, size: 16),
-              ),
-            ),
-          ),
-        ),
-      ),
+      appBar: commonAppBar(title: "My Wishlist",center: true),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 17),
         child: Column(
           children: [
             SizedBox(height: screenHeight * 0.03),
             Container(
               height: screenHeight * 0.05,
-              width: screenWidth * 0.9,
+              width: screenWidth * 0.8,
               decoration: BoxDecoration(
                 // borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.black),
@@ -59,7 +37,7 @@ class MyWishlistScreen extends StatelessWidget {
               child: Obx(
                     () => Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: List.generate(tabs.length, (index) {
+                  children: List.generate(controller.tabs.length, (index) {
                     bool isSelected = controller.selectedIndex.value == index;
                     return Expanded(
                       child: GestureDetector(
@@ -76,7 +54,7 @@ class MyWishlistScreen extends StatelessWidget {
                           ),
                           child: Center(
                             child: Text(
-                              tabs[index],
+                              controller.tabs[index],
                               style: isSelected
                                   ? AppTextStyles.subtitle
                                   : AppTextStyles.drawerSubText,
@@ -96,7 +74,7 @@ class MyWishlistScreen extends StatelessWidget {
                 case 0:
                   return AllItemsScreen();
                 case 1:
-                  return Text("Boards");
+                  return BoardScreen();
                 default:
                   return SizedBox();
               }

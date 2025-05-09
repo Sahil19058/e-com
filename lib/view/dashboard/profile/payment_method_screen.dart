@@ -5,6 +5,7 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 import '../../../controller/payment_methode_controller.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../widgets/common_appbar.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
   PaymentMethodScreen({super.key});
@@ -18,31 +19,7 @@ class PaymentMethodScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        title: Text("Payment", style: AppTextStyles.drawerSubText),
-        centerTitle: true,
-        backgroundColor: AppColor.fontWhite,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () => Get.back(),
-            child: Card(
-              color: AppColor.fontWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: screenWidth * 0.09,
-                width: screenWidth * 0.09,
-                decoration: const BoxDecoration(shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_back_ios_new, size: 16),
-              ),
-            ),
-          ),
-        ),
-      ),
+      appBar: commonAppBar(title: "Payment",center: true),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
         child: Column(

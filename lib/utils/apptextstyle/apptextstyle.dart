@@ -165,5 +165,11 @@ class AppTextStyles {
     color: AppColor.cancelledTextColor,
   );
 
+  static const TextStyle boardTitle = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w700,
+    color: AppColor.fontBlack,
+  );
+
 
 }

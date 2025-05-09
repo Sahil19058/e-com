@@ -6,6 +6,7 @@ import '../../../model/address_model.dart';
 import '../../../utils/appcolor/appcolor.dart';
 import '../../../utils/appimage/appimage.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../widgets/common_appbar.dart';
 
 class AddressScreen extends StatelessWidget {
   const AddressScreen({super.key});
@@ -16,31 +17,7 @@ class AddressScreen extends StatelessWidget {
     final controller = Get.put(AddressController());
 
     return Scaffold(
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        title: Text(" Delivery address", style: AppTextStyles.drawerSubText),
-        centerTitle: true,
-        backgroundColor: AppColor.fontWhite,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () => Get.back(), // or Navigator.pop(context)
-            child: Card(
-              color: AppColor.fontWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_back_ios_new, size: 16),
-              ),
-            ),
-          ),
-        ),
-      ),
+      appBar: commonAppBar(title: "Delivery Address", center: true),
 
       backgroundColor: AppColor.fontWhite,
       body: Container(
