@@ -6,6 +6,8 @@ import '../view/auth/login_screen.dart';
 import '../view/auth/newpass_screen.dart';
 import '../view/auth/otp_screen.dart';
 import '../view/auth/signup_screen.dart';
+import '../view/dashboard/drawer/setting_notification_screen.dart';
+import '../view/dashboard/drawer/setting_screen.dart';
 import '../view/dashboard/dresses_screen.dart';
 import '../view/dashboard/home_screen.dart';
 import '../view/dashboard/notificaton_screen.dart';
@@ -35,6 +37,8 @@ class AppRoutes {
     GetPage(name: RouteName.voucherScreen, page: () => VoucherScreen()),
     GetPage(name: RouteName.myWishlistScreen, page: () => MyWishlistScreen()),
     GetPage(name: RouteName.rateThisAppScreen, page: () => RateThisAppScreen()),
+    GetPage(name: RouteName.settingScreen, page: () => SettingScreen()),
+    GetPage(name: RouteName.settingNotificationScreen, page: () => SettingNotificationScreen()),
 
 
     // GetPage(name: RouteName.login, page: () => LoginScreen(),),

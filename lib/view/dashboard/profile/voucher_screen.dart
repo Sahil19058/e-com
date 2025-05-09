@@ -5,6 +5,7 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 
 import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../widgets/common_appbar.dart';
 
 class VoucherScreen extends StatelessWidget {
   const VoucherScreen({super.key});
@@ -13,31 +14,7 @@ class VoucherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        title: Text("Voucher", style: AppTextStyles.drawerSubText),
-        centerTitle: true,
-        backgroundColor: AppColor.fontWhite,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () => Get.back(), // or Navigator.pop(context)
-            child: Card(
-              color: AppColor.fontWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_back_ios_new, size: 16),
-              ),
-            ),
-          ),
-        ),
-      ),
+      appBar: commonAppBar(title: "Voucher",center: true),
       // body: Center(
       //   child: ListView(
       //     padding: const EdgeInsets.all(20),

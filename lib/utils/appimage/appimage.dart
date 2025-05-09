@@ -27,6 +27,12 @@ class AppImage {
   static const String voucher1Image = "assets/image/Voucher.png";
   static const String voucher2Image = "assets/image/Voucher2.png";
   static const String voucher3Image = "assets/image/Voucher3.png";
+  static const String boardModel1Image = "assets/image/Board-Model1.png";
+  static const String boardModel2Image = "assets/image/Board-Model2.png";
+  static const String boardModel3Image = "assets/image/Board-Model3.png";
+  static const String boardModel4Image = "assets/image/Board-Model4.png";
+  static const String boardModel5Image = "assets/image/Board-Model5.png";
+  static const String boardModel6Image = "assets/image/Board-Modal6.png";
 
 
 
@@ -68,7 +74,10 @@ class AppImage {
   static const String reviewGalleryIcon = "assets/icon/Review_Gallery.svg";
   static const String officeIcon = "assets/icon/office_icon.svg";
   static const String homeAddressIcon = "assets/icon/home_icon.svg";
-
-
+  static const String languageIcon = "assets/icon/Language.svg";
+  static const String settingNotificationIcon = "assets/icon/Bell_duotone.svg";
+  static const String termsIcon = "assets/icon/Turmes_OfUse.svg";
+  static const String privacyPolicyIcon = "assets/icon/Privacy_Police.svg";
+  static const String chatSupportIcon = "assets/icon/ChatSupport.svg";
 
 }

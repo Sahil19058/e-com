@@ -8,6 +8,7 @@ import '../../constant/routes_name.dart';
 import '../../controller/dresses_controller.dart';
 import '../../model/all_product_model.dart';
 import '../../utils/appimage/appimage.dart';
+import '../../widgets/common_appbar.dart';
 
 class DressesScreen extends StatelessWidget {
   const DressesScreen({super.key});
@@ -19,30 +20,7 @@ class DressesScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: AppBar(
-        scrolledUnderElevation: 0.0,
-        title: Text("Dresses", style: AppTextStyles.drawerSubText),
-        backgroundColor: AppColor.fontWhite,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () => Get.back(), // or Navigator.pop(context)
-            child: Card(
-              color: AppColor.fontWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
-                child: const Icon(Icons.arrow_back_ios_new, size: 16),
-              ),
-            ),
-          ),
-        ),
-      ),
+      appBar: commonAppBar(title: "Dresses",center: false),
       body: Column(
         children: [
           Padding(

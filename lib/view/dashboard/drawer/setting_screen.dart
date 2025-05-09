@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:get/get.dart';
+import 'package:untitled7/utils/appcolor/appcolor.dart';
+import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
+import '../../../controller/settings_controller.dart';
+import '../../../widgets/common_appbar.dart';
+
+class SettingScreen extends StatelessWidget {
+  const SettingScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final SettingsController controller = Get.put(SettingsController());
+
+    return Scaffold(
+      backgroundColor: AppColor.fontWhite,
+      appBar: commonAppBar(title: 'Settings', center: true),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            SizedBox(height: 50),
+            Flexible(
+              child: ListView.builder(
+                itemCount: controller.settingsList.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          if(index == 0){
+
+                          }else if(index == 1){
+                            
+                          }else if(index == 2){
+
+                          }else if(index == 3){
+
+                          }
+                        },
+                        child: ListTile(
+                          leading: Image(
+                            image: Svg(
+                              controller.settingsList[index].settingsIcon,
+                            ),
+                          ),
+                          title: Text(
+                            controller.settingsList[index].settingsTitle,
+                            style: AppTextStyles.tabBarSecondaryText,
+                          ),
+                          trailing: Icon(Icons.arrow_forward_ios),
+                        ),
+                      ),
+                      Divider(color: AppColor.divedertColor),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -3,7 +3,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import 'package:untitled7/view/dashboard/dresses_screen.dart';
-
 import '../../../../constant/routes_name.dart';
 import '../../../../controller/dresses_controller.dart';
 import '../../../../utils/appcolor/appcolor.dart';

@@ -17,4 +17,6 @@ class RouteName {
   static const String voucherScreen = "/voucherScreen";
   static const String myWishlistScreen = "/myWishlistScreen";
   static const String rateThisAppScreen = "/rateThisAppScreen";
+  static const String settingScreen = "/settingScreen";
+  static const String settingNotificationScreen = "/settingNotificationScreen";
 }
