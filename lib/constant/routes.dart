@@ -11,10 +11,10 @@ import '../view/dashboard/home_screen.dart';
 import '../view/dashboard/notificaton_screen.dart';
 import '../view/dashboard/product_detail.dart';
 import '../view/dashboard/profile/address_screen.dart';
-import '../view/dashboard/profile/my_wishlist_screen.dart';
 import '../view/dashboard/profile/payment_method_screen.dart';
 import '../view/dashboard/profile/ratethis_app_screen.dart';
 import '../view/dashboard/profile/voucher_screen.dart';
+import '../view/dashboard/profile/wishlist/my_wishlist_screen.dart';
 import '../view/onboarding/onboarding_screen.dart';
 
 class AppRoutes {

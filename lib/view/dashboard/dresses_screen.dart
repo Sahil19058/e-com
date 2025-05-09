@@ -340,13 +340,21 @@ class DressesScreen extends StatelessWidget {
                                     return GestureDetector(
                                       onTap: () {
                                         allProducts[index].isFavorite.toggle();
+                                        if (allProducts[index].isFavorite.value) {
+                                          if (!wishListProduct.contains(allProducts[index])) {
+                                            wishListProduct.add(allProducts[index]);
+                                          }
+                                        } else {
+                                          wishListProduct.remove(allProducts[index]);
+                                        }
                                       },
                                       child: Image(
-                                          image: Svg(AppImage.favoriteIcon),
-                                          color: isFav ? AppColor.likeColor : AppColor.notLikeColor
-                                      )
+                                        image: Svg(AppImage.favoriteIcon),
+                                        color: isFav ? AppColor.likeColor : AppColor.notLikeColor,
+                                      ),
                                     );
-                                  }),
+                                  })
+                                  ,
                                 ),
                               ),
                             ],
@@ -409,3 +417,5 @@ class DressesScreen extends StatelessWidget {
     );
   }
 }
+
+List<AllProductModel> wishListProduct = [];

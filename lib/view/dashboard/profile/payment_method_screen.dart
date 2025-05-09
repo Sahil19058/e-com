@@ -127,6 +127,7 @@ class PaymentMethodScreen extends StatelessWidget {
                 ),
               ),
             ),
+
           ],
         ),
       ),

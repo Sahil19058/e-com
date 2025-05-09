@@ -53,38 +53,38 @@ class HomeScreen extends StatelessWidget {
         child: Obx(() {
           final index = controller.selectedIndex.value;
           return index == 0 || index == 1 || index == 2
-              ? AppBar(
-                scrolledUnderElevation: 0.0,
-                leading: IconButton(
-                  onPressed: () {
-                    scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Image(image: Svg(AppImage.drawerIcon)),
-                ),
-                backgroundColor: AppColor.fontWhite,
-                title: Obx(
-                  () => Text(
-                    controller.selectedIndex.value == 0
-                        ? "Gemstore"
-                        : controller.selectedIndex.value == 1
-                        ? "Discover"
-                        : controller.selectedIndex.value == 2
-                        ? "My Orders"
-                        : "Profile ",
-                    style: AppTextStyles.onBoardingTitle,
+                ? AppBar(
+                  scrolledUnderElevation: 0.0,
+                  leading: IconButton(
+                    onPressed: () {
+                      scaffoldKey.currentState?.openDrawer();
+                    },
+                    icon: Image(image: Svg(AppImage.drawerIcon)),
                   ),
-                ),
-                centerTitle: true,
-                actions: [
-                  GestureDetector(
-                    onTap: () => Get.toNamed(RouteName.notificationScreen),
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                      child: Image(image: Svg(AppImage.notificationIcon)),
+                  backgroundColor: AppColor.fontWhite,
+                  title: Obx(
+                    () => Text(
+                      controller.selectedIndex.value == 0
+                          ? "Gemstore"
+                          : controller.selectedIndex.value == 1
+                          ? "Discover"
+                          : controller.selectedIndex.value == 2
+                          ? "My Orders"
+                          : "Profile ",
+                      style: AppTextStyles.onBoardingTitle,
                     ),
                   ),
-                ],
-              )
+                  centerTitle: true,
+                  actions: [
+                    GestureDetector(
+                      onTap: () => Get.toNamed(RouteName.notificationScreen),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: Image(image: Svg(AppImage.notificationIcon)),
+                      ),
+                    ),
+                  ],
+                )
               : Container();
         }),
       ),
