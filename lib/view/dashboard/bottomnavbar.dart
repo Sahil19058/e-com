@@ -3,17 +3,9 @@ import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../controller/bottomnav/bottomnav.dart';
 import '../../utils/appcolor/appcolor.dart';
-import '../../utils/appimage/appimage.dart';
 
 class BottomNavBar extends StatelessWidget {
   final BottomNavController controller = Get.put(BottomNavController());
-
-  final List<String> svgIcons = [
-    AppImage.homeIcon,
-    AppImage.searchIcon,
-    AppImage.shopIcon,
-    AppImage.profileIcon,
-  ];
 
   BottomNavBar({super.key});
 
@@ -40,11 +32,11 @@ class BottomNavBar extends StatelessWidget {
           child: Obx(
             () => Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(svgIcons.length, (index) {
+              children: List.generate(controller.svgIcons.length, (index) {
                 bool isSelected = controller.selectedIndex.value == index;
                 return IconButton(
                   icon: SvgPicture.asset(
-                    svgIcons[index],
+                    controller.svgIcons[index],
                     colorFilter: ColorFilter.mode(
                       isSelected ? Colors.black : Colors.grey.shade400,
                       BlendMode.srcIn,

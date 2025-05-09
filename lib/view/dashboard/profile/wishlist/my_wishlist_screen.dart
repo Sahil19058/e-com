@@ -4,16 +4,17 @@ import '../../../../controller/my_wishlist_controller.dart';
 import '../../../../utils/appcolor/appcolor.dart';
 import '../../../../utils/apptextstyle/apptextstyle.dart';
 
-
 class MyWishlistScreen extends StatelessWidget {
   const MyWishlistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     final TabControllerX controller = Get.put(TabControllerX());
     final size = MediaQuery.of(context).size;
     final screenWidth = size.width;
-    final List<String> tabs = ["All items","Boards"];
+    final screenHeight = size.height;
+    final List<String> tabs = ["All items", "Boards"];
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
@@ -24,7 +25,7 @@ class MyWishlistScreen extends StatelessWidget {
         backgroundColor: AppColor.fontWhite,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(screenWidth * 0.02),
           child: GestureDetector(
             onTap: () => Get.back(),
             child: Card(
@@ -42,46 +43,44 @@ class MyWishlistScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 34),
-            child: Container(
-              height: 38,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Column(
+          children: [
+            SizedBox(height: screenHeight * 0.03),
+            Container(
+              height: screenHeight * 0.05,
+              width: screenWidth * 0.9,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(0),
-                border: Border.all(
-                  color: Colors.black
-                )
+                // borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black),
               ),
               child: Obx(
                     () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(tabs.length, (index) {
                     bool isSelected = controller.selectedIndex.value == index;
-                    return GestureDetector(
-                      onTap: () => controller.changeTab(index),
-                      child: Container(
-                        width: 145,
-                        margin: EdgeInsets.symmetric(horizontal: 0),
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                        decoration: BoxDecoration(
-                          color:
-                          isSelected
-                              ? AppColor.fontBlack
-                              : Colors.transparent,
-                          borderRadius: BorderRadius.circular(0),
-                        ),
-                        child: Center(
-                          child: Text(
-                            tabs[index],
-                            style:
-                            isSelected
-                                ? AppTextStyles.subtitle
-                                : AppTextStyles.drawerSubText,
+                    return Expanded(
+                      child: GestureDetector(
+                        onTap: () => controller.changeTab(index),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.01,
+                          ),
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? AppColor.fontBlack
+                                : Colors.transparent,
+                            // borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Center(
+                            child: Text(
+                              tabs[index],
+                              style: isSelected
+                                  ? AppTextStyles.subtitle
+                                  : AppTextStyles.drawerSubText,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ),
                       ),
@@ -90,18 +89,19 @@ class MyWishlistScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Obx(() {
-            switch (controller.selectedIndex.value) {
-              case 0:
-                return Text("All item");
-              case 1:
-                return Text("Boards");
-              default:
-                return SizedBox();
-            }
-          }),
-        ],
+            SizedBox(height: screenHeight * 0.02),
+            Obx(() {
+              switch (controller.selectedIndex.value) {
+                case 0:
+                  return Text("All item");
+                case 1:
+                  return Text("Boards");
+                default:
+                  return SizedBox();
+              }
+            }),
+          ],
+        ),
       ),
     );
   }

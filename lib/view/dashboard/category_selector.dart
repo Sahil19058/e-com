@@ -12,12 +12,7 @@ class CategorySelector extends StatelessWidget {
 
   final CategoryController controller = Get.put(CategoryController());
 
-  final List<CategoryItem> categories = [
-    CategoryItem(icon: AppImage.womenIcon, label: 'Women'),
-    CategoryItem(icon: AppImage.menIcon, label: 'Men'),
-    CategoryItem(icon: AppImage.accessoriesIcon, label: 'Accessories'),
-    CategoryItem(icon: AppImage.beautyIcon, label: 'Beauty'),
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +26,7 @@ class CategorySelector extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
-            itemCount: categories.length,
+            itemCount: controller.categories.length,
             separatorBuilder: (_, __) => SizedBox(width: screenWidth * 0.08),
             itemBuilder: (context, index) {
               return Obx(() {
@@ -60,14 +55,14 @@ class CategorySelector extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.all(iconSize * 0.2),
                           child: Image(
-                            image: Svg(categories[index].icon),
+                            image: Svg(controller.categories[index].icon),
                             color: isSelected ? Colors.white : Colors.grey,
                           ),
                         ),
                       ),
                       SizedBox(height: 6),
                       Text(
-                        categories[index].label,
+                        controller.categories[index].label,
                         style: TextStyle(
                           fontSize: screenWidth * 0.035,
                           color: isSelected ? Colors.black : Colors.grey,

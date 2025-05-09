@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled7/model/product_model.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
+import '../../../controller/women_category_controller.dart';
 
 class WomenCateGoryScreen extends StatelessWidget {
   WomenCateGoryScreen({super.key});
 
-  final List<ProductModel> products = [
-    ProductModel(AppImage.productImage, "Long Sleeve Dress", "\$45.00", "", [Colors.red, Colors.blue, Colors.green], ["S", "M", "L", "XL"]),
-    ProductModel(AppImage.productImage, "Long Sleeve Dress", "\$45.00", "", [Colors.red, Colors.blue, Colors.green], ["S", "M", "L", "XL"]),
-    ProductModel(AppImage.productImage, "Long Sleeve Dress", "\$45.00", "", [Colors.red, Colors.blue, Colors.green], ["S", "M", "L", "XL"]),
-  ];
+  final WomenCategoryController controller = Get.put(WomenCategoryController());
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +58,9 @@ class WomenCateGoryScreen extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              itemCount: products.length,
+              itemCount: controller.products.length,
               itemBuilder: (context, index) {
-                return productCard(products[index]);
+                return productCard(controller.products[index]);
               },
             ),
           ),
@@ -80,9 +79,9 @@ class WomenCateGoryScreen extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              itemCount: products.length,
+              itemCount: controller.products.length,
               itemBuilder: (context, index) {
-                return recommendedCard(products[index]);
+                return recommendedCard(controller.products[index]);
               },
             ),
           ),

@@ -14,7 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
         builder: (context) => GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

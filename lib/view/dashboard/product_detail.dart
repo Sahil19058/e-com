@@ -18,25 +18,8 @@ class ProductDetailScreen extends StatelessWidget {
       ProductDetailController(),
     );
 
-    // final AllProductModel product = Get.arguments as AllProductModel;
-    final args = Get.arguments;
-    if (args == null || args is! AllProductModel) {
-      return const Scaffold(
-        body: Center(child: Text('Invalid or missing product data')),
-      );
-    }
+    final AllProductModel product = Get.arguments as AllProductModel;
 
-    final AllProductModel product = args;
-
-    List<SimilarProduct> similarProducts = [
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 39),
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 49),
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 32),
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 99),
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 79),
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 74),
-      SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 69),
-    ];
 
     return Scaffold(
       backgroundColor: AppColor.productDetailContainerColor,
@@ -484,7 +467,7 @@ class ProductDetailScreen extends StatelessWidget {
                                   child: Container(
                                     height: 227,
                                     child: ListView.builder(
-                                      itemCount: similarProducts.length,
+                                      itemCount: controller.similarProducts.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) {
                                         return Column(
@@ -501,7 +484,7 @@ class ProductDetailScreen extends StatelessWidget {
                                                 decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
-                                                      similarProducts[index]
+                                                      controller.similarProducts[index]
                                                           .productImage,
                                                     ),
                                                   ),
@@ -511,14 +494,14 @@ class ProductDetailScreen extends StatelessWidget {
                                             ),
 
                                             Text(
-                                              similarProducts[index]
+                                              controller.similarProducts[index]
                                                   .productName,
                                               style:
                                                   AppTextStyles.productNameText,
                                             ),
 
                                             Text(
-                                              "\$ ${similarProducts[index].productPrice.toDouble().toString()}",
+                                              "\$ ${controller.similarProducts[index].productPrice.toDouble().toString()}",
                                               style:
                                                   AppTextStyles.drawerSubText,
                                             ),

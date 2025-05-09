@@ -22,12 +22,6 @@ class HomeScreen extends StatelessWidget {
 
     final _ = Get.put(DrawerControllerX());
 
-    final List<Map<String, dynamic>> menuItems = [
-      {'icon': AppImage.homeIcon, 'title': 'Homepage'},
-      {'icon': AppImage.searchIcon, 'title': 'Discover'},
-      {'icon': AppImage.shopIcon, 'title': 'My Order'},
-      {'icon': AppImage.profileIcon, 'title': 'My profile'},
-    ];
 
     final List<Map<String, dynamic>> otherItem = [
       {'icon': AppImage.settingIcon, 'title': 'Setting'},
@@ -125,15 +119,15 @@ class HomeScreen extends StatelessWidget {
                   height: 240,
                   child: ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: menuItems.length,
+                    itemCount: controller.menuItems.length,
                     itemBuilder: (context, index) {
                       return ListTile(
                         leading: Image(
-                          image: Svg(menuItems[index]['icon']),
+                          image: Svg(controller.menuItems[index]['icon']),
                           color: AppColor.secondaryTextColor,
                         ),
                         title: Text(
-                          menuItems[index]['title'],
+                          controller.menuItems[index]['title'],
                           style: AppTextStyles.drawerMenuText,
                         ),
                       );

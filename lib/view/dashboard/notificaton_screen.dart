@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../controller/notification_controller.dart';
 import '../../model/notification_model.dart';
 import '../../utils/appcolor/appcolor.dart';
 import '../../utils/apptextstyle/apptextstyle.dart';
@@ -10,11 +11,7 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    List<NotificationModel> notificationsList = [
-      NotificationModel("Good morning! Get 20% Voucher", "Summer sale up to 20% off. Limited voucher. Get now!! 😜"),
-      NotificationModel("Special offer just for you", "New Autumn Collection 30% off"),
-      NotificationModel("Holiday sale 50%", "Tap here to get 50% voucher."),
-    ];
+    final NotificationController controller = Get.put(NotificationController());
     
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
@@ -45,7 +42,7 @@ class NotificationScreen extends StatelessWidget {
       ),
       body: Expanded(
          child: ListView.builder(
-           itemCount: notificationsList.length,
+           itemCount: controller.notificationsList.length,
              itemBuilder: (context, index) {
                return Card(
                  margin: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
@@ -56,7 +53,7 @@ class NotificationScreen extends StatelessWidget {
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
                        Text(
-                           notificationsList[index].title,
+                         controller.notificationsList[index].title,
                          style: AppTextStyles.tabBarSecondaryText.copyWith(
                            fontWeight: FontWeight.w700
                          ),
@@ -65,7 +62,7 @@ class NotificationScreen extends StatelessWidget {
                          height: 10,
                        ),
                        Text(
-                           notificationsList[index].subTitle,
+                         controller.notificationsList[index].subTitle,
                          style: AppTextStyles.drawerOtherText,
                        )
                      ],

@@ -13,14 +13,7 @@ class ProfilePage extends StatelessWidget {
 
   final UserController controller = Get.put(UserController());
 
-  final List<Map> menuItems = [
-    {'icon': AppImage.locationIcon, 'label': 'Address'},
-    {'icon': AppImage.walletIcon, 'label': 'Payment Method'},
-    {'icon': AppImage.ticketIcon, 'label': 'Voucher'},
-    {'icon': AppImage.favoriteIcon, 'label': 'My Wishlist'},
-    {'icon': AppImage.stareIcon, 'label': 'Rate this App'},
-    {'icon': AppImage.logOutIcon, 'label': 'Log out'},
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -94,14 +87,14 @@ class ProfilePage extends StatelessWidget {
                     height: 440,
                     child: ListView.builder(
                       physics: NeverScrollableScrollPhysics(),
-                      itemCount: menuItems.length,
+                      itemCount: controller.menuItems.length,
                       itemBuilder: (context, index) {
-                        final item = menuItems[index];
+                        final item = controller.menuItems[index];
                         final isLogout = item['label'] == 'Log out';
                         //
                         return GestureDetector(
                           onTap: () {
-                            final menu = menuItems[index];
+                            final menu = controller.menuItems[index];
                             if(menu['label'] == "Address"){
                               Get.toNamed(RouteName.addressScreen);
                             }else if(menu['label'] == "Payment Method"){

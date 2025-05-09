@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../constant/routes_name.dart';
+import '../../controller/dresses_controller.dart';
 import '../../model/all_product_model.dart';
 import '../../utils/appimage/appimage.dart';
 
@@ -13,233 +14,8 @@ class DressesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<AllProductModel> allProducts = [
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 52.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        5,
-        36
-      ),
-      AllProductModel(
-        AppImage.product2Image,
-        "Linen Dress",
-        "\$ 68.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        97
-      ),
-      AllProductModel(
-        AppImage.product2Image,
-        "Linen Dress",
-        "\$ 65.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        3,
-        92
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 34.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        3,
-        89
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 100.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        48
-      ),
-      AllProductModel(
-        AppImage.product2Image,
-        "Linen Dress",
-        "\$ 52.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        5,
-        86
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 52.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        2,
-        50
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 96.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        49
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 75.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        32
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 63.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        87
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 55.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        5,
-        65
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 52.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        63
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 42.00",
-        "",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        73
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 28.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        4,
-        20
-      ),
-      AllProductModel(
-        AppImage.product1Image,
-        "Linen Dress",
-        "\$ 64.00",
-        "\$ 90.00",
-        "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
-        [
-          AppColor.productColor1,
-          AppColor.productColor2,
-          AppColor.productColor3,
-        ],
-        ["M", "S", "L"],
-        5,
-        15
-      ),
-    ];
+
+    final DressesController controller =  Get.put(DressesController());
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
@@ -274,7 +50,7 @@ class DressesScreen extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  "Found \n ${allProducts.length} Results",
+                  "Found \n ${controller.allProducts.length} Results",
                   style: AppTextStyles.onBoardingTitle,
                 ),
                 Spacer(),
@@ -304,7 +80,7 @@ class DressesScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GridView.builder(
-                itemCount: allProducts.length,
+                itemCount: controller.allProducts.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.6,
@@ -314,7 +90,7 @@ class DressesScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      Get.toNamed(RouteName.productDetailScreen,arguments: allProducts[index]);
+                      Get.toNamed(RouteName.productDetailScreen,arguments: controller.allProducts[index]);
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 6),
@@ -323,7 +99,7 @@ class DressesScreen extends StatelessWidget {
                         children: [
                           Stack(
                             children: [
-                              Image(image : AssetImage(allProducts[index].productImage), ),
+                              Image(image : AssetImage(controller.allProducts[index].productImage), ),
                               // Image(image: AssetImage(AppImage.product1Image)),
                               Positioned(
                                 right: 10,
@@ -336,16 +112,16 @@ class DressesScreen extends StatelessWidget {
                                     color: AppColor.fontWhite,
                                   ),
                                   child: Obx(() {
-                                    final isFav = allProducts[index].isFavorite.value;
+                                    final isFav = controller.allProducts[index].isFavorite.value;
                                     return GestureDetector(
                                       onTap: () {
-                                        allProducts[index].isFavorite.toggle();
-                                        if (allProducts[index].isFavorite.value) {
-                                          if (!wishListProduct.contains(allProducts[index])) {
-                                            wishListProduct.add(allProducts[index]);
+                                        controller.allProducts[index].isFavorite.toggle();
+                                        if (controller.allProducts[index].isFavorite.value) {
+                                          if (!wishListProduct.contains(controller.allProducts[index])) {
+                                            wishListProduct.add(controller.allProducts[index]);
                                           }
                                         } else {
-                                          wishListProduct.remove(allProducts[index]);
+                                          wishListProduct.remove(controller.allProducts[index]);
                                         }
                                       },
                                       child: Image(
@@ -360,18 +136,18 @@ class DressesScreen extends StatelessWidget {
                             ],
                           ),
                           Text(
-                            allProducts[index].productName,
+                            controller.allProducts[index].productName,
                             style: AppTextStyles.productNameText,
                           ),
                           Row(
                             children: [
                               Text(
-                                allProducts[index].productPrice,
+                                controller.allProducts[index].productPrice,
                                 style: AppTextStyles.drawerSubText,
                               ),
                               SizedBox(width: 5),
                               Text(
-                                allProducts[index].productRealPrice,
+                                controller.allProducts[index].productRealPrice,
                                 style: AppTextStyles.womenCardText.copyWith(
                                   decoration: TextDecoration.lineThrough,
                                   decorationColor: AppColor.secondaryTextColor,
@@ -383,7 +159,7 @@ class DressesScreen extends StatelessWidget {
                             children: [
                               RatingBar(
                                 ignoreGestures: true, // Makes it read-only
-                                initialRating: allProducts[index].productRating.toDouble(),
+                                initialRating: controller.allProducts[index].productRating.toDouble(),
                                 direction: Axis.horizontal,
                                 itemCount: 5,
                                 itemSize: 15.0,
@@ -398,7 +174,7 @@ class DressesScreen extends StatelessWidget {
                                 width: 5,
                               ),
                               Text(
-                                  "(${allProducts[index].ratingCount})",
+                                  "(${controller.allProducts[index].ratingCount})",
                                 style: AppTextStyles.ratingCountText,
                               )
                             ],

@@ -17,15 +17,6 @@ class DiscoverScreen extends StatelessWidget {
     final controller = Get.put(DiscoverController());
     final filterController = Get.put(FilterDiscoverController());
 
-    List<DiscoverProductModel> discoverProducts = [
-      DiscoverProductModel("Jacket", 128),
-      DiscoverProductModel("Skirts", 40),
-      DiscoverProductModel("Dresses", 36),
-      DiscoverProductModel("Sweaters", 24),
-      DiscoverProductModel("Jeans", 14),
-      DiscoverProductModel("T-Shirts", 12),
-      DiscoverProductModel("Pants", 9),
-    ];
 
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Builder(
@@ -178,11 +169,11 @@ class DiscoverScreen extends StatelessWidget {
                           height: 396,
                           decoration: BoxDecoration(color: AppColor.fontWhite),
                           child: ListView.builder(
-                            itemCount: discoverProducts.length,
+                            itemCount: filterController.discoverProducts.length,
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                 onTap: () {
-                                  final category = discoverProducts[index].productCategory;
+                                  final category = filterController.discoverProducts[index].productCategory;
                                  if(category == "Dresses"){
                                    Get.toNamed(RouteName.dressesScreen);
                                  }else{
@@ -193,11 +184,11 @@ class DiscoverScreen extends StatelessWidget {
                                   children: [
                                     ListTile(
                                       title: Text(
-                                        discoverProducts[index].productCategory,
+                                        filterController.discoverProducts[index].productCategory,
                                         style: AppTextStyles.onBoardingSubTitle,
                                       ),
                                       trailing: Text(
-                                        "${discoverProducts[index].productQuantity.toString()} Items",
+                                        "${filterController.discoverProducts[index].productQuantity.toString()} Items",
                                         style: AppTextStyles.womenCardText,
                                       ),
                                     ),

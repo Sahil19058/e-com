@@ -3,18 +3,13 @@ import 'package:get/get.dart';
 import 'package:u_credit_card/u_credit_card.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
+import '../../../controller/payment_methode_controller.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
 
 class PaymentMethodScreen extends StatelessWidget {
   PaymentMethodScreen({super.key});
 
-  final List<String> paymentMethod = [
-    AppImage.payPalImage,
-    AppImage.visaImage,
-    AppImage.masterCardImage,
-    AppImage.aliPayImage,
-    AppImage.amexImage,
-  ];
+  final PaymentMethodeController controller =  Get.put(PaymentMethodeController());
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +98,7 @@ class PaymentMethodScreen extends StatelessWidget {
               child: SizedBox(
                 height: screenWidth * 0.09,
                 child: ListView.builder(
-                  itemCount: paymentMethod.length,
+                  itemCount: controller.paymentMethod.length,
                   scrollDirection: Axis.horizontal,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
@@ -118,7 +113,7 @@ class PaymentMethodScreen extends StatelessWidget {
                       ),
                       child: Center(
                         child: Image.asset(
-                          paymentMethod[index],
+                          controller.paymentMethod[index],
                           fit: BoxFit.fitWidth,
                         ),
                       ),
