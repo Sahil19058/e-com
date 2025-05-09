@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../../controller/my_wishlist_controller.dart';
 import '../../../../utils/appcolor/appcolor.dart';
 import '../../../../utils/apptextstyle/apptextstyle.dart';
+import 'all_items_screen.dart';
 
 class MyWishlistScreen extends StatelessWidget {
   const MyWishlistScreen({super.key});
@@ -93,7 +94,7 @@ class MyWishlistScreen extends StatelessWidget {
             Obx(() {
               switch (controller.selectedIndex.value) {
                 case 0:
-                  return Text("All item");
+                  return AllItemsScreen();
                 case 1:
                   return Text("Boards");
                 default:
