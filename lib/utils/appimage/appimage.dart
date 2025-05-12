@@ -81,5 +81,6 @@ class AppImage {
   static const String chatSupportIcon = "assets/icon/ChatSupport.svg";
   static const String orderIcon = "assets/icon/Deliverd_Icon.svg";
   static const String giftIcon = "assets/icon/Gift.svg";
+  static const String truckIcon = "assets/icon/truck.svg";
 
 }

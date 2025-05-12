@@ -121,12 +121,20 @@ class HomeScreen extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: controller.menuItems.length,
                     itemBuilder: (context, index) {
-                      return GestureDetector(
-                        // onTap: (){
-                        //   if(index == 0){
-                        //     Get.toNamed(RouteName.myWishlistScreen);
-                        //   }
-                        // },
+                      return InkWell(
+                        borderRadius: BorderRadius.circular(20),
+                        onTap: (){
+                          if(index == 0){
+                            Get.snackbar("Coming Soon", "This Screen is not available");
+                            // Get.toNamed(RouteName.myWishlistScreen);
+                          }else if(index == 1){
+                            Get.snackbar("Coming Soon", "This Screen is not available");
+                          }else if(index == 2){
+                            Get.snackbar("Coming Soon", "This Screen is not available");
+                          }else if(index == 3){
+                            Get.snackbar("Coming Soon", "This Screen is not available");
+                          }
+                        },
                         child: ListTile(
                           leading: Image(
                             image: Svg(controller.menuItems[index]['icon']),
@@ -158,7 +166,8 @@ class HomeScreen extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     itemCount: otherItem.length,
                     itemBuilder: (context, index) {
-                      return GestureDetector(
+                      return InkWell(
+                        borderRadius: BorderRadius.circular(20),
                         onTap: () {
                           if(index == 0){
                             Get.toNamed(RouteName.settingScreen);

@@ -48,6 +48,7 @@ class AppColor {
   static const Color feedbackStarUnselectColor = Color(0xFFB1B5C3);
   static const Color inActiveSwitchColor = Color(0xFFCBCDD8);
   static const Color orderDetailCardColor = Color(0xFF575757);
+  static const Color trackOrderColor = Color(0xFF474340);
 
 
 

@@ -10,8 +10,10 @@ import '../view/dashboard/drawer/setting_notification_screen.dart';
 import '../view/dashboard/drawer/setting_screen.dart';
 import '../view/dashboard/dresses_screen.dart';
 import '../view/dashboard/home_screen.dart';
-import '../view/dashboard/my_order/order_detail_screen.dart';
+import '../view/dashboard/my_order/delivered_order_detail_screen.dart';
+import '../view/dashboard/my_order/pending_order_detail_screen.dart';
 import '../view/dashboard/my_order/product_rating_screen.dart';
+import '../view/dashboard/my_order/track_order_screen.dart';
 import '../view/dashboard/notificaton_screen.dart';
 import '../view/dashboard/product_detail.dart';
 import '../view/dashboard/profile/address_screen.dart';
@@ -43,6 +45,8 @@ class AppRoutes {
     GetPage(name: RouteName.settingNotificationScreen, page: () => SettingNotificationScreen()),
     GetPage(name: RouteName.orderDetailScreen, page: () => OrderDetailScreen()),
     GetPage(name: RouteName.productRatingScreen, page: () => ProductRatingScreen()),
+    GetPage(name: RouteName.pendingOrderDetailScreen, page: () => PendingOrderDetailScreen()),
+    GetPage(name: RouteName.trackOrderScreen, page: () => TrackOrderScreen()),
 
 
     // GetPage(name: RouteName.login, page: () => LoginScreen(),),

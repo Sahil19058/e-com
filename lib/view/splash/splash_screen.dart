@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: Get.height * 0.65),
+            SizedBox(height: Get.height * 0.90),
 
             Text("Welcome to GemStore!", style: AppTextStyles.title),
 

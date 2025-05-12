@@ -189,4 +189,10 @@ class AppTextStyles {
     color: AppColor.fontWhite,
   );
 
+  static const TextStyle trackOrderText = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColor.trackOrderColor,
+  );
+
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
+import '../../../constant/routes_name.dart';
 import '../../../controller/pending_order_controller.dart';
 import '../../../model/pending_order_model.dart';
 import 'package:intl/intl.dart';
@@ -99,16 +100,21 @@ class PendingOrderScreen extends StatelessWidget {
                               "PENDING",
                             style: AppTextStyles.pendingText,
                           ),
-                          Spacer(),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 25,vertical: 9),
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColor.secondaryTextColor
+                           Spacer(),
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(RouteName.pendingOrderDetailScreen,arguments: controller.pendingOrders[index]);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 25,vertical: 9),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: AppColor.secondaryTextColor
+                                ),
+                                borderRadius: BorderRadius.circular(20)
                               ),
-                              borderRadius: BorderRadius.circular(20)
+                              child: Text("Detail"),
                             ),
-                            child: Text("Detail"),
                           )
                         ],
                       ),

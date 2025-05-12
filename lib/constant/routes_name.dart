@@ -21,4 +21,6 @@ class RouteName {
   static const String settingNotificationScreen = "/settingNotificationScreen";
   static const String orderDetailScreen = "/orderDetailScreen";
   static const String productRatingScreen = "/productRatingScreen";
+  static const String pendingOrderDetailScreen = "/pendingOrderDetailScreen";
+  static const String trackOrderScreen = "/trackOrderScreen";
 }

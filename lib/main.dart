@@ -8,21 +8,17 @@ import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
-      enabled: false,
-        builder: (context) => GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          fontFamily: "PTSans"
-      ),
-      getPages: AppRoutes.appRoutes(),
-    ),)
-
+      enabled: true,
+      builder:
+          (context) => GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(fontFamily: "PTSans"),
+            getPages: AppRoutes.appRoutes(),
+          ),
+    ),
   );
-
 }
