@@ -49,4 +49,16 @@ class SignUpController {
     passwordController.dispose();
     confirmPasswordController.dispose();
   }
+
+  bool obscureNewPassword = true;
+  bool obscureConfirmPassword = true;
+
+  String newPassword = '';
+  String confirmPassword = '';
+
+  bool get isButtonEnabled =>
+      newPassword.isNotEmpty &&
+          confirmPassword.isNotEmpty &&
+          newPassword == confirmPassword;
+
 }

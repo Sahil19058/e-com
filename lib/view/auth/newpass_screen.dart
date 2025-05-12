@@ -18,16 +18,7 @@ class NewPassScreen extends StatefulWidget {
 class _NewPassScreenState extends State<NewPassScreen> {
   final SignUpController controller = SignUpController();
 
-  bool obscureNewPassword = true;
-  bool obscureConfirmPassword = true;
 
-  String newPassword = '';
-  String confirmPassword = '';
-
-  bool get isButtonEnabled =>
-      newPassword.isNotEmpty &&
-      confirmPassword.isNotEmpty &&
-      newPassword == confirmPassword;
 
   @override
   void dispose() {
@@ -65,24 +56,24 @@ class _NewPassScreenState extends State<NewPassScreen> {
 
                 // New Password Field
                 TextFormField(
-                  obscureText: obscureNewPassword,
+                  obscureText: controller.obscureNewPassword,
                   onChanged: (value) {
-                    newPassword = value;
+                    controller.newPassword = value;
                     updateState();
                   },
                   decoration: InputDecoration(
                     hintText: 'New password',
                     suffixIcon:
-                        newPassword.isNotEmpty
+                    controller.newPassword.isNotEmpty
                             ? IconButton(
                               icon: Icon(
-                                obscureNewPassword
+                                controller.obscureNewPassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
                               ),
                               onPressed: () {
                                 setState(() {
-                                  obscureNewPassword = !obscureNewPassword;
+                                  controller.obscureNewPassword = !controller.obscureNewPassword;
                                 });
                               },
                             )
@@ -94,25 +85,25 @@ class _NewPassScreenState extends State<NewPassScreen> {
 
                 // Confirm Password Field
                 TextFormField(
-                  obscureText: obscureConfirmPassword,
+                  obscureText: controller.obscureConfirmPassword,
                   onChanged: (value) {
-                    confirmPassword = value;
+                    controller.confirmPassword = value;
                     updateState();
                   },
                   decoration: InputDecoration(
                     hintText: 'Confirm password',
                     suffixIcon:
-                        confirmPassword.isNotEmpty
+                    controller.confirmPassword.isNotEmpty
                             ? IconButton(
                               icon: Icon(
-                                obscureConfirmPassword
+                                controller.obscureConfirmPassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
                               ),
                               onPressed: () {
                                 setState(() {
-                                  obscureConfirmPassword =
-                                      !obscureConfirmPassword;
+                                  controller.obscureConfirmPassword =
+                                      !controller.obscureConfirmPassword;
                                 });
                               },
                             )
@@ -126,7 +117,7 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   child: CommonOutlineButton(
                     text: "Confirm",
                     backgroundColor:
-                        isButtonEnabled
+                    controller.isButtonEnabled
                             ? AppColor.fontBlack
                             : AppColor.buttonColor.withValues(alpha: 0.4),
                     textColor: AppColor.fontWhite,
