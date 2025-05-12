@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import 'package:untitled7/widgets/common_appbar.dart';
+import '../../../controller/tracking_order_controller.dart';
 import '../../../model/pending_order_model.dart';
 import '../../../model/stepperdara_model.dart';
 
@@ -12,26 +13,7 @@ class TrackOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<StepperData> stepperData = [
-      StepperData(
-        title: "Parcel is successfully delivered",
-        date: "15 May 10:20",
-      ),
-      StepperData(title: "Parcel is out for delivery", date: "14 May 08:00"),
-      StepperData(
-        title: "Parcel is received at delivery Branch",
-        date: "13 May 17:25",
-      ),
-      StepperData(title: "Parcel is in transit ", date: "13 May 07:00"),
-      StepperData(
-        title: "Sender has shipped your parcel",
-        date: "12 May 14:25",
-      ),
-      StepperData(
-        title: "Sender is preparing to ship your order",
-        date: "12 May 10:01",
-      ),
-    ];
+    final TrackingOrderController controller = Get.put(TrackingOrderController());
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
       appBar: commonAppBar(title: "Track Order", center: true),
@@ -57,7 +39,7 @@ class TrackOrderScreen extends StatelessWidget {
             SizedBox(height: 30),
             Flexible(
               child: ListView.builder(
-                itemCount: stepperData.length,
+                itemCount: controller.stepperData.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,18 +76,18 @@ class TrackOrderScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 10),
                           Text(
-                            stepperData[index].title,
+                            controller.stepperData[index].title,
                             style: AppTextStyles.trackOrderText,
                           ),
                           Spacer(),
                           Text(
-                            stepperData[index].date,
+                            controller.stepperData[index].date,
                             style: AppTextStyles.womenCardText,
                           ),
                         ],
                       ),
                       SizedBox(height: 5),
-                      if (index != stepperData.length - 1)
+                      if (index != controller.stepperData.length - 1)
                         Padding(
                           padding: const EdgeInsets.only(left: 7),
                           child: Column(
