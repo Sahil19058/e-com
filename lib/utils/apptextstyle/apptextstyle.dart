@@ -21,7 +21,7 @@ class AppTextStyles {
     color: AppColor.fontBlack,
   );
 
-  static const TextStyle onBoardingSubTitle = TextStyle(
+    static const TextStyle onBoardingSubTitle = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColor.fontBlack,

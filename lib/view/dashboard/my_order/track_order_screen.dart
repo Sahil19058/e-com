@@ -4,8 +4,7 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import 'package:untitled7/widgets/common_appbar.dart';
 import '../../../controller/tracking_order_controller.dart';
-import '../../../model/pending_order_model.dart';
-import '../../../model/stepperdara_model.dart';
+
 
 class TrackOrderScreen extends StatelessWidget {
   final String? trackingNumber = Get.arguments as String?;
@@ -26,18 +25,31 @@ class TrackOrderScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                Text("Delivered on:"),
-                Text("15.02.25")
+                Text(
+                    "Delivered on:",
+                  style: AppTextStyles.womenCardText,
+                ),
+                Text(
+                    "15.02.25",
+                  style: AppTextStyles.onBoardingSubTitle,
+                )
               ],
             ),
             Row(
               children: [
-                Text("Tracking Number: "),
-                Text(trackingNumber ?? "")
+                Text(
+                    "Tracking Number: ",
+                  style: AppTextStyles.womenCardText,
+                ),
+                Text(
+                    trackingNumber ?? "",
+                    style: AppTextStyles.onBoardingSubTitle
+                )
               ],
             ),
             SizedBox(height: 30),
-            Flexible(
+            Container(
+              height: 300,
               child: ListView.builder(
                 itemCount: controller.stepperData.length,
                 itemBuilder: (context, index) {
@@ -64,13 +76,13 @@ class TrackOrderScreen extends StatelessWidget {
                                   shape: BoxShape.circle,
                                 ),
                                 child:
-                                    index == 0
-                                        ? null
-                                        : Icon(
-                                          Icons.check,
-                                          size: 10,
-                                          color: AppColor.fontWhite,
-                                        ),
+                                index == 0
+                                    ? null
+                                    : Icon(
+                                  Icons.check,
+                                  size: 10,
+                                  color: AppColor.fontWhite,
+                                ),
                               ),
                             ),
                           ),
@@ -125,6 +137,19 @@ class TrackOrderScreen extends StatelessWidget {
                     ],
                   );
                 },
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Card(
+              elevation: 2,
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColor.fontWhite,
+                ),
               ),
             ),
           ],
