@@ -3,6 +3,7 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
+import '../../../constant/routes_name.dart';
 import '../../../controller/settings_controller.dart';
 import '../../../widgets/common_appbar.dart';
 
@@ -29,14 +30,28 @@ class SettingScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          if(index == 0){
-
-                          }else if(index == 1){
-                            
-                          }else if(index == 2){
-
-                          }else if(index == 3){
-
+                          if (index == 0) {
+                            Get.snackbar(
+                              "Coming soon",
+                              "This Screen is not available",
+                            );
+                          } else if (index == 1) {
+                            Get.toNamed(RouteName.settingNotificationScreen);
+                          } else if (index == 2) {
+                            Get.snackbar(
+                              "Coming soon",
+                              "This Screen is not available",
+                            );
+                          } else if (index == 3) {
+                            Get.snackbar(
+                              "Coming soon",
+                              "This Screen is not available",
+                            );
+                          } else if (index == 4) {
+                            Get.snackbar(
+                              "Coming soon",
+                              "This Screen is not available",
+                            );
                           }
                         },
                         child: ListTile(

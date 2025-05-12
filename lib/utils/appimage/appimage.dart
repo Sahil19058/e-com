@@ -79,5 +79,7 @@ class AppImage {
   static const String termsIcon = "assets/icon/Turmes_OfUse.svg";
   static const String privacyPolicyIcon = "assets/icon/Privacy_Police.svg";
   static const String chatSupportIcon = "assets/icon/ChatSupport.svg";
+  static const String orderIcon = "assets/icon/Deliverd_Icon.svg";
+  static const String giftIcon = "assets/icon/Gift.svg";
 
 }

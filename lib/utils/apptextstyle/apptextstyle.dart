@@ -59,7 +59,7 @@ class AppTextStyles {
 
   static const TextStyle drawerSubText = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
     color: AppColor.fontBlack,
   );
 
@@ -171,5 +171,22 @@ class AppTextStyles {
     color: AppColor.fontBlack,
   );
 
+  static const TextStyle orderDetailText = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w600,
+    color: AppColor.fontWhite,
+  );
+
+  static const TextStyle rateButtonText = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: AppColor.fontWhite,
+  );
+
+  static const TextStyle reviewProductBannerText = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColor.fontWhite,
+  );
 
 }

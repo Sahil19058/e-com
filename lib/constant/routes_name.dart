@@ -19,4 +19,6 @@ class RouteName {
   static const String rateThisAppScreen = "/rateThisAppScreen";
   static const String settingScreen = "/settingScreen";
   static const String settingNotificationScreen = "/settingNotificationScreen";
+  static const String orderDetailScreen = "/orderDetailScreen";
+  static const String productRatingScreen = "/productRatingScreen";
 }

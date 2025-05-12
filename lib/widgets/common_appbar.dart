@@ -6,7 +6,7 @@ import '../../utils/apptextstyle/apptextstyle.dart';
 PreferredSizeWidget commonAppBar({required String title,required bool center}) {
   return AppBar(
     scrolledUnderElevation: 0.0,
-    title: Text(title, style: AppTextStyles.drawerSubText),
+    title: Text(title, style: AppTextStyles.productDetailText,),
     centerTitle: center,
     backgroundColor: AppColor.fontWhite,
     elevation: 0,

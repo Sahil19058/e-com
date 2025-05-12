@@ -163,9 +163,9 @@ class HomeScreen extends StatelessWidget {
                           if(index == 0){
                             Get.toNamed(RouteName.settingScreen);
                           }else if(index == 1){
-
+                            Get.snackbar("Coming soon", "This Screen is not available");
                           }else if(index == 2){
-
+                            Get.snackbar("Coming soon", "This Screen is not available");
                           }
                         },
                         child: ListTile(

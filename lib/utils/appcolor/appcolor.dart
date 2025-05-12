@@ -46,6 +46,8 @@ class AppColor {
   static const Color deliveredTextColor = Color(0xFF009254);
   static const Color cancelledTextColor = Color(0xFFC50000);
   static const Color feedbackStarUnselectColor = Color(0xFFB1B5C3);
+  static const Color inActiveSwitchColor = Color(0xFFCBCDD8);
+  static const Color orderDetailCardColor = Color(0xFF575757);
 
 
 
