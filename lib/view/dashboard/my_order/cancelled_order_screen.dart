@@ -1,8 +1,9 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
-import '../../../model/pending_order_model.dart';
+import '../../../controller/cancelled_order_controller.dart';
 import 'package:intl/intl.dart';
 
 class CancelledOrderScreen extends StatelessWidget {
@@ -10,24 +11,12 @@ class CancelledOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<PendingOrderModel> pendingOrders = [
-      PendingOrderModel(
-        orderId: 1525,
-        trackingNumber: "IN256698541",
-        quantity: 2,
-        subTotal: 320,
-      ),
-      PendingOrderModel(
-        orderId: 1535,
-        trackingNumber: "IN985242141",
-        quantity: 3,
-        subTotal: 600,
-      ),
-    ];
+
+    final CancelledOrderController controller = Get.put(CancelledOrderController());
 
     return Expanded(
       child: ListView.builder(
-        itemCount: pendingOrders.length,
+        itemCount: controller.pendingOrders.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -54,7 +43,7 @@ class CancelledOrderScreen extends StatelessWidget {
                         children: [
 
                           Text(
-                            "Order #${pendingOrders[index].orderId}",
+                            "Order #${controller.pendingOrders[index].orderId}",
                             style: AppTextStyles.productDetailText,
                           ),
 
@@ -78,7 +67,7 @@ class CancelledOrderScreen extends StatelessWidget {
                           ),
 
                           Text(
-                            pendingOrders[index].trackingNumber,
+                            controller.pendingOrders[index].trackingNumber,
                             style: AppTextStyles.tabBarSecondaryText.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
@@ -97,7 +86,7 @@ class CancelledOrderScreen extends StatelessWidget {
                           ),
 
                           Text(
-                            pendingOrders[index].quantity.toString(),
+                            controller.pendingOrders[index].quantity.toString(),
                             style: AppTextStyles.tabBarSecondaryText.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
@@ -111,7 +100,7 @@ class CancelledOrderScreen extends StatelessWidget {
                           ),
 
                           Text(
-                            "\$${pendingOrders[index].subTotal}",
+                            "\$${controller.pendingOrders[index].subTotal}",
                             style: AppTextStyles.tabBarSecondaryText.copyWith(
                               fontWeight: FontWeight.bold,
                             ),

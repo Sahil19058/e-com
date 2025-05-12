@@ -10,7 +10,6 @@ import 'delevered_order_screen.dart';
 class MyOrdersScreen extends StatelessWidget {
   final OrderTabController controller = Get.put(OrderTabController());
 
-  final List<String> tabs = ["Pending", "Delivered", "Cancelled"];
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class MyOrdersScreen extends StatelessWidget {
         Obx(
           () => Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(tabs.length, (index) {
+            children: List.generate(controller.tabs.length, (index) {
               bool isSelected = controller.selectedIndex.value == index;
               return GestureDetector(
                 onTap: () => controller.changeTab(index),
@@ -35,7 +34,7 @@ class MyOrdersScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    tabs[index],
+                    controller.tabs[index],
                     style:
                         isSelected
                             ? AppTextStyles.tabBarText

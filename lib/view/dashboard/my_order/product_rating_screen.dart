@@ -11,7 +11,7 @@ import '../../../controller/review_controller.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
-  class ProductRatingScreen extends StatelessWidget {
+class ProductRatingScreen extends StatelessWidget {
   const ProductRatingScreen({super.key});
 
   @override
@@ -20,39 +20,39 @@ import '../../../widgets/common_appbar.dart';
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: commonAppBar(title: "Rate product",center: true),
+      appBar: commonAppBar(title: "Rate product", center: true),
 
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
                 height: 66,
                 decoration: BoxDecoration(
                   color: AppColor.orderDetailCardColor,
-                  borderRadius: BorderRadius.circular(10)
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
                       Image(image: Svg(AppImage.giftIcon)),
-                      SizedBox(
-                        width: 10,
-                      ),
+
+                      SizedBox(width: 10),
+
                       Text(
-                          "Submit your review to get 5 points",
+                        "Submit your review to get 5 points",
                         style: AppTextStyles.reviewProductBannerText,
                       ),
+
                       Spacer(),
+
                       Icon(
-                          Icons.arrow_forward_ios_outlined,
+                        Icons.arrow_forward_ios_outlined,
                         color: AppColor.fontWhite,
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -62,7 +62,7 @@ import '../../../widgets/common_appbar.dart';
             SizedBox(height: 20),
 
             Obx(
-                  () => RatingBar(
+              () => RatingBar(
                 initialRating: reviewController.selectedRating.value,
                 direction: Axis.horizontal,
                 minRating: 1,
@@ -93,6 +93,7 @@ import '../../../widgets/common_appbar.dart';
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
+
                       TextFormField(
                         cursorColor: AppColor.fontBlack,
                         controller: reviewController.textController,
@@ -107,7 +108,7 @@ import '../../../widgets/common_appbar.dart';
                           ),
                           // filled: true,fillColor: AppColor.fontWhite,
                           hintText:
-                          "Would you like to write anything about this product? ",
+                              "Would you like to write anything about this product? ",
                           counterText: '',
                         ),
                       ),
@@ -120,9 +121,9 @@ import '../../../widgets/common_appbar.dart';
                           return remaining == reviewController.maxLength
                               ? Text("50 Characters") // Hide when empty
                               : Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: Text("$remaining Characters"),
-                          );
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Text("$remaining Characters"),
+                              );
                         }),
                       ),
                     ],
@@ -153,20 +154,24 @@ import '../../../widgets/common_appbar.dart';
                         shape: Shape.box,
                         color: AppColor.feedbackStarUnselectColor,
                       ),
-                      child: Obx(() => Center(
-                        child:
-                        reviewController.selectedImage.value == null
-                            ? Image(image: Svg(AppImage.reviewGalleryIcon))
-                            : ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.file(
-                            reviewController.selectedImage.value!,
-                            fit: BoxFit.cover,
-                            width: 64,
-                            height: 64,
+                      child: Obx(
+                        () => Center(
+                          child:
+                          reviewController.selectedImage.value == null
+                              ? Image(
+                            image: Svg(AppImage.reviewGalleryIcon),
+                          )
+                              : ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.file(
+                              reviewController.selectedImage.value!,
+                              fit: BoxFit.cover,
+                              width: 64,
+                              height: 64,
+                            ),
                           ),
                         ),
-                      ),),
+                      ),
                     ),
                   ),
 
@@ -181,14 +186,15 @@ import '../../../widgets/common_appbar.dart';
                       }
                     },
                     child: Container(
-                        height: 64,
-                        width: 69,
-                        decoration: DottedDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          shape: Shape.box,
-                          color: AppColor.feedbackStarUnselectColor,
-                        ),
-                        child: Obx(() => Center(
+                      height: 64,
+                      width: 69,
+                      decoration: DottedDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        shape: Shape.box,
+                        color: AppColor.feedbackStarUnselectColor,
+                      ),
+                      child: Obx(
+                        () => Center(
                           child:
                           reviewController.selectedImage.value == null
                               ? Image(image: Svg(AppImage.reviewCameraIcon))
@@ -201,7 +207,8 @@ import '../../../widgets/common_appbar.dart';
                               height: 64,
                             ),
                           ),
-                        ),)
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -213,7 +220,7 @@ import '../../../widgets/common_appbar.dart';
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: GestureDetector(
-                onTap:() {
+                onTap: () {
                   reviewController.showThankYouDialog();
                 },
                 child: Container(
@@ -228,7 +235,6 @@ import '../../../widgets/common_appbar.dart';
                 ),
               ),
             ),
-
           ],
         ),
       ),

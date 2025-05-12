@@ -232,20 +232,25 @@ class OrderDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(
                 children: [
-                  Container(
-                    height: 44,
-                    width: 168,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColor.secondaryTextColor,
-                        width: 2
+                  GestureDetector(
+                    onTap: () {
+                      Get.offAllNamed(RouteName.homeScreen);
+                    },
+                    child: Container(
+                      height: 44,
+                      width: 168,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: AppColor.secondaryTextColor,
+                          width: 2
+                        ),
+                        borderRadius: BorderRadius.circular(30)
                       ),
-                      borderRadius: BorderRadius.circular(30)
-                    ),
-                    child: Center(
-                      child: Text(
-                          "Return home",
-                        style: AppTextStyles.drawerMenuText,
+                      child: Center(
+                        child: Text(
+                            "Return home",
+                          style: AppTextStyles.drawerMenuText,
+                        ),
                       ),
                     ),
                   ),
