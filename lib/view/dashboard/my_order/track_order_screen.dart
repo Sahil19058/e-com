@@ -9,15 +9,17 @@ import 'package:untitled7/widgets/common_appbar.dart';
 import '../../../controller/review_controller.dart';
 import '../../../controller/tracking_order_controller.dart';
 
-
 class TrackOrderScreen extends StatelessWidget {
   final String? trackingNumber = Get.arguments as String?;
-   TrackOrderScreen({super.key});
+  TrackOrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final TrackingOrderController controller = Get.put(TrackingOrderController());
+    final TrackingOrderController controller = Get.put(
+      TrackingOrderController(),
+    );
     final ReviewController reviewController = Get.put(ReviewController());
+
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
       appBar: commonAppBar(title: "Track Order", center: true),
@@ -25,34 +27,22 @@ class TrackOrderScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
 
             Row(
               children: [
-                Text(
-                    "Delivered on:",
-                  style: AppTextStyles.womenCardText,
-                ),
-                Text(
-                    "15.02.25",
-                  style: AppTextStyles.onBoardingSubTitle,
-                )
+                Text("Delivered on:", style: AppTextStyles.womenCardText),
+                Text("15.02.25", style: AppTextStyles.onBoardingSubTitle),
               ],
             ),
 
             Row(
               children: [
+                Text("Tracking Number: ", style: AppTextStyles.womenCardText),
                 Text(
-                    "Tracking Number: ",
-                  style: AppTextStyles.womenCardText,
+                  trackingNumber ?? "",
+                  style: AppTextStyles.onBoardingSubTitle,
                 ),
-                Text(
-                    trackingNumber ?? "",
-                    style: AppTextStyles.onBoardingSubTitle
-                )
               ],
             ),
 
@@ -68,7 +58,6 @@ class TrackOrderScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-
                           Container(
                             height: 18,
                             width: 18,
@@ -88,13 +77,13 @@ class TrackOrderScreen extends StatelessWidget {
                                   shape: BoxShape.circle,
                                 ),
                                 child:
-                                index == 0
-                                    ? null
-                                    : Icon(
-                                  Icons.check,
-                                  size: 10,
-                                  color: AppColor.fontWhite,
-                                ),
+                                    index == 0
+                                        ? null
+                                        : Icon(
+                                          Icons.check,
+                                          size: 10,
+                                          color: AppColor.fontWhite,
+                                        ),
                               ),
                             ),
                           ),
@@ -158,9 +147,7 @@ class TrackOrderScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
 
             Card(
               elevation: 2,
@@ -176,60 +163,65 @@ class TrackOrderScreen extends StatelessWidget {
                     children: [
                       SizedBox(
                         height: 100,
-                        width:70,
+                        width: 70,
                         child: Stack(
                           children: [
                             Positioned(
-                                top: 50,
-                                left: 30,
-                                child: Image(image: Svg(AppImage.handIcon))),
-                            Positioned(
-                                top: 40,
-                                left: 15,
-                                child: Image(image: Svg(AppImage.yellowStarIcon))),
-                            Positioned(
-                              top: 32,
-                                left: 32,
-                                child: Image(image: Svg(AppImage.yellowStarIcon))),
+                              top: 50,
+                              left: 30,
+                              child: Image(image: Svg(AppImage.handIcon)),
+                            ),
                             Positioned(
                               top: 40,
-                                left: 50,
-                                child: Image(image: Svg(AppImage.yellowStarIcon))),
+                              left: 15,
+                              child: Image(image: Svg(AppImage.yellowStarIcon)),
+                            ),
+                            Positioned(
+                              top: 32,
+                              left: 32,
+                              child: Image(image: Svg(AppImage.yellowStarIcon)),
+                            ),
+                            Positioned(
+                              top: 40,
+                              left: 50,
+                              child: Image(image: Svg(AppImage.yellowStarIcon)),
+                            ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
+                      SizedBox(width: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                              "Don’t forget to rate",
+                            "Don’t forget to rate",
                             style: AppTextStyles.productNameText.copyWith(
-                              fontWeight: FontWeight.w700
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          SizedBox(height: 10),
                           Text(
-                            "Rate product to get 5 points for collect."
-                            ,style: AppTextStyles.trackingOrderText,
+                            "Rate product to get 5 points for collect.",
+                            style: AppTextStyles.trackingOrderText,
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          SizedBox(height: 10),
                           Obx(
-                                () => RatingBar(
-                              initialRating: reviewController.selectedRating.value,
+                            () => RatingBar(
+                              initialRating:
+                                  reviewController.selectedRating.value,
                               direction: Axis.horizontal,
                               minRating: 1,
                               itemCount: 5,
                               itemSize: 23.0,
                               ratingWidget: RatingWidget(
-                                full: Icon(Icons.star, color: AppColor.ratingStarColor),
-                                half: Icon(Icons.star_half, color: AppColor.ratingStarColor),
+                                full: Icon(
+                                  Icons.star,
+                                  color: AppColor.ratingStarColor,
+                                ),
+                                half: Icon(
+                                  Icons.star_half,
+                                  color: AppColor.ratingStarColor,
+                                ),
                                 empty: Icon(
                                   Icons.star,
                                   color: AppColor.feedbackStarUnselectColor,
@@ -241,13 +233,12 @@ class TrackOrderScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
-
+                      ),
                     ],
                   ),
                 ),
               ),
-            ),  
+            ),
           ],
         ),
       ),
