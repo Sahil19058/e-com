@@ -1,4 +1,5 @@
 class RouteName {
+
   //define your routes name here
 
   static const String splashScreen = "/";

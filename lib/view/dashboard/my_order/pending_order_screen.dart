@@ -5,7 +5,6 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../constant/routes_name.dart';
 import '../../../controller/pending_order_controller.dart';
-import '../../../model/pending_order_model.dart';
 import 'package:intl/intl.dart';
 
 class PendingOrderScreen extends StatelessWidget {

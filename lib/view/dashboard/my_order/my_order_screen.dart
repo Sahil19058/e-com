@@ -8,6 +8,7 @@ import 'cancelled_order_screen.dart';
 import 'delevered_order_screen.dart';
 
 class MyOrdersScreen extends StatelessWidget {
+  MyOrdersScreen({super.key});
   final OrderTabController controller = Get.put(OrderTabController());
 
 

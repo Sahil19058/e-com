@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/model/similar_product_model.dart';
 import '../../controller/product_detail_controller.dart';
 import '../../model/all_product_model.dart';
 import '../../utils/appcolor/appcolor.dart';
@@ -464,7 +463,7 @@ class ProductDetailScreen extends StatelessWidget {
                                 // Divider(color: AppColor.divedertColor),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 20),
-                                  child: Container(
+                                  child: SizedBox(
                                     height: 227,
                                     child: ListView.builder(
                                       itemCount: controller.similarProducts.length,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled7/constant/routes_name.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
@@ -65,7 +64,7 @@ class PendingOrderDetailScreen extends StatelessWidget {
             Card(
               elevation: 2,
               color: AppColor.fontWhite,
-              child: Container(
+              child: SizedBox(
                 height: 114,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -130,7 +129,7 @@ class PendingOrderDetailScreen extends StatelessWidget {
             Card(
               elevation: 2,
               color: AppColor.fontWhite,
-              child: Container(
+              child: SizedBox(
                 height: 247,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(

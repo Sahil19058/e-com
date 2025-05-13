@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:untitled7/constant/routes_name.dart';
 import '../../controller/discover_controller.dart';
 import '../../controller/filter_discover_controller.dart';
-import '../../model/discover_product_model.dart';
 import '../../utils/appcolor/appcolor.dart';
 import '../../utils/appimage/appimage.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
@@ -16,7 +15,6 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(DiscoverController());
     final filterController = Get.put(FilterDiscoverController());
-
 
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Builder(
@@ -173,18 +171,26 @@ class DiscoverScreen extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return GestureDetector(
                                 onTap: () {
-                                  final category = filterController.discoverProducts[index].productCategory;
-                                 if(category == "Dresses"){
-                                   Get.toNamed(RouteName.dressesScreen);
-                                 }else{
-                                   Get.snackbar("Coming Soon", "this screen are not available ");
-                                 }
+                                  final category =
+                                      filterController
+                                          .discoverProducts[index]
+                                          .productCategory;
+                                  if (category == "Dresses") {
+                                    Get.toNamed(RouteName.dressesScreen);
+                                  } else {
+                                    Get.snackbar(
+                                      "Coming Soon",
+                                      "this screen are not available ",
+                                    );
+                                  }
                                 },
                                 child: Column(
                                   children: [
                                     ListTile(
                                       title: Text(
-                                        filterController.discoverProducts[index].productCategory,
+                                        filterController
+                                            .discoverProducts[index]
+                                            .productCategory,
                                         style: AppTextStyles.onBoardingSubTitle,
                                       ),
                                       trailing: Text(

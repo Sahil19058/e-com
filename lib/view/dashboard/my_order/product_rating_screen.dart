@@ -88,7 +88,7 @@ class ProductRatingScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Card(
                 color: AppColor.fontWhite,
-                child: Container(
+                child: SizedBox(
                   height: 267,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,

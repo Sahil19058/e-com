@@ -173,7 +173,7 @@ class TrackOrderScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 100,
                         width:70,
                         child: Stack(

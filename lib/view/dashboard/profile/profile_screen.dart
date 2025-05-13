@@ -129,12 +129,12 @@ class ProfilePage extends StatelessWidget {
                                       style: AppTextStyles.onBoardingSubTitle,
                                     ),
                                     trailing:
-                                        isLogout
-                                            ? null
-                                            : Icon(
-                                              Icons.arrow_forward_ios,
-                                              size: 16,
-                                            ),
+                                    isLogout
+                                        ? null
+                                        : Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 16,
+                                    ),
                                   ),
                                 ),
                               ),

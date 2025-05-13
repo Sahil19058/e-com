@@ -5,7 +5,6 @@ import 'package:untitled7/constant/routes_name.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../controller/delevered_order_controller.dart';
-import '../../../model/pending_order_model.dart';
 import 'package:intl/intl.dart';
 
 class DeliveredOrderScreen extends StatelessWidget {
