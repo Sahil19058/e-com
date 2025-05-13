@@ -40,6 +40,7 @@ class DiscoverScreen extends StatelessWidget {
                         children: [
                           Text("Prise"),
                           SfRangeSlider(
+                            dragMode: SliderDragMode.both,
                             min: 10,
                             max: 500,
                             values: range,
