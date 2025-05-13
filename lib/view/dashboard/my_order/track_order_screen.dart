@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
+import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import 'package:untitled7/widgets/common_appbar.dart';
+import '../../../controller/review_controller.dart';
 import '../../../controller/tracking_order_controller.dart';
 
 
@@ -13,6 +17,7 @@ class TrackOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TrackingOrderController controller = Get.put(TrackingOrderController());
+    final ReviewController reviewController = Get.put(ReviewController());
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
       appBar: commonAppBar(title: "Track Order", center: true),
@@ -164,9 +169,84 @@ class TrackOrderScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   color: AppColor.fontWhite,
                 ),
-              ),
-            ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 100,
+                        width:70,
+                        child: Stack(
+                          children: [
+                            Positioned(
+                                top: 50,
+                                left: 30,
+                                child: Image(image: Svg(AppImage.handIcon))),
+                            Positioned(
+                                top: 40,
+                                left: 15,
+                                child: Image(image: Svg(AppImage.yellowStarIcon))),
+                            Positioned(
+                              top: 32,
+                                left: 32,
+                                child: Image(image: Svg(AppImage.yellowStarIcon))),
+                            Positioned(
+                              top: 40,
+                                left: 50,
+                                child: Image(image: Svg(AppImage.yellowStarIcon))),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                              "Don’t forget to rate",
+                            style: AppTextStyles.productNameText.copyWith(
+                              fontWeight: FontWeight.w700
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Rate product to get 5 points for collect."
+                            ,style: AppTextStyles.trackingOrderText,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Obx(
+                                () => RatingBar(
+                              initialRating: reviewController.selectedRating.value,
+                              direction: Axis.horizontal,
+                              minRating: 1,
+                              itemCount: 5,
+                              itemSize: 23.0,
+                              ratingWidget: RatingWidget(
+                                full: Icon(Icons.star, color: AppColor.ratingStarColor),
+                                half: Icon(Icons.star_half, color: AppColor.ratingStarColor),
+                                empty: Icon(
+                                  Icons.star,
+                                  color: AppColor.feedbackStarUnselectColor,
+                                ),
+                              ),
+                              onRatingUpdate: (rating) {
+                                reviewController.updateRating(rating);
+                              },
+                            ),
+                          ),
+                        ],
+                      )
 
+                    ],
+                  ),
+                ),
+              ),
+            ),  
           ],
         ),
       ),

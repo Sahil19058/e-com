@@ -14,7 +14,6 @@ class ProfilePage extends StatelessWidget {
   final UserController controller = Get.put(UserController());
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +45,11 @@ class ProfilePage extends StatelessWidget {
                   ),
                   subtitle: Obx(() => Text(controller.email.value)),
           
-                  trailing: Image(image: Svg(AppImage.settingIcon)),
+                  trailing: GestureDetector(
+                    onTap: () {
+                      Get.toNamed(RouteName.settingScreen);
+                    },
+                      child: Image(image: Svg(AppImage.settingIcon))),
                 ),
               ),
           

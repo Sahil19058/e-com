@@ -195,4 +195,11 @@ class AppTextStyles {
     color: AppColor.trackOrderColor,
   );
 
+  static const TextStyle trackingOrderText = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w300,
+    color: AppColor.secondaryTextColor,
+  );
+
+
 }
