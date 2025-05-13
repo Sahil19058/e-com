@@ -20,9 +20,11 @@ class TrackOrderScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
+
             SizedBox(
               height: 30,
             ),
+
             Row(
               children: [
                 Text(
@@ -35,6 +37,7 @@ class TrackOrderScreen extends StatelessWidget {
                 )
               ],
             ),
+
             Row(
               children: [
                 Text(
@@ -47,8 +50,10 @@ class TrackOrderScreen extends StatelessWidget {
                 )
               ],
             ),
+
             SizedBox(height: 30),
-            Container(
+
+            SizedBox(
               height: 300,
               child: ListView.builder(
                 itemCount: controller.stepperData.length,
@@ -58,6 +63,7 @@ class TrackOrderScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
+
                           Container(
                             height: 18,
                             width: 18,
@@ -86,19 +92,25 @@ class TrackOrderScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+
                           SizedBox(width: 10),
+
                           Text(
                             controller.stepperData[index].title,
                             style: AppTextStyles.trackOrderText,
                           ),
+
                           Spacer(),
+
                           Text(
                             controller.stepperData[index].date,
                             style: AppTextStyles.womenCardText,
                           ),
                         ],
                       ),
+
                       SizedBox(height: 5),
+
                       if (index != controller.stepperData.length - 1)
                         Padding(
                           padding: const EdgeInsets.only(left: 7),
@@ -139,9 +151,11 @@ class TrackOrderScreen extends StatelessWidget {
                 },
               ),
             ),
+
             SizedBox(
               height: 20,
             ),
+
             Card(
               elevation: 2,
               child: Container(
@@ -152,6 +166,7 @@ class TrackOrderScreen extends StatelessWidget {
                 ),
               ),
             ),
+
           ],
         ),
       ),

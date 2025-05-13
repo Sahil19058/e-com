@@ -94,7 +94,7 @@ flutter:
     - assets/image/splash/
     - assets/image/onboarding/
     - assets/icon/
-#    - assets/splash/splashimage.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
