@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'constant/routes.dart';
-import 'view/onboarding/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
@@ -12,11 +11,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder:
           (context) => GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(fontFamily: "PTSans"),
+            theme: ThemeData(
+                fontFamily: "PTSans",
+                useMaterial3: true
+            ),
             getPages: AppRoutes.appRoutes(),
           ),
     ),

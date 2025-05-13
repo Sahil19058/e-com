@@ -67,7 +67,12 @@ class WomenCateGoryScreen extends StatelessWidget {
           SizedBox(height: 20),
 
           // Middle Promotional Banner
-          promoBanner(AppImage.decorationImage, "| NEW COLLECTION", "HANG OUT", "& PARTY"),
+          promoBanner(
+            AppImage.decorationImage,
+            "| NEW COLLECTION",
+            "HANG OUT",
+            "& PARTY",
+          ),
 
           SizedBox(height: 20),
 
@@ -89,7 +94,12 @@ class WomenCateGoryScreen extends StatelessWidget {
 
           // Top Collection
           sectionHeader("Top Collection", onTap: () {}),
-          promoBanner(AppImage.modelImage, "| Sale up to 40%", "FOR SLIM", "& BEAUTY"),
+          promoBanner(
+            AppImage.modelImage,
+            "| Sale up to 40%",
+            "FOR SLIM",
+            "& BEAUTY",
+          ),
 
           SizedBox(height: 20),
 
@@ -111,10 +121,19 @@ class WomenCateGoryScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Summer Collection 2021", style: AppTextStyles.womenCardText),
+                          Text(
+                            "Summer Collection 2021",
+                            style: AppTextStyles.womenCardText,
+                          ),
                           SizedBox(height: 20),
-                          Text("Most sexy ", style: AppTextStyles.onBoardingTitle),
-                          Text("& fabulous", style: AppTextStyles.onBoardingTitle),
+                          Text(
+                            "Most sexy ",
+                            style: AppTextStyles.onBoardingTitle,
+                          ),
+                          Text(
+                            "& fabulous",
+                            style: AppTextStyles.onBoardingTitle,
+                          ),
                           Text("design", style: AppTextStyles.onBoardingTitle),
                         ],
                       ),
@@ -136,6 +155,14 @@ class WomenCateGoryScreen extends StatelessWidget {
           ),
 
           SizedBox(height: 20),
+
+          NavigationBar(
+            selectedIndex: 0,
+            destinations: [
+              NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+              NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+            ],
+          )
         ],
       ),
     );
@@ -148,7 +175,10 @@ class WomenCateGoryScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title, style: AppTextStyles.onBoardingTitle),
-          TextButton(onPressed: onTap, child: Text("Show all", style: AppTextStyles.textButtonText)),
+          TextButton(
+            onPressed: onTap,
+            child: Text("Show all", style: AppTextStyles.textButtonText),
+          ),
         ],
       ),
     );
@@ -165,7 +195,10 @@ class WomenCateGoryScreen extends StatelessWidget {
             width: 126,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(image: AssetImage(product.productImage), fit: BoxFit.cover),
+              image: DecorationImage(
+                image: AssetImage(product.productImage),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(height: 6),
@@ -190,7 +223,10 @@ class WomenCateGoryScreen extends StatelessWidget {
               width: 66,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(image: AssetImage(product.productImage), fit: BoxFit.cover),
+                image: DecorationImage(
+                  image: AssetImage(product.productImage),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(width: 10),
@@ -254,12 +290,17 @@ class WomenCateGoryScreen extends StatelessWidget {
                 height: 150,
                 width: 100,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+                  image: DecorationImage(
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ],
           ),
           SizedBox(width: 20),
+
+
         ],
       ),
     );

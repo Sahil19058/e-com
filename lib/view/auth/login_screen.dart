@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 26),
 
                 /// Login with icon ex:- google, facebook, apple
-                LoginwithIcon(id: 2),
+                LoginWithIcon(id: 2),
 
                 SizedBox(height: 80),
 
@@ -132,6 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 SizedBox(height: 20),
+
               ],
             ),
           ),

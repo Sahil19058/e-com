@@ -15,9 +15,7 @@ class TrackOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TrackingOrderController controller = Get.put(
-      TrackingOrderController(),
-    );
+    final TrackingOrderController controller = Get.put(TrackingOrderController());
     final ReviewController reviewController = Get.put(ReviewController());
 
     return Scaffold(

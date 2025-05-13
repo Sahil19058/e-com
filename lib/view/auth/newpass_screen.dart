@@ -18,8 +18,6 @@ class NewPassScreen extends StatefulWidget {
 class _NewPassScreenState extends State<NewPassScreen> {
   final SignUpController controller = SignUpController();
 
-
-
   @override
   void dispose() {
     controller.dispose();
@@ -64,7 +62,7 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   decoration: InputDecoration(
                     hintText: 'New password',
                     suffixIcon:
-                    controller.newPassword.isNotEmpty
+                        controller.newPassword.isNotEmpty
                             ? IconButton(
                               icon: Icon(
                                 controller.obscureNewPassword
@@ -73,7 +71,8 @@ class _NewPassScreenState extends State<NewPassScreen> {
                               ),
                               onPressed: () {
                                 setState(() {
-                                  controller.obscureNewPassword = !controller.obscureNewPassword;
+                                  controller.obscureNewPassword =
+                                      !controller.obscureNewPassword;
                                 });
                               },
                             )
@@ -93,7 +92,7 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   decoration: InputDecoration(
                     hintText: 'Confirm password',
                     suffixIcon:
-                    controller.confirmPassword.isNotEmpty
+                        controller.confirmPassword.isNotEmpty
                             ? IconButton(
                               icon: Icon(
                                 controller.obscureConfirmPassword
@@ -117,7 +116,7 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   child: CommonOutlineButton(
                     text: "Confirm",
                     backgroundColor:
-                    controller.isButtonEnabled
+                        controller.isButtonEnabled
                             ? AppColor.fontBlack
                             : AppColor.buttonColor.withValues(alpha: 0.4),
                     textColor: AppColor.fontWhite,

@@ -52,6 +52,7 @@ dependencies:
   image_picker: ^1.0.4
   card_swiper: ^3.0.1
   u_credit_card: ^1.4.0
+  syncfusion_flutter_sliders: ^29.1.41
 #  order_tracker: ^0.0.2
 #  universal_stepper: ^1.0.0+1
 

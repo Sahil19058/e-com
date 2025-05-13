@@ -13,9 +13,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductDetailController controller = Get.put(
-      ProductDetailController(),
-    );
+    final ProductDetailController controller = Get.put(ProductDetailController());
 
     final AllProductModel product = Get.arguments as AllProductModel;
 
@@ -54,7 +52,7 @@ class ProductDetailScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 0,
                     blurRadius: 6,
                     offset: Offset(0, -4), // negative Y offset for top shadow

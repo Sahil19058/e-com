@@ -112,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(height: 26),
 
                 /// sign up with icon ex:- google, facebook, apple
-                LoginwithIcon(id: 1),
+                LoginWithIcon(id: 1),
 
                 SizedBox(height: 40),
 

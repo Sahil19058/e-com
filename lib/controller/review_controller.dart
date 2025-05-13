@@ -1,9 +1,7 @@
 import 'dart:io';
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../utils/appcolor/appcolor.dart';
 import '../utils/apptextstyle/apptextstyle.dart';
 
@@ -91,5 +89,4 @@ class ReviewController extends GetxController {
       barrierDismissible: false,
     );
   }
-
 }

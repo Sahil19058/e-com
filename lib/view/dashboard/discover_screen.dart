@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:untitled7/constant/routes_name.dart';
 import '../../controller/discover_controller.dart';
 import '../../controller/filter_discover_controller.dart';
+import '../../controller/slider_controller.dart';
 import '../../utils/appcolor/appcolor.dart';
 import '../../utils/appimage/appimage.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import '../../utils/apptextstyle/apptextstyle.dart';
+
+
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
@@ -15,15 +19,72 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(DiscoverController());
     final filterController = Get.put(FilterDiscoverController());
+    final sliderController = Get.put(SliderController());
 
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Builder(
       builder:
           (context) => Scaffold(
             key: scaffoldKey,
-            endDrawer: Drawer(
+            endDrawer:Drawer(
               backgroundColor: AppColor.fontWhite,
-              child: Center(child: Text("Hello")),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Obx(() {
+                      final range = sliderController.priceRange.value;
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Prise"),
+                          SfRangeSlider(
+                            min: 10,
+                            max: 500,
+                            values: range,
+                            interval: 100,
+                            showTicks: false,
+                            showLabels: false,
+                            enableTooltip: false,
+                            activeColor: AppColor.fontBlack,
+                            inactiveColor: AppColor.divedertColor,
+                            endThumbIcon: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Colors.black),
+                              ),
+                            ),
+                            onChanged: (SfRangeValues newRange) {
+                              sliderController.priceRange.value = newRange;
+                            },
+                            startThumbIcon: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Colors.black),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("\$${range.start.toInt()}",
+                                    style: AppTextStyles.secondaryText),
+                                Text("\$${range.end.toInt()}",
+                                    style: AppTextStyles.secondaryText),
+                              ],
+                            ),
+                          )
+                        ],
+                      );
+                    }),
+                  ],
+                ),
+              ),
             ),
             backgroundColor: AppColor.fontWhite,
             body: SingleChildScrollView(

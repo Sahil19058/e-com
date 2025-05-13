@@ -8,9 +8,9 @@ import '../services/signupwithgoogle.dart';
 import '../utils/appcolor/appcolor.dart';
 import '../utils/appimage/appimage.dart';
 
-class LoginwithIcon extends StatelessWidget {
+class LoginWithIcon extends StatelessWidget {
   final int id;
-  const LoginwithIcon({required this.id, super.key});
+  const LoginWithIcon({required this.id, super.key});
 
   @override
   Widget build(BuildContext context) {
