@@ -78,6 +78,7 @@ class TrackOrderScreen extends StatelessWidget {
                                 color: AppColor.trackOrderColor,
                               ),
                             ),
+
                             child: Center(
                               child: Container(
                                 height: 13,
