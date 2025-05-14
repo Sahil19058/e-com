@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
-import '../../controller/page/catagoty_controller.dart';
+import '../../controller/catagoty_controller.dart';
 import 'catagory_pages/womencategory_screen.dart';
 
 class CategorySelector extends StatelessWidget {

@@ -6,7 +6,7 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../constant/routes_name.dart';
-import '../../../controller/profile/user_controller.dart';
+import '../../../controller/user_controller.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});

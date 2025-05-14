@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../utils/appimage/appimage.dart';
+import '../utils/appimage/appimage.dart';
 
 class BottomNavController extends GetxController {
   var selectedIndex = 0.obs;

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
-import '../../controller/auth/signup_controller.dart';
+import '../../controller/signup_controller.dart';
 import '../../widgets/common_button.dart';
 import '../../constant/routes_name.dart';
 

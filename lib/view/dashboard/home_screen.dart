@@ -6,7 +6,7 @@ import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import 'package:untitled7/view/dashboard/profile/profile_screen.dart';
-import '../../controller/bottomnav/bottomnav.dart';
+import '../../controller/bottomnav.dart';
 import '../../controller/drawer_controller.dart';
 import 'bottomnavbar.dart';
 import 'category_selector.dart';
