@@ -55,6 +55,8 @@ class DiscoverScreen extends StatelessWidget {
                       const Divider(color: AppColor.divedertColor),
                       const Text("Prise"),
                       SfRangeSlider(
+                        tickShape: SfTickShape(),labelPlacement: LabelPlacement.betweenTicks,
+                        stepSize: 10,
                         dragMode: SliderDragMode.both,
                         min: 10,
                         max: 500,
@@ -63,6 +65,7 @@ class DiscoverScreen extends StatelessWidget {
                         showTicks: false,
                         showLabels: false,
                         enableTooltip: false,
+                        // tooltipShape: SfPaddleTooltipShape(),
                         activeColor: AppColor.fontBlack,
                         inactiveColor: AppColor.divedertColor,
                         endThumbIcon: Container(
