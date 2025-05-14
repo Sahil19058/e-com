@@ -14,56 +14,81 @@ class AllItemsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DressesController controller =  Get.put(DressesController());
+    final DressesController controller = Get.put(DressesController());
+
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    final crossAxisCount = (screenWidth / 180).floor().clamp(2, 4);
+
+    final childAspectRatio = screenWidth < 600 ? 0.6 : 0.65;
+
     return Flexible(
-        child:  GridView.builder(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.03, // Responsive horizontal padding
+          vertical: screenWidth * 0.02,
+        ),
+        child: GridView.builder(
           itemCount: controller.allProducts.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 0.6,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            childAspectRatio: childAspectRatio,
+            crossAxisSpacing: screenWidth * 0.05, // Responsive spacing
+            mainAxisSpacing: screenWidth * 0.05,
           ),
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-                Get.toNamed(RouteName.productDetailScreen,arguments: controller.allProducts[index]);
+                Get.toNamed(RouteName.productDetailScreen,
+                    arguments: controller.allProducts[index]);
               },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Stack(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Stack(
                       children: [
-                        Image(image : AssetImage(controller.allProducts[index].productImage), ),
-                        // Image(image: AssetImage(AppImage.product1Image)),
+                        Image(
+                          image: AssetImage(
+                              controller.allProducts[index].productImage),
+                          fit: BoxFit.cover, // Ensure image scales properly
+                          width: double.infinity,
+                        ),
                         Positioned(
-                          right: 10,
-                          top: 10,
+                          right: screenWidth * 0.02,
+                          top: screenWidth * 0.02,
                           child: Container(
-                            height: 27,
-                            width: 27,
+                            height: screenWidth * 0.06, // Responsive icon size
+                            width: screenWidth * 0.06,
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColor.fontWhite,
                             ),
                             child: Obx(() {
-                              final isFav = controller.allProducts[index].isFavorite.value;
+                              final isFav = controller
+                                  .allProducts[index].isFavorite.value;
                               return GestureDetector(
                                 onTap: () {
-                                  controller.allProducts[index].isFavorite.toggle();
-                                  if (controller.allProducts[index].isFavorite.value) {
-                                    if (!wishListProduct.contains(controller.allProducts[index])) {
-                                      wishListProduct.add(controller.allProducts[index]);
+                                  controller.allProducts[index].isFavorite
+                                      .toggle();
+                                  if (controller
+                                      .allProducts[index].isFavorite.value) {
+                                    if (!wishListProduct.contains(
+                                        controller.allProducts[index])) {
+                                      wishListProduct
+                                          .add(controller.allProducts[index]);
                                     }
                                   } else {
-                                    wishListProduct.remove(controller.allProducts[index]);
+                                    wishListProduct
+                                        .remove(controller.allProducts[index]);
                                   }
                                 },
                                 child: Image(
                                   image: const Svg(AppImage.favoriteIcon),
-                                  color: isFav ? AppColor.notLikeColor : AppColor.likeColor ,
+                                  color: isFav
+                                      ? AppColor.notLikeColor
+                                      : AppColor.likeColor,
+                                  fit: BoxFit.scaleDown,
                                 ),
                               );
                             }),
@@ -71,56 +96,75 @@ class AllItemsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Text(
-                      controller.allProducts[index].productName,
-                      style: AppTextStyles.productNameText,
+                  ),
+                  SizedBox(height: screenWidth * 0.015), // Responsive spacing
+                  Text(
+                    controller.allProducts[index].productName,
+                    style: AppTextStyles.productNameText.copyWith(
+                      fontSize: screenWidth < 600 ? 14 : 16, // Responsive font
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          controller.allProducts[index].productPrice,
-                          style: AppTextStyles.drawerSubText,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        controller.allProducts[index].productPrice,
+                        style: AppTextStyles.drawerSubText.copyWith(
+                          fontSize: screenWidth < 600 ? 12 : 14,
                         ),
-                        const SizedBox(width: 5),
-                        Text(
-                          controller.allProducts[index].productRealPrice,
-                          style: AppTextStyles.womenCardText.copyWith(
-                            decoration: TextDecoration.lineThrough,
-                            decorationColor: AppColor.secondaryTextColor,
+                      ),
+                      SizedBox(width: screenWidth * 0.015),
+                      Text(
+                        controller.allProducts[index].productRealPrice,
+                        style: AppTextStyles.womenCardText.copyWith(
+                          fontSize: screenWidth < 600 ? 12 : 14,
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: AppColor.secondaryTextColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      RatingBar(
+                        ignoreGestures: true,
+                        initialRating: controller
+                            .allProducts[index].productRating
+                            .toDouble(),
+                        direction: Axis.horizontal,
+                        itemCount: 5,
+                        itemSize: screenWidth < 600 ? 15.0 : 18.0, // Responsive
+                        ratingWidget: RatingWidget(
+                          full: const Icon(
+                            Icons.star,
+                            color: AppColor.ratingStarColor,
+                          ),
+                          empty: const Icon(
+                            Icons.star_border,
+                            color: AppColor.ratingStarColor,
+                          ),
+                          half: const Image(
+                            image: Svg(AppImage.outlineStarIcon),
                           ),
                         ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        RatingBar(
-                          ignoreGestures: true, // Makes it read-only
-                          initialRating: controller.allProducts[index].productRating.toDouble(),
-                          direction: Axis.horizontal,
-                          itemCount: 5,
-                          itemSize: 15.0,
-                          ratingWidget: RatingWidget(
-                            full: const Icon(Icons.star,color: AppColor.ratingStarColor,),     // full star
-                            empty: const Icon(Icons.star_border, color: AppColor.ratingStarColor,),
-                            half: const Image(image: Svg(AppImage.outlineStarIcon)), // outlined star
-                          ),
-                          onRatingUpdate: (rating) {}, // Required, even if not used
+                        onRatingUpdate: (rating) {},
+                      ),
+                      SizedBox(width: screenWidth * 0.015),
+                      Text(
+                        "(${controller.allProducts[index].ratingCount})",
+                        style: AppTextStyles.ratingCountText.copyWith(
+                          fontSize: screenWidth < 600 ? 12 : 14,
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          "(${controller.allProducts[index].ratingCount})",
-                          style: AppTextStyles.ratingCountText,
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             );
           },
-        )
+        ),
+      ),
     );
   }
 }

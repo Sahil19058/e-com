@@ -10,8 +10,6 @@ import '../../utils/appimage/appimage.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import '../../utils/apptextstyle/apptextstyle.dart';
 
-
-
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
 
@@ -26,10 +24,13 @@ class DiscoverScreen extends StatelessWidget {
       builder:
           (context) => Scaffold(
             key: scaffoldKey,
-            endDrawer:Drawer(
+            endDrawer: Drawer(
               backgroundColor: AppColor.fontWhite,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 20,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -38,6 +39,21 @@ class DiscoverScreen extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const Row(
+                            children: [
+                              Text(
+                                "Filter",
+                                style: AppTextStyles.onBoardingTitle,
+                              ),
+                              Spacer(),
+                              SizedBox(
+                                height: 27,
+                                width: 27,
+                                child: Image(image: Svg(AppImage.filterIcon)),
+                              ),
+                            ],
+                          ),
+                          const Divider(color: AppColor.divedertColor),
                           const Text("Prise"),
                           SfRangeSlider(
                             dragMode: SliderDragMode.both,
@@ -69,17 +85,23 @@ class DiscoverScreen extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8.0,
+                            ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("\$${range.start.toInt()}",
-                                    style: AppTextStyles.secondaryText),
-                                Text("\$${range.end.toInt()}",
-                                    style: AppTextStyles.secondaryText),
+                                Text(
+                                  "\$${range.start.toInt()}",
+                                  style: AppTextStyles.secondaryText,
+                                ),
+                                Text(
+                                  "\$${range.end.toInt()}",
+                                  style: AppTextStyles.secondaryText,
+                                ),
                               ],
                             ),
-                          )
+                          ),
                         ],
                       );
                     }),
@@ -145,7 +167,9 @@ class DiscoverScreen extends StatelessWidget {
                                 color: AppColor.circleColor,
                                 borderRadius: BorderRadius.circular(16),
                               ),
-                              child: const Image(image: Svg(AppImage.filterIcon)),
+                              child: const Image(
+                                image: Svg(AppImage.filterIcon),
+                              ),
                             ),
                           ),
                         ],
@@ -171,7 +195,10 @@ class DiscoverScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                const Text("CLOTHING", style: AppTextStyles.subtitle),
+                                const Text(
+                                  "CLOTHING",
+                                  style: AppTextStyles.subtitle,
+                                ),
                                 const Spacer(),
                                 Stack(
                                   children: [
@@ -227,7 +254,9 @@ class DiscoverScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Container(
                           height: 396,
-                          decoration: const BoxDecoration(color: AppColor.fontWhite),
+                          decoration: const BoxDecoration(
+                            color: AppColor.fontWhite,
+                          ),
                           child: ListView.builder(
                             itemCount: filterController.discoverProducts.length,
                             itemBuilder: (context, index) {
@@ -260,7 +289,9 @@ class DiscoverScreen extends StatelessWidget {
                                         style: AppTextStyles.womenCardText,
                                       ),
                                     ),
-                                    const Divider(color: AppColor.divedertColor),
+                                    const Divider(
+                                      color: AppColor.divedertColor,
+                                    ),
                                   ],
                                 ),
                               );
@@ -349,7 +380,10 @@ class DiscoverScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: [
-                              const Text("SHOES", style: AppTextStyles.subtitle),
+                              const Text(
+                                "SHOES",
+                                style: AppTextStyles.subtitle,
+                              ),
                               const Spacer(),
                               Stack(
                                 children: [
@@ -412,7 +446,10 @@ class DiscoverScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: [
-                              const Text("COLLECTION", style: AppTextStyles.subtitle),
+                              const Text(
+                                "COLLECTION",
+                                style: AppTextStyles.subtitle,
+                              ),
                               const Spacer(),
                               Stack(
                                 children: [
