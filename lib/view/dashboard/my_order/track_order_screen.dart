@@ -25,9 +25,9 @@ class TrackOrderScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
 
-            Row(
+            const Row(
               children: [
                 Text("Delivered on:", style: AppTextStyles.womenCardText),
                 Text("15.02.25", style: AppTextStyles.onBoardingSubTitle),
@@ -36,7 +36,7 @@ class TrackOrderScreen extends StatelessWidget {
 
             Row(
               children: [
-                Text("Tracking Number: ", style: AppTextStyles.womenCardText),
+                const Text("Tracking Number: ", style: AppTextStyles.womenCardText),
                 Text(
                   trackingNumber ?? "",
                   style: AppTextStyles.onBoardingSubTitle,
@@ -44,7 +44,7 @@ class TrackOrderScreen extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
 
             SizedBox(
               height: 300,
@@ -70,14 +70,15 @@ class TrackOrderScreen extends StatelessWidget {
                               child: Container(
                                 height: 13,
                                 width: 13,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: AppColor.trackOrderColor,
                                   shape: BoxShape.circle,
                                 ),
                                 child:
                                     index == 0
                                         ? null
-                                        : Icon(
+                                        :
+                                    const Icon(
                                           Icons.check,
                                           size: 10,
                                           color: AppColor.fontWhite,
@@ -86,14 +87,14 @@ class TrackOrderScreen extends StatelessWidget {
                             ),
                           ),
 
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
 
                           Text(
                             controller.stepperData[index].title,
                             style: AppTextStyles.trackOrderText,
                           ),
 
-                          Spacer(),
+                          const Spacer(),
 
                           Text(
                             controller.stepperData[index].date,
@@ -102,7 +103,7 @@ class TrackOrderScreen extends StatelessWidget {
                         ],
                       ),
 
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
 
                       if (index != controller.stepperData.length - 1)
                         Padding(
@@ -112,7 +113,7 @@ class TrackOrderScreen extends StatelessWidget {
                               Container(
                                 height: 4,
                                 width: 4,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppColor.trackOrderColor,
                                 ),
@@ -121,7 +122,7 @@ class TrackOrderScreen extends StatelessWidget {
                               Container(
                                 height: 4,
                                 width: 4,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppColor.trackOrderColor,
                                 ),
@@ -130,7 +131,7 @@ class TrackOrderScreen extends StatelessWidget {
                               Container(
                                 height: 4,
                                 width: 4,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppColor.trackOrderColor,
                                 ),
@@ -145,7 +146,7 @@ class TrackOrderScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             Card(
               elevation: 2,
@@ -159,7 +160,7 @@ class TrackOrderScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 100,
                         width: 70,
                         child: Stack(
@@ -187,7 +188,7 @@ class TrackOrderScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -197,12 +198,12 @@ class TrackOrderScreen extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                             ),
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          const SizedBox(height: 10),
+                          const Text(
                             "Rate product to get 5 points for collect.",
                             style: AppTextStyles.trackingOrderText,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Obx(
                             () => RatingBar(
                               initialRating:
@@ -212,15 +213,15 @@ class TrackOrderScreen extends StatelessWidget {
                               itemCount: 5,
                               itemSize: 23.0,
                               ratingWidget: RatingWidget(
-                                full: Icon(
+                                full: const Icon(
                                   Icons.star,
                                   color: AppColor.ratingStarColor,
                                 ),
-                                half: Icon(
+                                half: const Icon(
                                   Icons.star_half,
                                   color: AppColor.ratingStarColor,
                                 ),
-                                empty: Icon(
+                                empty: const Icon(
                                   Icons.star,
                                   color: AppColor.feedbackStarUnselectColor,
                                 ),

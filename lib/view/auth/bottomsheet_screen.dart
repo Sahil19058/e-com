@@ -28,21 +28,21 @@ class ShowBottomSheet {
                   child: Container(
                     height: 100,
                     width: 100,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: Svg(AppImage.bottomSheetIcon),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 40),
-                Text(
+                const SizedBox(height: 40),
+                const Text(
                   "Your password has been changed",
                   style: AppTextStyles.onBoardingTitle,
                 ),
-                SizedBox(height: 20),
-                Text("Welcome back! Discover now!"),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
+                const Text("Welcome back! Discover now!"),
+                const SizedBox(height: 20),
                 CommonOutlineButton(
                   text: "Browse home",
                   onTap: () {},

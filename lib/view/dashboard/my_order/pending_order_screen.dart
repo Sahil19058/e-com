@@ -36,25 +36,26 @@ class PendingOrderScreen extends StatelessWidget {
                     color: AppColor.fontWhite,
                   ),
                   child: Column(
-                    children: [
-                      SizedBox(height: 20),
+                    children: <Widget>[
+
+                      const SizedBox(height: 20),
                       Row(
                         children: [
                           Text(
                             "Order #${controller.pendingOrders[index].orderId}",
                             style: AppTextStyles.productDetailText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             DateFormat('dd/mm/yyyy').format(DateTime.now()),
                             style: AppTextStyles.drawerOtherText,
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Tracking number: ",
                             style: AppTextStyles.drawerOtherText,
                           ),
@@ -66,10 +67,10 @@ class PendingOrderScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Quantity: ",
                             style: AppTextStyles.drawerOtherText,
                           ),
@@ -79,8 +80,8 @@ class PendingOrderScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Spacer(),
-                          Text(
+                          const Spacer(),
+                          const Text(
                             "Subtotal: ",
                             style: AppTextStyles.drawerOtherText,
                           ),
@@ -92,27 +93,27 @@ class PendingOrderScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                               "PENDING",
                             style: AppTextStyles.pendingText,
                           ),
-                           Spacer(),
+                           const Spacer(),
                           GestureDetector(
                             onTap: () {
                               Get.toNamed(RouteName.pendingOrderDetailScreen,arguments: controller.pendingOrders[index]);
                             },
                             child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 25,vertical: 9),
+                              padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 9),
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: AppColor.secondaryTextColor
                                 ),
                                 borderRadius: BorderRadius.circular(20)
                               ),
-                              child: Text("Detail"),
+                              child: const Text("Detail"),
                             ),
                           )
                         ],

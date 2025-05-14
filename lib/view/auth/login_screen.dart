@@ -36,18 +36,18 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
 
-                Text(
+                const Text(
                   "Log into",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   "your account",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
 
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
 
                 CommonTextField(
                   controller: controller.emailController,
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
 
                 CommonTextField(
                   controller: controller.passwordController,
@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         Get.toNamed(RouteName.forgotPassScreen);
                       },
-                      child: Text(
+                      child: const Text(
                         "Forgot Password?",
                         style: AppTextStyles.onBoardingSubTitle,
                       ),
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
 
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
 
                 Center(
                   child: CommonOutlineButton(
@@ -99,26 +99,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
 
-                SizedBox(height: 26),
+                const SizedBox(height: 26),
 
-                Center(
+                const Center(
                   child: Text(
                     "or log in with",
                     style: AppTextStyles.onBoardingSubTitle,
                   ),
                 ),
 
-                SizedBox(height: 26),
+                const SizedBox(height: 26),
 
                 /// Login with icon ex:- google, facebook, apple
-                LoginWithIcon(id: 2),
+                const LoginWithIcon(id: 2),
 
-                SizedBox(height: 80),
+                const SizedBox(height: 80),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Don’t have an account?",
                       style: AppTextStyles.textButton,
                     ),
@@ -126,12 +126,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         Get.offNamed(RouteName.signupScreen);
                       },
-                      child: Text("Sign Up", style: AppTextStyles.textButton),
+                      child: const Text("Sign Up", style: AppTextStyles.textButton),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
               ],
             ),

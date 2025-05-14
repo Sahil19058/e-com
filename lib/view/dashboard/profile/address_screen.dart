@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import '../../../controller/address_controller.dart';
-import '../../../model/address_model.dart';
 import '../../../utils/appcolor/appcolor.dart';
-import '../../../utils/appimage/appimage.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
@@ -33,7 +31,7 @@ class AddressScreen extends StatelessWidget {
                     child: Card(
                       elevation: 2,
                       color: AppColor.fontWhite,
-                      child: Container(
+                      child: SizedBox(
 
                         height: 110,
                         child: Column(
@@ -52,12 +50,12 @@ class AddressScreen extends StatelessWidget {
                                   );
                                 }),
                                 Image(image: Svg(controller.addresses[index].icons)),
-                                SizedBox(
+                                const SizedBox(
                                   width: 20,
                                 ),
                                 Column(
                                   children: [
-                                    Text(
+                                    const Text(
                                         "SEND TO",
                                       style: AppTextStyles.womenCardText,
                                     ),
@@ -69,7 +67,7 @@ class AddressScreen extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 TextButton(
                                     onPressed: () {
                                       
@@ -85,7 +83,7 @@ class AddressScreen extends StatelessWidget {
                                 )
                               ],
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                             Text(
                               controller.addresses[index].address,
                               style: AppTextStyles.womenCardText,

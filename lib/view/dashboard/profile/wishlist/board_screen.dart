@@ -14,7 +14,7 @@ class BoardScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return Card(
                 color: AppColor.fontWhite,
-                child: Container(
+                child: SizedBox(
                   height: 226,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class BoardScreen extends StatelessWidget {
                           Container(
                             height: 148,
                             width: 107,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft:Radius.circular(10) ),
                               image: DecorationImage(
                                   image: AssetImage(AppImage.boardModel1Image)
@@ -34,7 +34,7 @@ class BoardScreen extends StatelessWidget {
                           Container(
                             height: 148,
                             width: 107,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 // borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft:Radius.circular(20) ),
                                 image: DecorationImage(
                                     image: AssetImage(AppImage.boardModel2Image),
@@ -46,7 +46,7 @@ class BoardScreen extends StatelessWidget {
                               Container(
                                 height: 86,
                                 width: 52,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(AppImage.boardModel6Image),
                                       fit: BoxFit.fitHeight
@@ -56,7 +56,7 @@ class BoardScreen extends StatelessWidget {
                               Container(
                                 height: 62  ,
                                 width: 52,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(AppImage.boardModel5Image),
                                       fit: BoxFit.fitHeight
@@ -71,7 +71,7 @@ class BoardScreen extends StatelessWidget {
                               Container(
                                 height: 59,
                                 width: 52,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(topRight: Radius.circular(10)),
                                     image: DecorationImage(
                                         image: AssetImage(AppImage.boardModel3Image)
@@ -81,7 +81,7 @@ class BoardScreen extends StatelessWidget {
                               Container(
                                 height: 88  ,
                                 width: 52,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(bottomRight: Radius.circular(10)),
                                     image: DecorationImage(
                                         image: AssetImage(AppImage.boardModel4Image)
@@ -92,9 +92,9 @@ class BoardScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 5,),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                      const SizedBox(height: 5,),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Row(
                           children: [
                             Text(
@@ -106,11 +106,11 @@ class BoardScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15),
                         child: Text(
                             "36 items",
                           style: AppTextStyles.womenCardText,

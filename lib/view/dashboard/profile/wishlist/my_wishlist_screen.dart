@@ -72,11 +72,11 @@ class MyWishlistScreen extends StatelessWidget {
             Obx(() {
               switch (controller.selectedIndex.value) {
                 case 0:
-                  return AllItemsScreen();
+                  return const AllItemsScreen();
                 case 1:
-                  return BoardScreen();
+                  return const BoardScreen();
                 default:
-                  return SizedBox();
+                  return const SizedBox();
               }
             }),
           ],

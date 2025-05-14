@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:ticket_clippers/ticket_clippers.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
 import 'package:untitled7/utils/appimage/appimage.dart';
 
-import '../../../utils/apptextstyle/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
 class VoucherScreen extends StatelessWidget {
@@ -52,7 +49,7 @@ class VoucherScreen extends StatelessWidget {
       //   ),
       // ),
       
-      body: Column(
+      body: const Column(
         children: [
           Image(image: AssetImage(AppImage.voucher1Image)),
 

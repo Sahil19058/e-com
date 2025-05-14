@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
 
     final List<Widget> pages = [
       CategorySelector(),
-      DiscoverScreen(),
+      const DiscoverScreen(),
       MyOrdersScreen(),
       ProfilePage(),
     ];
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       scaffoldKey.currentState?.openDrawer();
                     },
-                    icon: Image(image: Svg(AppImage.drawerIcon)),
+                    icon: const Image(image: Svg(AppImage.drawerIcon)),
                   ),
                   backgroundColor: AppColor.fontWhite,
                   title: Obx(
@@ -72,8 +72,8 @@ class HomeScreen extends StatelessWidget {
                   actions: [
                     GestureDetector(
                       onTap: () => Get.toNamed(RouteName.notificationScreen),
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 20),
+                      child: const Padding(
+                        padding: EdgeInsets.only(right: 20),
                         child: Image(image: Svg(AppImage.notificationIcon)),
                       ),
                     ),
@@ -89,19 +89,19 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Row(
                 children: [
                   Container(
                     height: 120,
                     width: 120,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(AppImage.avatarImage),
                       ),
                     ),
                   ),
-                  Column(
+                  const Column(
                     children: [
                       Text("Sunie Pham", style: AppTextStyles.drawerText),
                       Text(
@@ -116,9 +116,9 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SizedBox(
-                  height: 240,
+                  height: 250,
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: controller.menuItems.length,
                     itemBuilder: (context, index) {
                       return InkWell(
@@ -151,10 +151,10 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
           
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
           
-              Padding(
-                padding: const EdgeInsets.only(left: 50),
+              const Padding(
+                padding: EdgeInsets.only(left: 50),
                 child: Text("OTHER", style: AppTextStyles.drawerOtherText),
               ),
           
@@ -163,7 +163,7 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 240,
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: otherItem.length,
                     itemBuilder: (context, index) {
                       return InkWell(

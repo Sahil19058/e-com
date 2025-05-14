@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../model/all_product_model.dart';
 import '../model/similar_product_model.dart';
 import '../utils/appimage/appimage.dart';
 

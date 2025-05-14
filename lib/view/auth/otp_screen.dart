@@ -37,7 +37,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
               child: Container(
                 height: 36,
                 width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
+                decoration: const BoxDecoration(shape: BoxShape.circle),
                 child: const Icon(Icons.arrow_back_ios_new, size: 16),
               ),
             ),
@@ -80,14 +80,14 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                 onChanged: (value) {},
               ),
               const SizedBox(height: 12),
-              Text(
+              const Text(
                 "Resend in 00",
 
                 ///${remainingSeconds.toString().padLeft(2, '0')}
                 style: TextStyle(color: AppColor.liteTextColor),
               ),
 
-              SizedBox(height: 250),
+              const SizedBox(height: 250),
 
               Center(
                 child: CommonOutlineButton(

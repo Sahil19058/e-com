@@ -53,6 +53,8 @@ dependencies:
   card_swiper: ^3.0.1
   u_credit_card: ^1.4.0
   syncfusion_flutter_sliders: ^29.1.41
+  very_good_analysis: ^7.0.0
+  flutter_lints: ^5.0.0
 #  order_tracker: ^0.0.2
 #  universal_stepper: ^1.0.0+1
 
@@ -66,6 +68,8 @@ dependencies:
 
 
 
+  flutter_svg: any
+  intl: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,7 +79,6 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

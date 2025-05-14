@@ -6,6 +6,7 @@ import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../controller/women_category_controller.dart';
 
+
 class WomenCateGoryScreen extends StatelessWidget {
   WomenCateGoryScreen({super.key});
 
@@ -25,15 +26,15 @@ class WomenCateGoryScreen extends StatelessWidget {
               height: screenWidth * 0.4,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage(AppImage.headerImage),
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Align(
+              child: const Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -48,7 +49,7 @@ class WomenCateGoryScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Featured Products
           sectionHeader("Feature Products", onTap: () {}),
@@ -64,7 +65,7 @@ class WomenCateGoryScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Middle Promotional Banner
           promoBanner(
@@ -74,7 +75,7 @@ class WomenCateGoryScreen extends StatelessWidget {
             "& PARTY",
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Recommended
           sectionHeader("Recommended", onTap: () {}),
@@ -90,7 +91,7 @@ class WomenCateGoryScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Top Collection
           sectionHeader("Top Collection", onTap: () {}),
@@ -101,7 +102,7 @@ class WomenCateGoryScreen extends StatelessWidget {
             "& BEAUTY",
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Full-Width Promo
           Padding(
@@ -114,10 +115,10 @@ class WomenCateGoryScreen extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     flex: 2,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 100),
+                      padding: EdgeInsets.only(left: 20, top: 100),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -142,7 +143,7 @@ class WomenCateGoryScreen extends StatelessWidget {
                   Container(
                     height: 300,
                     width: 150,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(AppImage.model1Image),
                         fit: BoxFit.cover,
@@ -154,13 +155,13 @@ class WomenCateGoryScreen extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           NavigationBar(
             selectedIndex: 0,
             destinations: [
-              NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-              NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+              const NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+              const NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
             ],
           )
         ],
@@ -177,7 +178,7 @@ class WomenCateGoryScreen extends StatelessWidget {
           Text(title, style: AppTextStyles.onBoardingTitle),
           TextButton(
             onPressed: onTap,
-            child: Text("Show all", style: AppTextStyles.textButtonText),
+            child: const Text("Show all", style: AppTextStyles.textButtonText),
           ),
         ],
       ),
@@ -201,7 +202,7 @@ class WomenCateGoryScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 6),
+          const SizedBox(height: 6),
           Text(product.productName, style: AppTextStyles.productNameText),
           Text(product.productPrice, style: AppTextStyles.drawerSubText),
         ],
@@ -229,7 +230,7 @@ class WomenCateGoryScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,20 +261,20 @@ class WomenCateGoryScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(topText, style: AppTextStyles.womenCardText),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(line1, style: AppTextStyles.womenCardSubText),
                 Text(line2, style: AppTextStyles.womenCardSubText),
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Stack(
             alignment: Alignment.center,
             children: [
               Container(
                 height: 120,
                 width: 120,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColor.decoration1tColor,
                 ),
@@ -281,7 +282,7 @@ class WomenCateGoryScreen extends StatelessWidget {
               Container(
                 height: 90,
                 width: 90,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: AppColor.decoration2tColor,
                 ),
@@ -298,7 +299,7 @@ class WomenCateGoryScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
 
 
         ],

@@ -21,7 +21,7 @@ class PendingOrderDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Container(
               height: 102,
               decoration: BoxDecoration(
@@ -35,32 +35,32 @@ class PendingOrderDetailScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Spacer(),
-                        Text(
+                        const Spacer(),
+                        const Text(
                           "Your order is on the way",
                           style: AppTextStyles.subtitle,
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         GestureDetector(
                           onTap: () {
                             print("Tracking Number: ${order.trackingNumber}");
                             Get.toNamed(RouteName.trackOrderScreen,arguments: order.trackingNumber);
                           },
-                          child: Text(
+                          child: const Text(
                             "Click here to track your order",
                             style: AppTextStyles.orderDetailText,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
-                    Spacer(),
-                    Image(image: Svg(AppImage.truckIcon)),
+                    const Spacer(),
+                    const Image(image: Svg(AppImage.truckIcon)),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Card(
               elevation: 2,
               color: AppColor.fontWhite,
@@ -75,11 +75,11 @@ class PendingOrderDetailScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Order number",
                             style: AppTextStyles.womenCardText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "#${order.orderId.toString()}",
                             style: AppTextStyles.productNameText.copyWith(
@@ -88,14 +88,14 @@ class PendingOrderDetailScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Tracking Number",
                             style: AppTextStyles.womenCardText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             order.trackingNumber.toString(),
                             style: AppTextStyles.productNameText.copyWith(
@@ -104,14 +104,14 @@ class PendingOrderDetailScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Delivery Address",
                             style: AppTextStyles.womenCardText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "Not Proper mansion",
                             style: AppTextStyles.productNameText.copyWith(
@@ -125,7 +125,7 @@ class PendingOrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Card(
               elevation: 2,
               color: AppColor.fontWhite,
@@ -140,21 +140,21 @@ class PendingOrderDetailScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Maxi Dress",
                             style: AppTextStyles.onBoardingSubTitle,
                           ),
-                          Spacer(flex: 2),
+                          const Spacer(flex: 2),
                           Text("x${order.quantity.toString()}"),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             order.subTotal.toDouble().toString(),
                             style: AppTextStyles.drawerSubText,
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
-                      Row(
+                      const SizedBox(height: 10),
+                      const Row(
                         children: [
                           Text("None", style: AppTextStyles.onBoardingSubTitle),
                           Spacer(flex: 2),
@@ -163,23 +163,23 @@ class PendingOrderDetailScreen extends StatelessWidget {
                           Text("-", style: AppTextStyles.drawerSubText),
                         ],
                       ),
-                      SizedBox(height: 40),
+                      const SizedBox(height: 40),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Sub Total",
                             style: AppTextStyles.onBoardingSubTitle,
                           ),
-                          Spacer(flex: 2),
-                          Spacer(),
+                          const Spacer(flex: 2),
+                          const Spacer(),
                           Text(
                             order.subTotal.toDouble().toString(),
                             style: AppTextStyles.drawerText,
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
-                      Row(
+                      const SizedBox(height: 10),
+                      const Row(
                         children: [
                           Text(
                             "Shipping",
@@ -190,15 +190,15 @@ class PendingOrderDetailScreen extends StatelessWidget {
                           Text("0.0", style: AppTextStyles.drawerText),
                         ],
                       ),
-                      Divider(color: AppColor.divedertColor),
+                      const Divider(color: AppColor.divedertColor),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Total",
                             style: AppTextStyles.onBoardingSubTitle,
                           ),
-                          Spacer(flex: 2),
-                          Spacer(),
+                          const Spacer(flex: 2),
+                          const Spacer(),
                           Text( 
                             "\$${order.subTotal.toDouble().toString()}",
                             style: AppTextStyles.drawerText,
@@ -210,7 +210,7 @@ class PendingOrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: GestureDetector(
@@ -224,7 +224,7 @@ class PendingOrderDetailScreen extends StatelessWidget {
                     color: AppColor.tabBarButtonColor,
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Continue shopping",
                       style: AppTextStyles.subtitle,

@@ -46,7 +46,7 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   "Create new password",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   "Your new password must be different from previously used password",
                   style: TextStyle(fontSize: 14, color: AppColor.buttonColor),
                 ),
@@ -139,21 +139,21 @@ class _NewPassScreenState extends State<NewPassScreen> {
                                     child: Container(
                                       height: 100,
                                       width: 100,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         image: DecorationImage(
                                           image: Svg(AppImage.bottomSheetIcon),
                                         ),
                                       ),
                                     ),
                                   ),
-                                  SizedBox(height: 40),
-                                  Text(
+                                  const SizedBox(height: 40),
+                                  const Text(
                                     "Your password has been changed",
                                     style: AppTextStyles.onBoardingTitle,
                                   ),
-                                  SizedBox(height: 20),
-                                  Text("Welcome back! Discover now!"),
-                                  SizedBox(height: 20),
+                                  const SizedBox(height: 20),
+                                  const Text("Welcome back! Discover now!"),
+                                  const SizedBox(height: 20),
                                   CommonOutlineButton(
                                     text: "Browse home",
                                     onTap: () {

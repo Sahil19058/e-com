@@ -16,7 +16,7 @@ class NotificationScreen extends StatelessWidget {
       backgroundColor: AppColor.fontWhite,
       appBar: AppBar(
         scrolledUnderElevation: 0.0,
-        title: Text("Notification", style: AppTextStyles.drawerSubText),
+        title: const Text("Notification", style: AppTextStyles.drawerSubText),
         centerTitle: true,
         backgroundColor: AppColor.fontWhite,
         elevation: 0,
@@ -32,7 +32,7 @@ class NotificationScreen extends StatelessWidget {
               child: Container(
                 height: 36,
                 width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
+                decoration: const BoxDecoration(shape: BoxShape.circle),
                 child: const Icon(Icons.arrow_back_ios_new, size: 16),
               ),
             ),
@@ -44,10 +44,10 @@ class NotificationScreen extends StatelessWidget {
            itemCount: controller.notificationsList.length,
              itemBuilder: (context, index) {
                return Card(
-                 margin: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+                 margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
                  color: AppColor.fontWhite,
                  child: Container(
-                   padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                   padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                    child: Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
@@ -57,7 +57,7 @@ class NotificationScreen extends StatelessWidget {
                            fontWeight: FontWeight.w700
                          ),
                        ),
-                       SizedBox(
+                       const SizedBox(
                          height: 10,
                        ),
                        Text(

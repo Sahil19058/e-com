@@ -22,15 +22,15 @@ class OrderDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Container(
               height: 102,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: AppColor.orderDetailCardColor,
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   children: [
                     Column(
@@ -54,7 +54,7 @@ class OrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Card(
               elevation: 2,
               color: AppColor.fontWhite,
@@ -69,11 +69,11 @@ class OrderDetailScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Order number",
                             style: AppTextStyles.womenCardText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "#${order.orderId.toString()}",
                             style: AppTextStyles.productNameText.copyWith(
@@ -82,14 +82,14 @@ class OrderDetailScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Tracking Number",
                             style: AppTextStyles.womenCardText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             order.trackingNumber.toString(),
                             style: AppTextStyles.productNameText.copyWith(
@@ -98,14 +98,14 @@ class OrderDetailScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Delivery Address",
                             style: AppTextStyles.womenCardText,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "Not Proper mansion",
                             style: AppTextStyles.productNameText.copyWith(
@@ -119,7 +119,7 @@ class OrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Card(
@@ -133,23 +133,23 @@ class OrderDetailScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(
+                          const Text(
                               "Maxi Dress",
                             style: AppTextStyles.onBoardingSubTitle,
                           ),
-                          Spacer(
+                          const Spacer(
                             flex: 2,
                           ),
                           Text("x${order.quantity.toString()}"),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                               order.subTotal.toDouble().toString(),
                             style: AppTextStyles.drawerSubText,
                           )
                         ],
                       ),
-                      SizedBox(height: 10,),
-                      Row(
+                      const SizedBox(height: 10,),
+                      const Row(
                         children: [
                           Text(
                             "None",
@@ -166,26 +166,26 @@ class OrderDetailScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Sub Total",
                             style: AppTextStyles.onBoardingSubTitle,),
-                          Spacer(
+                          const Spacer(
                             flex: 2,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                               order.subTotal.toDouble().toString(),
                             style: AppTextStyles.drawerText,
                           )
                         ],
                       ),
-                      SizedBox(height: 10,),
-                      Row(
+                      const SizedBox(height: 10,),
+                      const Row(
                         children: [
                           Text(
                               "Shipping",
@@ -201,18 +201,18 @@ class OrderDetailScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      Divider(
+                      const Divider(
                         color: AppColor.divedertColor,
                       ),
                       Row(
                         children: [
-                          Text(
+                          const Text(
                             "Total",
                             style: AppTextStyles.onBoardingSubTitle,),
-                          Spacer(
+                          const Spacer(
                             flex: 2,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                               "\$${order.subTotal.toDouble().toString()}",
                             style: AppTextStyles.drawerText,
@@ -224,7 +224,7 @@ class OrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -245,7 +245,7 @@ class OrderDetailScreen extends StatelessWidget {
                         ),
                         borderRadius: BorderRadius.circular(30)
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                             "Return home",
                           style: AppTextStyles.drawerMenuText,
@@ -253,7 +253,7 @@ class OrderDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: () {
                       Get.toNamed(RouteName.productRatingScreen);
@@ -265,7 +265,7 @@ class OrderDetailScreen extends StatelessWidget {
                           color: AppColor.productDetailButtonColor,
                           borderRadius: BorderRadius.circular(30)
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                             "Rate",
                           style: AppTextStyles.rateButtonText,

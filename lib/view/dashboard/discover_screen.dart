@@ -38,7 +38,7 @@ class DiscoverScreen extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Prise"),
+                          const Text("Prise"),
                           SfRangeSlider(
                             dragMode: SliderDragMode.both,
                             min: 10,
@@ -101,7 +101,7 @@ class DiscoverScreen extends StatelessWidget {
                             child: TextFormField(
                               cursorColor: AppColor.fontBlack,
                               decoration: InputDecoration(
-                                prefixIcon: Image(
+                                prefixIcon: const Image(
                                   image: Svg(AppImage.searchIcon),
                                   color: AppColor.secondaryTextColor,
                                 ),
@@ -110,21 +110,21 @@ class DiscoverScreen extends StatelessWidget {
                                 hintText: "Search",
                                 hintStyle: AppTextStyles.secondaryText,
                                 border: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     style: BorderStyle.none,
                                     width: 0,
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     style: BorderStyle.none,
                                     width: 0,
                                   ),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     style: BorderStyle.none,
                                     width: 0,
                                   ),
@@ -145,14 +145,14 @@ class DiscoverScreen extends StatelessWidget {
                                 color: AppColor.circleColor,
                                 borderRadius: BorderRadius.circular(16),
                               ),
-                              child: Image(image: Svg(AppImage.filterIcon)),
+                              child: const Image(image: Svg(AppImage.filterIcon)),
                             ),
                           ),
                         ],
                       ),
                     ),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -171,8 +171,8 @@ class DiscoverScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Text("CLOTHING", style: AppTextStyles.subtitle),
-                                Spacer(),
+                                const Text("CLOTHING", style: AppTextStyles.subtitle),
+                                const Spacer(),
                                 Stack(
                                   children: [
                                     Positioned(
@@ -180,7 +180,7 @@ class DiscoverScreen extends StatelessWidget {
                                       child: Container(
                                         height: 105,
                                         width: 105,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:
                                               AppColor
@@ -194,7 +194,7 @@ class DiscoverScreen extends StatelessWidget {
                                       child: Container(
                                         height: 70,
                                         width: 70,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
                                           color:
                                               AppColor
@@ -205,7 +205,7 @@ class DiscoverScreen extends StatelessWidget {
                                     Container(
                                       height: 126,
                                       width: 149,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         image: DecorationImage(
                                           image: AssetImage(
                                             AppImage.discoverModel1Image,
@@ -227,7 +227,7 @@ class DiscoverScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Container(
                           height: 396,
-                          decoration: BoxDecoration(color: AppColor.fontWhite),
+                          decoration: const BoxDecoration(color: AppColor.fontWhite),
                           child: ListView.builder(
                             itemCount: filterController.discoverProducts.length,
                             itemBuilder: (context, index) {
@@ -260,7 +260,7 @@ class DiscoverScreen extends StatelessWidget {
                                         style: AppTextStyles.womenCardText,
                                       ),
                                     ),
-                                    Divider(color: AppColor.divedertColor),
+                                    const Divider(color: AppColor.divedertColor),
                                   ],
                                 ),
                               );
@@ -269,7 +269,7 @@ class DiscoverScreen extends StatelessWidget {
                         ),
                       ),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -283,11 +283,11 @@ class DiscoverScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: [
-                              Text(
+                              const Text(
                                 "ACCESSORIES",
                                 style: AppTextStyles.subtitle,
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Stack(
                                 children: [
                                   Positioned(
@@ -296,7 +296,7 @@ class DiscoverScreen extends StatelessWidget {
                                     child: Container(
                                       height: 105,
                                       width: 105,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color:
                                             AppColor.discoverCard2Shadow1Color,
@@ -309,7 +309,7 @@ class DiscoverScreen extends StatelessWidget {
                                     child: Container(
                                       height: 70,
                                       width: 70,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color:
                                             AppColor.discoverCard2Shadow2Color,
@@ -319,7 +319,7 @@ class DiscoverScreen extends StatelessWidget {
                                   Container(
                                     height: 126,
                                     width: 149,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage(
                                           AppImage.discoverModel2Image,
@@ -335,7 +335,7 @@ class DiscoverScreen extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -349,8 +349,8 @@ class DiscoverScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: [
-                              Text("SHOES", style: AppTextStyles.subtitle),
-                              Spacer(),
+                              const Text("SHOES", style: AppTextStyles.subtitle),
+                              const Spacer(),
                               Stack(
                                 children: [
                                   Positioned(
@@ -359,7 +359,7 @@ class DiscoverScreen extends StatelessWidget {
                                     child: Container(
                                       height: 105,
                                       width: 105,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color:
                                             AppColor.discoverCard3Shadow1Color,
@@ -372,7 +372,7 @@ class DiscoverScreen extends StatelessWidget {
                                     child: Container(
                                       height: 70,
                                       width: 70,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color:
                                             AppColor.discoverCard3Shadow2Color,
@@ -382,7 +382,7 @@ class DiscoverScreen extends StatelessWidget {
                                   Container(
                                     height: 126,
                                     width: 149,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage(
                                           AppImage.discoverModel3Image,
@@ -398,7 +398,7 @@ class DiscoverScreen extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -412,8 +412,8 @@ class DiscoverScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 20),
                           child: Row(
                             children: [
-                              Text("COLLECTION", style: AppTextStyles.subtitle),
-                              Spacer(),
+                              const Text("COLLECTION", style: AppTextStyles.subtitle),
+                              const Spacer(),
                               Stack(
                                 children: [
                                   Positioned(
@@ -421,7 +421,7 @@ class DiscoverScreen extends StatelessWidget {
                                     child: Container(
                                       height: 105,
                                       width: 105,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color:
                                             AppColor.discoverCard4Shadow1Color,
@@ -434,7 +434,7 @@ class DiscoverScreen extends StatelessWidget {
                                     child: Container(
                                       height: 73,
                                       width: 73,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
                                         color:
                                             AppColor.discoverCard4Shadow2Color,
@@ -444,7 +444,7 @@ class DiscoverScreen extends StatelessWidget {
                                   Container(
                                     height: 126,
                                     width: 83,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage(
                                           AppImage.discoverModel4Image,

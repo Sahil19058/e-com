@@ -36,18 +36,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
 
-                Text(
+                const Text(
                   "Create",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   "your account",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
 
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
 
                 CommonTextField(
                   controller: controller.nameController,
@@ -56,7 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 CommonTextField(
                   controller: controller.emailController,
@@ -65,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
 
                 CommonTextField(
                   controller: controller.passwordController,
@@ -74,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
 
                 CommonTextField(
                   controller: controller.confirmPasswordController,
@@ -83,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
 
                 Center(
                   child: CommonOutlineButton(
@@ -100,26 +100,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
 
-                SizedBox(height: 26),
+                const SizedBox(height: 26),
 
-                Center(
+                const Center(
                   child: Text(
                     "or sign up with",
                     style: AppTextStyles.onBoardingSubTitle,
                   ),
                 ),
 
-                SizedBox(height: 26),
+                const SizedBox(height: 26),
 
                 /// sign up with icon ex:- google, facebook, apple
-                LoginWithIcon(id: 1),
+                const LoginWithIcon(id: 1),
 
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Already have account?",
                       style: AppTextStyles.textButton,
                     ),
@@ -127,12 +127,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {
                         Get.offNamed(RouteName.loginScreen);
                       },
-                      child: Text("Login", style: AppTextStyles.textButton),
+                      child: const Text("Login", style: AppTextStyles.textButton),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
               ],
             ),

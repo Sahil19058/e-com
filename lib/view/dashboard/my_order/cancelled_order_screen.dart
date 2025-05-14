@@ -37,7 +37,7 @@ class CancelledOrderScreen extends StatelessWidget {
                   child: Column(
                     children: [
 
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
                       Row(
                         children: [
@@ -47,7 +47,7 @@ class CancelledOrderScreen extends StatelessWidget {
                             style: AppTextStyles.productDetailText,
                           ),
 
-                          Spacer(),
+                          const Spacer(),
 
                           Text(
                             DateFormat('dd/mm/yyyy').format(DateTime.now()),
@@ -56,12 +56,12 @@ class CancelledOrderScreen extends StatelessWidget {
                         ],
                       ),
 
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
 
                       Row(
                         children: [
 
-                          Text(
+                          const Text(
                             "Tracking number: ",
                             style: AppTextStyles.drawerOtherText,
                           ),
@@ -75,12 +75,12 @@ class CancelledOrderScreen extends StatelessWidget {
                         ],
                       ),
 
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
                       Row(
                         children: [
 
-                          Text(
+                          const Text(
                             "Quantity: ",
                             style: AppTextStyles.drawerOtherText,
                           ),
@@ -92,9 +92,9 @@ class CancelledOrderScreen extends StatelessWidget {
                             ),
                           ),
 
-                          Spacer(),
+                          const Spacer(),
 
-                          Text(
+                          const Text(
                             "Subtotal: ",
                             style: AppTextStyles.drawerOtherText,
                           ),
@@ -108,26 +108,26 @@ class CancelledOrderScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Row(
                         children: [
 
-                          Text(
+                          const Text(
                             "CANCELLED",
                             style: AppTextStyles.cancelledText,
                           ),
 
-                          Spacer(),
+                          const Spacer(),
 
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 25,vertical: 9),
+                            padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 9),
                             decoration: BoxDecoration(
                                 border: Border.all(
                                     color: AppColor.secondaryTextColor
                                 ),
                                 borderRadius: BorderRadius.circular(20)
                             ),
-                            child: Text("Detail"),
+                            child: const Text("Detail"),
                           )
                         ],
                       ),

@@ -24,13 +24,13 @@ class LoginWithIcon extends StatelessWidget {
           height: 45,
           width: 45,
           decoration: BoxDecoration(
-            image: DecorationImage(image: Svg(AppImage.appleIcon)),
+            image: const DecorationImage(image: Svg(AppImage.appleIcon)),
             border: Border.all(color: AppColor.buttonColor, width: 1),
             shape: BoxShape.circle,
           ),
         ),
 
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
 
         id == 1
             ? GestureDetector(
@@ -46,7 +46,7 @@ class LoginWithIcon extends StatelessWidget {
                 height: 45,
                 width: 45,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: Svg(AppImage.googleIcon)),
+                  image: const DecorationImage(image: Svg(AppImage.googleIcon)),
                   border: Border.all(color: AppColor.buttonColor, width: 1),
                   shape: BoxShape.circle,
                 ),
@@ -65,20 +65,20 @@ class LoginWithIcon extends StatelessWidget {
                 height: 45,
                 width: 45,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: Svg(AppImage.googleIcon)),
+                  image: const DecorationImage(image: Svg(AppImage.googleIcon)),
                   border: Border.all(color: AppColor.buttonColor, width: 1),
                   shape: BoxShape.circle,
                 ),
               ),
             ),
 
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
 
         Container(
           height: 45,
           width: 45,
           decoration: BoxDecoration(
-            image: DecorationImage(image: Svg(AppImage.facebookIcon)),
+            image: const DecorationImage(image: Svg(AppImage.facebookIcon)),
             border: Border.all(color: AppColor.buttonColor, width: 1),
             shape: BoxShape.circle,
           ),

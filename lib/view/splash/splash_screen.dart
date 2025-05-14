@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(AppImage.splashImage),
+            image: const AssetImage(AppImage.splashImage),
             colorFilter: ColorFilter.mode(
               Colors.black.withValues(alpha: 0.3),
               BlendMode.darken,
@@ -29,16 +29,16 @@ class SplashScreen extends StatelessWidget {
           children: [
             SizedBox(height: Get.height * 0.60),
 
-            Text("Welcome to GemStore!", style: AppTextStyles.title),
+            const Text("Welcome to GemStore!", style: AppTextStyles.title),
 
-            SizedBox(height: 13),
+            const SizedBox(height: 13),
 
-            Text(
+            const Text(
               "The home for a fashionista",
               style: AppTextStyles.subtitle,
             ),
 
-            SizedBox(height: 53),
+            const SizedBox(height: 53),
 
             GestureDetector(
               onTap: () {
@@ -55,7 +55,7 @@ class SplashScreen extends StatelessWidget {
                     width: 1.18,
                   ),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Get Started", style: AppTextStyles.subtitle),
                 ),
               ),

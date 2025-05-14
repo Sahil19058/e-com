@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 class AddressModel {
   String place;

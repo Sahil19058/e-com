@@ -18,7 +18,7 @@ class AllItemsScreen extends StatelessWidget {
     return Flexible(
         child:  GridView.builder(
           itemCount: controller.allProducts.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 0.6,
             crossAxisSpacing: 10,
@@ -44,7 +44,7 @@ class AllItemsScreen extends StatelessWidget {
                           child: Container(
                             height: 27,
                             width: 27,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColor.fontWhite,
                             ),
@@ -62,7 +62,7 @@ class AllItemsScreen extends StatelessWidget {
                                   }
                                 },
                                 child: Image(
-                                  image: Svg(AppImage.favoriteIcon),
+                                  image: const Svg(AppImage.favoriteIcon),
                                   color: isFav ? AppColor.notLikeColor : AppColor.likeColor ,
                                 ),
                               );
@@ -81,7 +81,7 @@ class AllItemsScreen extends StatelessWidget {
                           controller.allProducts[index].productPrice,
                           style: AppTextStyles.drawerSubText,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           controller.allProducts[index].productRealPrice,
                           style: AppTextStyles.womenCardText.copyWith(
@@ -100,13 +100,13 @@ class AllItemsScreen extends StatelessWidget {
                           itemCount: 5,
                           itemSize: 15.0,
                           ratingWidget: RatingWidget(
-                            full: Icon(Icons.star,color: AppColor.ratingStarColor,),     // full star
-                            empty: Icon(Icons.star_border, color: AppColor.ratingStarColor,),
-                            half: Image(image: Svg(AppImage.outlineStarIcon)), // outlined star
+                            full: const Icon(Icons.star,color: AppColor.ratingStarColor,),     // full star
+                            empty: const Icon(Icons.star_border, color: AppColor.ratingStarColor,),
+                            half: const Image(image: Svg(AppImage.outlineStarIcon)), // outlined star
                           ),
                           onRatingUpdate: (rating) {}, // Required, even if not used
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(

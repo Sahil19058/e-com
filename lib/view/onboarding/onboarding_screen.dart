@@ -40,7 +40,7 @@ class OnboardingScreen extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height * 0.5,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(color: AppColor.secondaryColor),
+              decoration: const BoxDecoration(color: AppColor.secondaryColor),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -136,7 +136,7 @@ class OnboardingScreen extends StatelessWidget {
                   border: Border.all(color: AppColor.fontWhite, width: 1.18),
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text("Shopping now", style: AppTextStyles.subtitle),
                 ),
               ),

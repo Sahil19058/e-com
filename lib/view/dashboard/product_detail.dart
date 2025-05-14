@@ -29,7 +29,7 @@ class ProductDetailScreen extends StatelessWidget {
             child: Container(
               height: 240,
               width: 240,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: AppColor.productDetailBackgroundColor,
                 shape: BoxShape.circle,
               ),
@@ -38,7 +38,7 @@ class ProductDetailScreen extends StatelessWidget {
           Container(
             height: 532,
             width: Get.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(AppImage.productDetailModelImage),
               ),
@@ -55,11 +55,11 @@ class ProductDetailScreen extends StatelessWidget {
                     color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 0,
                     blurRadius: 6,
-                    offset: Offset(0, -4), // negative Y offset for top shadow
+                    offset: const Offset(0, -4), // negative Y offset for top shadow
                   ),
                 ],
                 color: AppColor.fontWhite,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(20),
                   topLeft: Radius.circular(20),
                 ),
@@ -71,7 +71,7 @@ class ProductDetailScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 30),
+                        const SizedBox(height: 30),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
@@ -80,7 +80,7 @@ class ProductDetailScreen extends StatelessWidget {
                                 product.productName,
                                 style: AppTextStyles.productDetailText,
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Text(
                                 product.productPrice,
                                 style: AppTextStyles.productDetailPriseText,
@@ -88,7 +88,7 @@ class ProductDetailScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
@@ -100,22 +100,22 @@ class ProductDetailScreen extends StatelessWidget {
                                 itemCount: 5,
                                 itemSize: 20.0,
                                 ratingWidget: RatingWidget(
-                                  full: Icon(
+                                  full: const Icon(
                                     Icons.star,
                                     color: AppColor.ratingStarColor,
                                   ), // full star
-                                  empty: Icon(
+                                  empty: const Icon(
                                     Icons.star_border,
                                     color: AppColor.ratingStarColor,
                                   ),
-                                  half: Image(
+                                  half: const Image(
                                     image: Svg(AppImage.outlineStarIcon),
                                   ), // outlined star
                                 ),
                                 onRatingUpdate:
                                     (rating) {}, // Required, even if not used
                               ),
-                              SizedBox(width: 5),
+                              const SizedBox(width: 5),
                               Text(
                                 "(${product.ratingCount})",
                                 style: AppTextStyles.womenCardText,
@@ -124,15 +124,15 @@ class ProductDetailScreen extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Divider(color: AppColor.divedertColor),
                         ),
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
                             children: [
                               Text(
@@ -192,7 +192,7 @@ class ProductDetailScreen extends StatelessWidget {
                                 ),
                               ),
 
-                             Spacer(),
+                             const Spacer(),
 
                               /// This is the size part of the product
                               SizedBox(
@@ -241,14 +241,14 @@ class ProductDetailScreen extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Divider(color: AppColor.divedertColor),
                         ),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
                         /// This is the description part of the product
                         GestureDetector(
@@ -257,17 +257,17 @@ class ProductDetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Row(
                               children: [
-                                Text(
+                                const Text(
                                   "Description",
                                   style: AppTextStyles.drawerSubText,
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Obx(
                                   () => Image(
                                     image:
                                         controller.showDescription.value
-                                            ? Svg(AppImage.arrowDownIcon)
-                                            : Svg(AppImage.arrowForwardIcon),
+                                            ? const Svg(AppImage.arrowDownIcon)
+                                            : const Svg(AppImage.arrowForwardIcon),
                                   ),
                                 ),
                               ],
@@ -279,8 +279,8 @@ class ProductDetailScreen extends StatelessWidget {
                           if (controller.showDescription.value) {
                             return Column(
                               children: [
-                                SizedBox(height: 10),
-                                Divider(color: AppColor.divedertColor),
+                                const SizedBox(height: 10),
+                                const Divider(color: AppColor.divedertColor),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 20,
@@ -295,18 +295,18 @@ class ProductDetailScreen extends StatelessWidget {
                               ],
                             );
                           } else {
-                            return SizedBox.shrink();
+                            return const SizedBox.shrink();
                           }
                         }),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Divider(color: AppColor.divedertColor),
                         ),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
                         /// This is for review part of the product
                         GestureDetector(
@@ -315,17 +315,17 @@ class ProductDetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Row(
                               children: [
-                                Text(
+                                const Text(
                                   "Reviews",
                                   style: AppTextStyles.drawerSubText,
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Obx(
                                   () => Image(
                                     image:
                                         controller.showReviews.value
-                                            ? Svg(AppImage.arrowDownIcon)
-                                            : Svg(AppImage.arrowForwardIcon),
+                                            ? const Svg(AppImage.arrowDownIcon)
+                                            : const Svg(AppImage.arrowForwardIcon),
                                   ),
                                 ),
                               ],
@@ -341,9 +341,9 @@ class ProductDetailScreen extends StatelessWidget {
                               ),
                               child: Column(
                                 children: [
-                                  SizedBox(height: 10),
-                                  Divider(color: AppColor.divedertColor),
-                                  SizedBox(height: 10),
+                                  const SizedBox(height: 10),
+                                  const Divider(color: AppColor.divedertColor),
+                                  const SizedBox(height: 10),
                                   Row(
                                     children: [
                                       Text(
@@ -354,12 +354,12 @@ class ProductDetailScreen extends StatelessWidget {
                                             AppTextStyles
                                                 .productDetailReviewText,
                                       ),
-                                      SizedBox(width: 5),
-                                      Text(
+                                      const SizedBox(width: 5),
+                                      const Text(
                                         "OUT OF 5",
                                         style: AppTextStyles.womenCardText,
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
                                       Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.end,
@@ -374,15 +374,15 @@ class ProductDetailScreen extends StatelessWidget {
                                             itemCount: 5,
                                             itemSize: 18.0,
                                             ratingWidget: RatingWidget(
-                                              full: Icon(
+                                              full: const Icon(
                                                 Icons.star,
                                                 color: AppColor.ratingStarColor,
                                               ), // full star
-                                              empty: Icon(
+                                              empty: const Icon(
                                                 Icons.star_border,
                                                 color: AppColor.ratingStarColor,
                                               ),
-                                              half: Image(
+                                              half: const Image(
                                                 image: Svg(
                                                   AppImage.outlineStarIcon,
                                                 ),
@@ -394,7 +394,7 @@ class ProductDetailScreen extends StatelessWidget {
                                                 ) {}, // Required, even if not used
                                           ),
 
-                                          SizedBox(width: 5),
+                                          const SizedBox(width: 5),
 
                                           Text(
                                             "${product.ratingCount} ratings",
@@ -408,18 +408,18 @@ class ProductDetailScreen extends StatelessWidget {
                               ),
                             );
                           } else {
-                            return SizedBox.shrink();
+                            return const SizedBox.shrink();
                           }
                         }),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Divider(color: AppColor.divedertColor),
                         ),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
                         GestureDetector(
                           onTap: controller.toggleSimilarProduct,
@@ -427,19 +427,19 @@ class ProductDetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Row(
                               children: [
-                                Text(
+                                const Text(
                                   "Similar Products",
                                   style: AppTextStyles.drawerSubText,
                                 ),
 
-                                Spacer(),
+                                const Spacer(),
 
                                 Obx(
                                   () => Image(
                                     image:
                                         controller.similarProduct.value
-                                            ? Svg(AppImage.arrowDownIcon)
-                                            : Svg(AppImage.arrowForwardIcon),
+                                            ? const Svg(AppImage.arrowDownIcon)
+                                            : const Svg(AppImage.arrowForwardIcon),
                                   ),
                                 ),
                               ],
@@ -447,10 +447,10 @@ class ProductDetailScreen extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
 
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Divider(color: AppColor.divedertColor),
                         ),
 
@@ -509,8 +509,8 @@ class ProductDetailScreen extends StatelessWidget {
                                   ),
                                 ),
 
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(
                                     horizontal: 20,
                                   ),
                                   child: Divider(color: AppColor.divedertColor),
@@ -518,7 +518,7 @@ class ProductDetailScreen extends StatelessWidget {
                               ],
                             );
                           } else {
-                            return SizedBox.shrink();
+                            return const SizedBox.shrink();
                           }
                         }),
                       ],
@@ -539,7 +539,7 @@ class ProductDetailScreen extends StatelessWidget {
               },
               child: Container(
                 height: 77,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColor.productDetailButtonColor,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
@@ -547,7 +547,7 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                 ),
 
-                child: Center(
+                child: const Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

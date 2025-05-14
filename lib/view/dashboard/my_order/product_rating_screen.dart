@@ -25,7 +25,7 @@ class ProductRatingScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
@@ -34,8 +34,8 @@ class ProductRatingScreen extends StatelessWidget {
                   color: AppColor.orderDetailCardColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
                       Image(image: Svg(AppImage.giftIcon)),
@@ -59,7 +59,7 @@ class ProductRatingScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             Obx(
               () => RatingBar(
@@ -69,9 +69,9 @@ class ProductRatingScreen extends StatelessWidget {
                 itemCount: 5,
                 itemSize: 45.0,
                 ratingWidget: RatingWidget(
-                  full: Icon(Icons.star, color: AppColor.ratingStarColor),
-                  half: Icon(Icons.star_half, color: AppColor.ratingStarColor),
-                  empty: Icon(
+                  full: const Icon(Icons.star, color: AppColor.ratingStarColor),
+                  half: const Icon(Icons.star_half, color: AppColor.ratingStarColor),
+                  empty: const Icon(
                     Icons.star,
                     color: AppColor.feedbackStarUnselectColor,
                   ),
@@ -82,7 +82,7 @@ class ProductRatingScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -99,7 +99,7 @@ class ProductRatingScreen extends StatelessWidget {
                         controller: reviewController.textController,
                         maxLines: 8,
                         maxLength: reviewController.maxLength,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide.none,
                           ),
@@ -119,7 +119,7 @@ class ProductRatingScreen extends StatelessWidget {
                           final remaining =
                               reviewController.remainingChars.value;
                           return remaining == reviewController.maxLength
-                              ? Text("50 Characters") // Hide when empty
+                              ? const Text("50 Characters") // Hide when empty
                               : Padding(
                                 padding: const EdgeInsets.only(bottom: 8.0),
                                 child: Text("$remaining Characters"),
@@ -132,7 +132,7 @@ class ProductRatingScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -158,7 +158,7 @@ class ProductRatingScreen extends StatelessWidget {
                         () => Center(
                           child:
                           reviewController.selectedImage.value == null
-                              ? Image(
+                              ? const Image(
                             image: Svg(AppImage.reviewGalleryIcon),
                           )
                               : ClipRRect(
@@ -175,7 +175,7 @@ class ProductRatingScreen extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
 
                   GestureDetector(
                     onTap: () async {
@@ -197,7 +197,7 @@ class ProductRatingScreen extends StatelessWidget {
                         () => Center(
                           child:
                           reviewController.selectedImage.value == null
-                              ? Image(image: Svg(AppImage.reviewCameraIcon))
+                              ? const Image(image: Svg(AppImage.reviewCameraIcon))
                               : ClipRRect(
                             borderRadius: BorderRadius.circular(12),
                             child: Image.file(
@@ -215,7 +215,7 @@ class ProductRatingScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -229,7 +229,7 @@ class ProductRatingScreen extends StatelessWidget {
                     color: AppColor.tabBarButtonColor,
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text("Submit Review", style: AppTextStyles.subtitle),
                   ),
                 ),

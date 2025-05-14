@@ -41,7 +41,7 @@ class ForgatepassScreenState extends State<ForgatepassScreen> {
               child: Container(
                 height: 36,
                 width: 36,
-                decoration: BoxDecoration(shape: BoxShape.circle),
+                decoration: const BoxDecoration(shape: BoxShape.circle),
                 child: const Icon(Icons.arrow_back_ios_new, size: 16),
               ),
             ),
@@ -56,18 +56,18 @@ class ForgatepassScreenState extends State<ForgatepassScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
 
-                Text(
+                const Text(
                   "Forgot password?",
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   "Enter email associated with your account and we’ll send and email with intructions to reset your password",
                   style: TextStyle(fontSize: 14, color: AppColor.buttonColor),
                 ),
 
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
 
                 CommonTextField(
                   controller: controller.emailController,
@@ -76,7 +76,7 @@ class ForgatepassScreenState extends State<ForgatepassScreen> {
                   keyboardType: TextInputType.emailAddress,
                 ),
 
-                SizedBox(height: 250),
+                const SizedBox(height: 250),
 
                 Center(
                   child: CommonOutlineButton(

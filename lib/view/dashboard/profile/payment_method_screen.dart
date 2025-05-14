@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:u_credit_card/u_credit_card.dart';
 import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
 import '../../../controller/payment_methode_controller.dart';
 import '../../../utils/apptextstyle/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
@@ -27,7 +26,7 @@ class PaymentMethodScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text("Card Management", style: AppTextStyles.productDetailText),
+                const Text("Card Management", style: AppTextStyles.productDetailText),
                 const Spacer(),
                 TextButton(
                   onPressed: () {
@@ -55,7 +54,7 @@ class PaymentMethodScreen extends StatelessWidget {
                 doesSupportNfc: true,
                 placeNfcIconAtTheEnd: true,
                 cardType: CardType.debit,
-                cardProviderLogo: FlutterLogo(),
+                cardProviderLogo: const FlutterLogo(),
                 cardProviderLogoPosition: CardProviderLogoPosition.right,
                 showBalance: true,
                 balance: 128.32434343,
@@ -67,7 +66,7 @@ class PaymentMethodScreen extends StatelessWidget {
 
             SizedBox(height: screenWidth * 0.1),
 
-            Text("Or check out with", style: AppTextStyles.productNameText),
+            const Text("Or check out with", style: AppTextStyles.productNameText),
 
             SizedBox(height: screenWidth * 0.1),
 
@@ -77,7 +76,7 @@ class PaymentMethodScreen extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: controller.paymentMethod.length,
                   scrollDirection: Axis.horizontal,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return Container(
                       margin: EdgeInsets.only(right: screenWidth * 0.075),

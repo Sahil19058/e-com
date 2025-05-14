@@ -21,7 +21,7 @@ class SettingScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Flexible(
               child: ListView.builder(
                 itemCount: controller.settingsList.length,
@@ -64,10 +64,10 @@ class SettingScreen extends StatelessWidget {
                             controller.settingsList[index].settingsTitle,
                             style: AppTextStyles.tabBarSecondaryText,
                           ),
-                          trailing: Icon(Icons.arrow_forward_ios),
+                          trailing: const Icon(Icons.arrow_forward_ios),
                         ),
                       ),
-                      Divider(color: AppColor.divedertColor),
+                      const Divider(color: AppColor.divedertColor),
                     ],
                   );
                 },

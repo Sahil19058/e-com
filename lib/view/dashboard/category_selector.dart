@@ -58,7 +58,7 @@ class CategorySelector extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 6),
+                      const SizedBox(height: 6),
                       Text(
                         controller.categories[index].label,
                         style: TextStyle(
@@ -75,7 +75,7 @@ class CategorySelector extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
 
         /// Responsive category content
         Expanded(
@@ -84,13 +84,13 @@ class CategorySelector extends StatelessWidget {
               case 0:
                 return WomenCateGoryScreen();
               case 1:
-                return Center(child: Text("Men", style: TextStyle(fontSize: 18)));
+                return const Center(child: Text("Men", style: TextStyle(fontSize: 18)));
               case 2:
-                return Center(child: Text("Accessories", style: TextStyle(fontSize: 18)));
+                return const Center(child: Text("Accessories", style: TextStyle(fontSize: 18)));
               case 3:
-                return Center(child: Text("Beauty", style: TextStyle(fontSize: 18)));
+                return const Center(child: Text("Beauty", style: TextStyle(fontSize: 18)));
               default:
-                return SizedBox();
+                return const SizedBox();
             }
           }),
         ),

@@ -16,7 +16,7 @@ class MyOrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Obx(
           () => Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,8 +25,8 @@ class MyOrdersScreen extends StatelessWidget {
               return GestureDetector(
                 onTap: () => controller.changeTab(index),
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 8),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
                     color:
                         isSelected
@@ -47,19 +47,19 @@ class MyOrdersScreen extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
 
         /// Content for selected tab (Optional)
         Obx(() {
           switch (controller.selectedIndex.value) {
             case 0:
-              return PendingOrderScreen();
+              return const PendingOrderScreen();
             case 1:
-              return DeliveredOrderScreen();
+              return const DeliveredOrderScreen();
             case 2:
-              return CancelledOrderScreen();
+              return const CancelledOrderScreen();
             default:
-              return SizedBox();
+              return const SizedBox();
           }
         }),
       ],

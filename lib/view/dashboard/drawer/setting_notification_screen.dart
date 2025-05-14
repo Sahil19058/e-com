@@ -53,7 +53,7 @@ Widget buildSwitchTile({
 }) {
   return Obx(() => SwitchListTile(
     contentPadding: EdgeInsets.zero,
-    title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+    title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
     subtitle: Text(subtitle),
     value: value.value,
     onChanged: onChanged,

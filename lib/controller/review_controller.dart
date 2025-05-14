@@ -77,8 +77,8 @@ class ReviewController extends GetxController {
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                   child: Text("Done", style: AppTextStyles.tabBarText,),
                 ),
               )

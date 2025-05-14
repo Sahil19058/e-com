@@ -29,7 +29,7 @@ class ProfilePage extends StatelessWidget {
                   leading: Container(
                     width: 68,
                     height: 68,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         image: AssetImage(AppImage.avatarImage),
@@ -40,7 +40,7 @@ class ProfilePage extends StatelessWidget {
                   title: Obx(
                     () => Text(
                       controller.name.value,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                   subtitle: Obx(() => Text(controller.email.value)),
@@ -49,7 +49,7 @@ class ProfilePage extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(RouteName.settingScreen);
                     },
-                      child: Image(image: Svg(AppImage.settingIcon))),
+                      child: const Image(image: Svg(AppImage.settingIcon))),
                 ),
               ),
           
@@ -89,7 +89,7 @@ class ProfilePage extends StatelessWidget {
                   child: SizedBox(
                     height: 440,
                     child: ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: controller.menuItems.length,
                       itemBuilder: (context, index) {
                         final item = controller.menuItems[index];
@@ -131,14 +131,14 @@ class ProfilePage extends StatelessWidget {
                                     trailing:
                                     isLogout
                                         ? null
-                                        : Icon(
+                                        : const Icon(
                                       Icons.arrow_forward_ios,
                                       size: 16,
                                     ),
                                   ),
                                 ),
                               ),
-                              Divider(color: AppColor.divedertColor),
+                              const Divider(color: AppColor.divedertColor),
                             ],
                           ),
                         );
