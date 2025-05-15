@@ -11,23 +11,7 @@ class OnboardingScreen extends StatelessWidget {
 
   final OnboardingController controller = Get.put(OnboardingController());
 
-  final List<Map<String, String>> onboardingData = [
-    {
-      "image": AppImage.onboardingImage1,
-      "title": "Discover something new",
-      "description": "Special new arrivals just for you",
-    },
-    {
-      "image": AppImage.onboardingImage2,
-      "title": "Update trendy outfit",
-      "description": "Favorite brands and hottest trends",
-    },
-    {
-      "image": AppImage.onboardingImage3,
-      "title": "Explore your true style",
-      "description": "Relax and let us bring the style to you",
-    },
-  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +35,7 @@ class OnboardingScreen extends StatelessWidget {
                     () => Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        onboardingData.length,
+                        controller.onboardingData.length,
                         (index) => AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
                           margin: const EdgeInsets.symmetric(horizontal: 5),
@@ -79,17 +63,17 @@ class OnboardingScreen extends StatelessWidget {
           /// PageView content
           PageView.builder(
             controller: controller.pageController,
-            itemCount: onboardingData.length,
+            itemCount: controller.onboardingData.length,
             onPageChanged: controller.onPageChanged,
             itemBuilder: (context, index) {
-              final item = onboardingData[index];
+              final item = controller.onboardingData[index];
               return Column(
                 children: [
                   const SizedBox(height: 80),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Text(
-                      item['title'] ?? '',
+                      item.title?? '',
                       style: AppTextStyles.onBoardingTitle,
                       textAlign: TextAlign.center,
                     ),
@@ -98,7 +82,7 @@ class OnboardingScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Text(
-                      item['description'] ?? '',
+                      item.description ?? '',
                       style: AppTextStyles.onBoardingSubTitle,
                       textAlign: TextAlign.center,
                     ),
@@ -111,7 +95,7 @@ class OnboardingScreen extends StatelessWidget {
                       color: AppColor.cardColor,
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
-                        image: AssetImage(item['image'] ?? ''),
+                        image: AssetImage(item.image?? ''),
                         fit: BoxFit.fitHeight,
                       ),
                     ),
