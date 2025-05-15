@@ -1,5 +1,7 @@
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
+import '../constant/routes_name.dart';
+import '../model/profile_model.dart';
 import '../utils/appimage.dart';
 
 class UserController extends GetxController {
@@ -12,12 +14,31 @@ class UserController extends GetxController {
     // You can add navigation to login here
   }
 
-  final List<Map> menuItems = [
-    {'icon': AppImage.locationIcon, 'label': 'Address'},
-    {'icon': AppImage.walletIcon, 'label': 'Payment Method'},
-    {'icon': AppImage.ticketIcon, 'label': 'Voucher'},
-    {'icon': AppImage.favoriteIcon, 'label': 'My Wishlist'},
-    {'icon': AppImage.stareIcon, 'label': 'Rate this App'},
-    {'icon': AppImage.logOutIcon, 'label': 'Log out'},
+  final List<ProfileModel> menuItems = [
+    ProfileModel(icon: AppImage.locationIcon, label: 'Address'),
+    ProfileModel(icon: AppImage.walletIcon, label: 'Payment Method'),
+    ProfileModel(icon: AppImage.ticketIcon, label: 'Voucher'),
+    ProfileModel(icon: AppImage.favoriteIcon, label: 'My Wishlist'),
+    ProfileModel(icon: AppImage.stareIcon, label: 'Rate this App'),
+    ProfileModel(icon: AppImage.logOutIcon, label: 'Log out'),
   ];
+
+
+  void checkProfileIndex(int menu){
+    if(menu == 0){
+      Get.toNamed(RouteName.addressScreen);
+    }else if(menu == 1){
+      Get.toNamed(RouteName.paymentMethodScreen);
+    }else if(menu == 2){
+      Get.toNamed(RouteName.voucherScreen);
+    }else if(menu == 3){
+      Get.toNamed(RouteName.myWishlistScreen);
+    }else if(menu == 4){
+      Get.toNamed(RouteName.rateThisAppScreen);
+    }else if(menu == 5){
+      SystemNavigator.pop();
+    }
+  }
+
+
 }

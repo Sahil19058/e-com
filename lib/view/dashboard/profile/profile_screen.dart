@@ -93,24 +93,12 @@ class ProfilePage extends StatelessWidget {
                       itemCount: controller.menuItems.length,
                       itemBuilder: (context, index) {
                         final item = controller.menuItems[index];
-                        final isLogout = item['label'] == 'Log out';
+                        final isLogout = item.label == 'Log out';
                         //
                         return GestureDetector(
                           onTap: () {
-                            final menu = controller.menuItems[index];
-                            if(menu['label'] == "Address"){
-                              Get.toNamed(RouteName.addressScreen);
-                            }else if(menu['label'] == "Payment Method"){
-                              Get.toNamed(RouteName.paymentMethodScreen);
-                            }else if(menu['label'] == "Voucher"){
-                              Get.toNamed(RouteName.voucherScreen);
-                            }else if(menu['label'] == "My Wishlist"){
-                              Get.toNamed(RouteName.myWishlistScreen);
-                            }else if(menu['label'] == "Rate this App"){
-                              Get.toNamed(RouteName.rateThisAppScreen);
-                            }else if(menu['label'] == "Log out"){
-                              SystemNavigator.pop();
-                            }
+                            controller.checkProfileIndex(index);
+
                           },
                           child: Column(
                             children: [
@@ -122,10 +110,10 @@ class ProfilePage extends StatelessWidget {
                                     leading: SizedBox(
                                       height: 24,
                                       width: 24,
-                                      child: Image(image: Svg(item['icon'])),
+                                      child: Image(image: Svg(item.icon ?? "")),
                                     ),
                                     title: Text(
-                                      item['label'],
+                                      item.label ?? "",
                                       style: AppTextStyles.onBoardingSubTitle,
                                     ),
                                     trailing:
