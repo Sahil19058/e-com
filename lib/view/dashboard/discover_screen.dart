@@ -15,6 +15,7 @@ class DiscoverScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final controller = Get.put(DiscoverController());
     final filterController = Get.put(FilterDiscoverController());
     final sliderController = Get.put(SliderController());
@@ -55,7 +56,8 @@ class DiscoverScreen extends StatelessWidget {
                       const Divider(color: AppColor.divedertColor),
                       const Text("Prise"),
                       SfRangeSlider(
-                        tickShape: SfTickShape(),labelPlacement: LabelPlacement.betweenTicks,
+                        tickShape: const SfTickShape(),
+                        labelPlacement: LabelPlacement.betweenTicks,
                         stepSize: 10,
                         dragMode: SliderDragMode.both,
                         min: 10,

@@ -17,6 +17,12 @@ class BottomNavController extends GetxController {
     {'icon': AppImage.profileIcon, 'title': 'My profile'},
   ];
 
+  final List<Map<String, dynamic>> otherItem = [
+    {'icon': AppImage.settingIcon, 'title': 'Setting'},
+    {'icon': AppImage.emailIcon, 'title': 'Support'},
+    {'icon': AppImage.aboutIcon, 'title': 'About us'},
+  ];
+
   final List<String> svgIcons = [
     AppImage.homeIcon,
     AppImage.searchIcon,
