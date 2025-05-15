@@ -94,6 +94,8 @@ class ProductDetailScreen extends StatelessWidget {
                           child: Row(
                             children: [
                               RatingBar(
+                                
+                                glow: false,
                                 ignoreGestures: true, // Makes it read-only
                                 initialRating: product.productRating.toDouble(),
                                 direction: Axis.horizontal,

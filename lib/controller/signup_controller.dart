@@ -1,5 +1,6 @@
 // signup_controller.dart
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUpController {
   final formKey = GlobalKey<FormState>();
@@ -35,9 +36,7 @@ class SignUpController {
 
   bool submitForm(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(
-        context,
-      );
+      ScaffoldMessenger.of(context);
       return true;
     }
     return false;
@@ -58,7 +57,6 @@ class SignUpController {
 
   bool get isButtonEnabled =>
       newPassword.isNotEmpty &&
-          confirmPassword.isNotEmpty &&
-          newPassword == confirmPassword;
-
+      confirmPassword.isNotEmpty &&
+      newPassword == confirmPassword;
 }

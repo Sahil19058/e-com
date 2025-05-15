@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../constant/routes_name.dart';
 import '../services/signinwithgoogle.dart';
 import '../services/signupwithgoogle.dart';
@@ -16,6 +17,11 @@ class LoginWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     final GoogleAuthService authService = GoogleAuthService();
     final GoogleAuthService1 authService1 = GoogleAuthService1();
+
+    // Future<void> saveLoginStatus() async {
+    //   final prefs = await SharedPreferences.getInstance();
+    //   await prefs.setBool('isLoggedIn', true);
+    // }
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -40,6 +46,7 @@ class LoginWithIcon extends StatelessWidget {
                 // If sign-in is successful, navigate to the HomeScreen
                 if (user != null) {
                   Get.offAllNamed(RouteName.homeScreen);
+                  // saveLoginStatus();
                 }
               },
               child: Container(
@@ -59,6 +66,7 @@ class LoginWithIcon extends StatelessWidget {
                 // If sign-in is successful, navigate to the HomeScreen
                 if (user != null) {
                   Get.toNamed(RouteName.homeScreen);
+                  // saveLoginStatus();
                 }
               },
               child: Container(

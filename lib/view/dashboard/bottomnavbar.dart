@@ -32,11 +32,11 @@ class BottomNavBar extends StatelessWidget {
           child: Obx(
             () => Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(controller.svgIcons.length, (index) {
+              children: List.generate(BottomNavController.menuItems.length, (index) {
                 bool isSelected = controller.selectedIndex.value == index;
                 return IconButton(
                   icon: SvgPicture.asset(
-                    controller.svgIcons[index],
+                    BottomNavController.menuItems[index].icon ?? "",
                     colorFilter: ColorFilter.mode(
                       isSelected ? Colors.black : Colors.grey.shade400,
                       BlendMode.srcIn,

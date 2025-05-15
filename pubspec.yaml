@@ -70,6 +70,7 @@ dependencies:
 
   flutter_svg: any
   intl: any
+  shared_preferences: ^2.5.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

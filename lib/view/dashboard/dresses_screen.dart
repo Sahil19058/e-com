@@ -97,9 +97,11 @@ class DressesScreen extends StatelessWidget {
                                         if (controller.allProducts[index].isFavorite.value) {
                                           if (!wishListProduct.contains(controller.allProducts[index])) {
                                             wishListProduct.add(controller.allProducts[index]);
+                                            print(wishListProduct.length);
                                           }
                                         } else {
                                           wishListProduct.remove(controller.allProducts[index]);
+                                          print(wishListProduct.length);
                                         }
                                       },
                                       child: Image(

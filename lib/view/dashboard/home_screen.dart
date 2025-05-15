@@ -19,10 +19,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final BottomNavController controller = Get.put(BottomNavController());
 
+
     // final DrawerControllerX drawerController = Get.put(DrawerControllerX());
-
-
-
 
     final List<Widget> pages = [
       CategorySelector(),
@@ -112,31 +110,22 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SizedBox(
                   height: 250,
-                  child: ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: controller.menuItems.length,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        borderRadius: BorderRadius.circular(20),
-                        onTap: (){
-                          if(index == 0){
-                            Get.snackbar("Coming Soon", "This Screen is not available");
-                            // Get.toNamed(RouteName.myWishlistScreen);
-                          }else if(index == 1){
-                            Get.snackbar("Coming Soon", "This Screen is not available");
-                          }else if(index == 2){
-                            Get.snackbar("Coming Soon", "This Screen is not available");
-                          }else if(index == 3){
-                            Get.snackbar("Coming Soon", "This Screen is not available");
-                          }
-                        },
+                    child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: BottomNavController.menuItems.length,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          borderRadius: BorderRadius.circular(20),
+                          onTap: (){
+                            controller.checkIndex(index);
+                          },
                         child: ListTile(
                           leading: Image(
-                            image: Svg(controller.menuItems[index]['icon']),
+                            image: Svg(BottomNavController.menuItems[index].icon??""),
                             color: AppColor.secondaryTextColor,
                           ),
                           title: Text(
-                            controller.menuItems[index]['title'],
+                            BottomNavController.menuItems[index].title ?? "",
                             style: AppTextStyles.drawerMenuText,
                           ),
                         ),
@@ -164,13 +153,7 @@ class HomeScreen extends StatelessWidget {
                       return InkWell(
                         borderRadius: BorderRadius.circular(20),
                         onTap: () {
-                          if(index == 0){
-                            Get.toNamed(RouteName.settingScreen);
-                          }else if(index == 1){
-                            Get.snackbar("Coming soon", "This Screen is not available");
-                          }else if(index == 2){
-                            Get.snackbar("Coming soon", "This Screen is not available");
-                          }
+                          controller.otherItemCheckIndex(index);
                         },
                         child: ListTile(
                           leading: Image(
