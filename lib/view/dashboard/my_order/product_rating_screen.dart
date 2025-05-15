@@ -63,6 +63,8 @@ class ProductRatingScreen extends StatelessWidget {
 
             Obx(
               () => RatingBar(
+                glow: false,
+                tapOnlyMode: true,
                 initialRating: reviewController.selectedRating.value,
                 direction: Axis.horizontal,
                 minRating: 1,

@@ -206,6 +206,8 @@ class TrackOrderScreen extends StatelessWidget {
                           const SizedBox(height: 10),
                           Obx(
                             () => RatingBar(
+                              tapOnlyMode: true,
+                              glow: false,
                               initialRating:
                                   reviewController.selectedRating.value,
                               direction: Axis.horizontal,

@@ -36,6 +36,8 @@ class RateThisAppScreen extends StatelessWidget {
 
             Obx(
               () => RatingBar(
+                tapOnlyMode: true,
+                glow: false,
                 initialRating: reviewController.selectedRating.value,
                 direction: Axis.horizontal,
                 minRating: 1,
