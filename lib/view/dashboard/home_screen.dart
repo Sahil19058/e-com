@@ -7,7 +7,6 @@ import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import 'package:untitled7/view/dashboard/profile/profile_screen.dart';
 import '../../controller/bottomnav.dart';
-import '../../controller/drawer_controller.dart';
 import 'bottomnavbar.dart';
 import 'category_selector.dart';
 import 'discover_screen.dart';
@@ -20,14 +19,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final BottomNavController controller = Get.put(BottomNavController());
 
-    final _ = Get.put(DrawerControllerX());
+    // final DrawerControllerX drawerController = Get.put(DrawerControllerX());
 
 
-    final List<Map<String, dynamic>> otherItem = [
-      {'icon': AppImage.settingIcon, 'title': 'Setting'},
-      {'icon': AppImage.emailIcon, 'title': 'Support'},
-      {'icon': AppImage.aboutIcon, 'title': 'About us'},
-    ];
+
 
     final List<Widget> pages = [
       CategorySelector(),
@@ -164,7 +159,7 @@ class HomeScreen extends StatelessWidget {
                   height: 240,
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: otherItem.length,
+                    itemCount: controller.otherItem.length,
                     itemBuilder: (context, index) {
                       return InkWell(
                         borderRadius: BorderRadius.circular(20),
@@ -179,11 +174,11 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: ListTile(
                           leading: Image(
-                            image: Svg(otherItem[index]['icon']),
+                            image: Svg(controller.otherItem[index]['icon']),
                             color: AppColor.secondaryTextColor,
                           ),
                           title: Text(
-                            otherItem[index]['title'],
+                            controller.otherItem[index]['title'],
                             style: AppTextStyles.drawerMenuText,
                           ),
                         ),

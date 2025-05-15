@@ -6,7 +6,6 @@ import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../controller/women_category_controller.dart';
 
-
 class WomenCateGoryScreen extends StatelessWidget {
   WomenCateGoryScreen({super.key});
 
@@ -14,6 +13,7 @@ class WomenCateGoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return SingleChildScrollView(
@@ -155,15 +155,15 @@ class WomenCateGoryScreen extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          // const SizedBox(height: 20),
 
-          NavigationBar(
-            selectedIndex: 0,
-            destinations: [
-              const NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-              const NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
-            ],
-          )
+          // NavigationBar(
+          //   selectedIndex: 0,
+          //   destinations: [
+          //     const NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          //     const NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+          //   ],
+          // )
         ],
       ),
     );
@@ -299,9 +299,6 @@ class WomenCateGoryScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(width: 20),
-
-
         ],
       ),
     );
