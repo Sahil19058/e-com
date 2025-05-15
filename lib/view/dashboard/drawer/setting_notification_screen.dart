@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
 import '../../../controller/setting_notification_screen.dart';
+import '../../../utils/appcolor.dart';
 import '../../../widgets/common_appbar.dart';
 
 class SettingNotificationScreen extends StatelessWidget {

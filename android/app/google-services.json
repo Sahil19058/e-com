@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1035745821086:android:dc88d1166a2a56018a968f",
         "android_client_info": {
-          "package_name": "com.example.untitled7"
+          "package_name": "com.example.GamStore"
         }
       },
       "oauth_client": [
@@ -42,7 +42,7 @@
               "client_id": "1035745821086-uvlhi26r1atqvbfin782okbcibbq03i1.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.untitled7"
+                "bundle_id": "com.example.GamStore"
               }
             }
           ]

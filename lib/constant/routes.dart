@@ -1,6 +1,5 @@
+import 'package:GamStore/constant/routes_name.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/constant/routes_name.dart';
-import 'package:untitled7/view/splash/splash_screen.dart';
 import '../view/auth/forgotepass_screen.dart';
 import '../view/auth/login_screen.dart';
 import '../view/auth/newpass_screen.dart';
@@ -22,6 +21,7 @@ import '../view/dashboard/profile/ratethis_app_screen.dart';
 import '../view/dashboard/profile/voucher_screen.dart';
 import '../view/dashboard/profile/wishlist/my_wishlist_screen.dart';
 import '../view/onboarding/onboarding_screen.dart';
+import '../view/splash/splash_screen.dart';
 
 class AppRoutes {
   static appRoutes() => [

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../constant/routes_name.dart';
 import '../../controller/dresses_controller.dart';
 import '../../model/all_product_model.dart';
-import '../../utils/appimage/appimage.dart';
+import '../../utils/appcolor.dart';
+import '../../utils/appimage.dart';
+import '../../utils/apptextstyle.dart';
 import '../../widgets/common_appbar.dart';
 
 class DressesScreen extends StatelessWidget {

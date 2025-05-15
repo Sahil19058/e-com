@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../model/product_model.dart';
-import '../utils/appimage/appimage.dart';
+import '../utils/appimage.dart';
 
 class WomenCategoryController extends GetxController{
   final List<ProductModel> products = [

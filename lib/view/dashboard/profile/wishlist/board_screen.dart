@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
-import '../../../../utils/appimage/appimage.dart';
+import '../../../../utils/appcolor.dart';
+import '../../../../utils/appimage.dart';
+import '../../../../utils/apptextstyle.dart';
 
 class BoardScreen extends StatelessWidget {
   const BoardScreen({super.key});

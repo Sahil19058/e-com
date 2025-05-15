@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
 import '../model/all_product_model.dart';
-import '../utils/appcolor/appcolor.dart';
-import '../utils/appimage/appimage.dart';
+import '../utils/appcolor.dart';
+import '../utils/appimage.dart';
 
 class DressesController extends GetxController{
 

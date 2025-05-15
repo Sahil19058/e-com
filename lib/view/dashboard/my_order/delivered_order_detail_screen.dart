@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/constant/routes_name.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
-import 'package:untitled7/widgets/common_appbar.dart';
-
+import '../../../constant/routes_name.dart';
 import '../../../model/pending_order_model.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/appimage.dart';
+import '../../../utils/apptextstyle.dart';
+import '../../../widgets/common_appbar.dart';
 
 class OrderDetailScreen extends StatelessWidget {
   final PendingOrderModel order = Get.arguments;

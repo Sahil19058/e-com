@@ -33,6 +33,7 @@ class AppImage {
   static const String boardModel4Image = "assets/image/Board-Model4.png";
   static const String boardModel5Image = "assets/image/Board-Model5.png";
   static const String boardModel6Image = "assets/image/Board-Modal6.png";
+  static const String launcherIcon = "assets/image/icon.png";
 
 
 

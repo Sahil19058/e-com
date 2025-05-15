@@ -1,10 +1,11 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../controller/cancelled_order_controller.dart';
 import 'package:intl/intl.dart';
+
+import '../../../utils/appcolor.dart';
+import '../../../utils/apptextstyle.dart';
 
 class CancelledOrderScreen extends StatelessWidget {
   const CancelledOrderScreen({super.key});

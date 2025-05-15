@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../controller/bottomnav.dart';
-import '../../utils/appcolor/appcolor.dart';
+import '../../utils/appcolor.dart';
 
 class BottomNavBar extends StatelessWidget {
   final BottomNavController controller = Get.put(BottomNavController());

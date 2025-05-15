@@ -1,4 +1,4 @@
-package com.example.untitled7
+package com.example.GamStore
 
 import io.flutter.embedding.android.FlutterActivity
 

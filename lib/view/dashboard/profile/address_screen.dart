@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import '../../../controller/address_controller.dart';
-import '../../../utils/appcolor/appcolor.dart';
-import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
 class AddressScreen extends StatelessWidget {

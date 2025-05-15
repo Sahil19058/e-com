@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../constant/routes_name.dart';
 import '../../../controller/user_controller.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/appimage.dart';
+import '../../../utils/apptextstyle.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});

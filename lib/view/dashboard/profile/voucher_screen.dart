@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
-
+import '../../../utils/appcolor.dart';
+import '../../../utils/appimage.dart';
 import '../../../widgets/common_appbar.dart';
 
 class VoucherScreen extends StatelessWidget {

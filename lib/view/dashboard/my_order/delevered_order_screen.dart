@@ -1,11 +1,12 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/constant/routes_name.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
+import '../../../constant/routes_name.dart';
 import '../../../controller/delevered_order_controller.dart';
 import 'package:intl/intl.dart';
+
+import '../../../utils/appcolor.dart';
+import '../../../utils/apptextstyle.dart';
 
 class DeliveredOrderScreen extends StatelessWidget {
   const DeliveredOrderScreen({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../constant/routes_name.dart';
 import '../../../controller/settings_controller.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
 class SettingScreen extends StatelessWidget {

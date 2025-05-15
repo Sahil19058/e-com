@@ -5,10 +5,10 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
 import '../../../controller/review_controller.dart';
-import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/appimage.dart';
+import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
 class ProductRatingScreen extends StatelessWidget {

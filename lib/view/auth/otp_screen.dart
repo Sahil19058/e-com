@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../constant/routes_name.dart';
-import '../../utils/appcolor/appcolor.dart';
+import '../../utils/appcolor.dart';
 import '../../widgets/common_button.dart';
 
 class VerificationCodeScreen extends StatefulWidget {

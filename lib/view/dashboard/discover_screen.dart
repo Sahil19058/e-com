@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
-import 'package:untitled7/constant/routes_name.dart';
+import '../../constant/routes_name.dart';
 import '../../controller/discover_controller.dart';
 import '../../controller/filter_discover_controller.dart';
 import '../../controller/slider_controller.dart';
-import '../../utils/appcolor/appcolor.dart';
-import '../../utils/appimage/appimage.dart';
+import '../../utils/appcolor.dart';
+import '../../utils/appimage.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-import '../../utils/apptextstyle/apptextstyle.dart';
+import '../../utils/apptextstyle.dart';
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});

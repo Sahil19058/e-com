@@ -2,12 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../constant/routes_name.dart';
 import '../services/signinwithgoogle.dart';
 import '../services/signupwithgoogle.dart';
-import '../utils/appcolor/appcolor.dart';
-import '../utils/appimage/appimage.dart';
+import '../utils/appcolor.dart';
+import '../utils/appimage.dart';
 
 class LoginWithIcon extends StatelessWidget {
   final int id;

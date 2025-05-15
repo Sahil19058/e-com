@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../utils/appimage/appimage.dart';
+import '../utils/appimage.dart';
 
 class UserController extends GetxController {
   var name = 'Sune Pam'.obs;

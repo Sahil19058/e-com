@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/model/product_model.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
 import '../../../controller/women_category_controller.dart';
+import '../../../model/product_model.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/appimage.dart';
+import '../../../utils/apptextstyle.dart';
 
 class WomenCateGoryScreen extends StatelessWidget {
   WomenCateGoryScreen({super.key});

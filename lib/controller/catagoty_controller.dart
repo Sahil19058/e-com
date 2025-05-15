@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../model/catagory_item.dart';
-import '../utils/appimage/appimage.dart';
+import '../utils/appimage.dart';
 
 class CategoryController extends GetxController {
   var selectedIndex = 0.obs;

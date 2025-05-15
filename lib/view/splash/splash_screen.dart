@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
 import 'package:get/get.dart';
-
 import '../../constant/routes_name.dart';
-import '../../utils/apptextstyle/apptextstyle.dart';
+import '../../utils/appcolor.dart';
+import '../../utils/appimage.dart';
+import '../../utils/apptextstyle.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

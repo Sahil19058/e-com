@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../model/settings_model.dart';
-import '../utils/appimage/appimage.dart';
+import '../utils/appimage.dart';
 
 class SettingsController extends GetxController{
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:u_credit_card/u_credit_card.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
 import '../../../controller/payment_methode_controller.dart';
-import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
 class PaymentMethodScreen extends StatelessWidget {

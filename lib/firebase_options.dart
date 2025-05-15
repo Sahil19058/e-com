@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'test-96b7b.firebasestorage.app',
     androidClientId: '1035745821086-d8jfouglhjjtt9mkrcrvlun5147u4mkl.apps.googleusercontent.com',
     iosClientId: '1035745821086-uvlhi26r1atqvbfin782okbcibbq03i1.apps.googleusercontent.com',
-    iosBundleId: 'com.example.untitled7',
+    iosBundleId: 'com.example.GamStore',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -77,7 +77,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'test-96b7b.firebasestorage.app',
     androidClientId: '1035745821086-d8jfouglhjjtt9mkrcrvlun5147u4mkl.apps.googleusercontent.com',
     iosClientId: '1035745821086-uvlhi26r1atqvbfin782okbcibbq03i1.apps.googleusercontent.com',
-    iosBundleId: 'com.example.untitled7',
+    iosBundleId: 'com.example.GamStore',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(

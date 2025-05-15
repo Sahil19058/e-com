@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../utils/appcolor/appcolor.dart';
-import '../../utils/apptextstyle/apptextstyle.dart';
+import '../utils/appcolor.dart';
+import '../utils/apptextstyle.dart';
 
 PreferredSizeWidget commonAppBar({required String title,required bool center}) {
   return AppBar(

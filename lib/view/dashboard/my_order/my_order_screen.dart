@@ -1,9 +1,9 @@
+import 'package:GamStore/view/dashboard/my_order/pending_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/view/dashboard/my_order/pending_order_screen.dart';
 import '../../../controller/my_orders_controller.dart';
-import '../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../utils/appcolor.dart';
+import '../../../utils/apptextstyle.dart';
 import 'cancelled_order_screen.dart';
 import 'delevered_order_screen.dart';
 

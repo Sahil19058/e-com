@@ -1,12 +1,12 @@
+import 'package:GamStore/view/dashboard/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/constant/routes_name.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
-import 'package:untitled7/utils/apptextstyle/apptextstyle.dart';
-import 'package:untitled7/view/dashboard/profile/profile_screen.dart';
+import '../../constant/routes_name.dart';
 import '../../controller/bottomnav.dart';
+import '../../utils/appcolor.dart';
+import '../../utils/appimage.dart';
+import '../../utils/apptextstyle.dart';
 import 'bottomnavbar.dart';
 import 'category_selector.dart';
 import 'discover_screen.dart';

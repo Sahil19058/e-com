@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/constant/routes_name.dart';
-import 'package:untitled7/utils/appcolor/appcolor.dart';
-import 'package:untitled7/utils/appimage/appimage.dart';
+import '../../constant/routes_name.dart';
 import '../../controller/onboarding_controller.dart';
-import '../../utils/apptextstyle/apptextstyle.dart';
+import '../../utils/appcolor.dart';
+import '../../utils/appimage.dart';
+import '../../utils/apptextstyle.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});

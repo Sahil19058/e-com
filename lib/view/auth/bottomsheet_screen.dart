@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import '../../utils/appcolor/appcolor.dart';
-import '../../utils/appimage/appimage.dart';
-import '../../utils/apptextstyle/apptextstyle.dart';
+import '../../utils/appcolor.dart';
+import '../../utils/appimage.dart';
+import '../../utils/apptextstyle.dart';
 import '../../widgets/common_button.dart';
 
 class ShowBottomSheet {

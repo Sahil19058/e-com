@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:untitled7/view/dashboard/dresses_screen.dart';
 import '../../../../constant/routes_name.dart';
 import '../../../../controller/dresses_controller.dart';
-import '../../../../utils/appcolor/appcolor.dart';
-import '../../../../utils/appimage/appimage.dart';
-import '../../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../../utils/appcolor.dart';
+import '../../../../utils/appimage.dart';
+import '../../../../utils/apptextstyle.dart';
+import '../../dresses_screen.dart';
 
 class AllItemsScreen extends StatelessWidget {
   const AllItemsScreen({super.key});

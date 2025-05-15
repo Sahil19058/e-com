@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../controller/my_wishlist_controller.dart';
-import '../../../../utils/appcolor/appcolor.dart';
-import '../../../../utils/apptextstyle/apptextstyle.dart';
+import '../../../../utils/appcolor.dart';
+import '../../../../utils/apptextstyle.dart';
 import '../../../../widgets/common_appbar.dart';
 import 'all_items_screen.dart';
 import 'board_screen.dart';

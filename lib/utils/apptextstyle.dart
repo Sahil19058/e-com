@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../appcolor/appcolor.dart';
+import 'appcolor.dart';
 
 class AppTextStyles {
   static const TextStyle title = TextStyle(
