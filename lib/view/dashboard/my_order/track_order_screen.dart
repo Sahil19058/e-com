@@ -15,9 +15,9 @@ class TrackOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-    final TrackingOrderController controller = Get.put(TrackingOrderController());
+    final TrackingOrderController controller = Get.put(
+      TrackingOrderController(),
+    );
     final ReviewController reviewController = Get.put(ReviewController());
 
     return Scaffold(
@@ -38,7 +38,10 @@ class TrackOrderScreen extends StatelessWidget {
 
             Row(
               children: [
-                const Text("Tracking Number: ", style: AppTextStyles.womenCardText),
+                const Text(
+                  "Tracking Number: ",
+                  style: AppTextStyles.womenCardText,
+                ),
                 Text(
                   trackingNumber ?? "",
                   style: AppTextStyles.onBoardingSubTitle,
@@ -79,8 +82,7 @@ class TrackOrderScreen extends StatelessWidget {
                                 child:
                                     index == 0
                                         ? null
-                                        :
-                                    const Icon(
+                                        : const Icon(
                                           Icons.check,
                                           size: 10,
                                           color: AppColor.fontWhite,

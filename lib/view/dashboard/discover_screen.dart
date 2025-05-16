@@ -21,6 +21,7 @@ class DiscoverScreen extends StatelessWidget {
     final sliderController = Get.put(SliderController());
 
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
     return Builder(
       builder: (context) => Scaffold(
         key: scaffoldKey,

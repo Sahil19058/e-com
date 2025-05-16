@@ -13,10 +13,11 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductDetailController controller = Get.put(ProductDetailController());
+    final ProductDetailController controller = Get.put(
+      ProductDetailController(),
+    );
 
     final AllProductModel product = Get.arguments as AllProductModel;
-
 
     return Scaffold(
       backgroundColor: AppColor.productDetailContainerColor,
@@ -55,7 +56,7 @@ class ProductDetailScreen extends StatelessWidget {
                     color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 0,
                     blurRadius: 6,
-                    offset: const Offset(0, -4), // negative Y offset for top shadow
+                    offset: const Offset(0, -4,), // negative Y offset for top shadow
                   ),
                 ],
                 color: AppColor.fontWhite,
@@ -94,7 +95,6 @@ class ProductDetailScreen extends StatelessWidget {
                           child: Row(
                             children: [
                               RatingBar(
-                                
                                 glow: false,
                                 ignoreGestures: true, // Makes it read-only
                                 initialRating: product.productRating.toDouble(),
@@ -166,12 +166,14 @@ class ProductDetailScreen extends StatelessWidget {
                                   itemBuilder: (context, index) {
                                     return Obx(() {
                                       final isSelected =
-                                          controller.selectedColorIndex.value == index;
+                                          controller.selectedColorIndex.value ==
+                                          index;
                                       return Padding(
                                         padding: const EdgeInsets.only(left: 5),
                                         child: GestureDetector(
                                           onTap:
-                                              () => controller.selectedColorIndex(index),
+                                              () => controller
+                                                  .selectedColorIndex(index),
                                           child: Container(
                                             height: 33,
                                             width: 33,
@@ -180,11 +182,14 @@ class ProductDetailScreen extends StatelessWidget {
                                               color:
                                                   product.productColor[index],
                                               border:
-                                                  isSelected
-                                                      ? Border.all(
-                                                        color: AppColor.notLikeColor,
-                                                        width: 4,
-                                                      ) : null,
+                                              isSelected
+                                                  ? Border.all(
+                                                color:
+                                                AppColor
+                                                    .notLikeColor,
+                                                width: 4,
+                                              )
+                                                  : null,
                                             ),
                                           ),
                                         ),
@@ -194,7 +199,7 @@ class ProductDetailScreen extends StatelessWidget {
                                 ),
                               ),
 
-                             const Spacer(),
+                              const Spacer(),
 
                               /// This is the size part of the product
                               SizedBox(
@@ -205,30 +210,33 @@ class ProductDetailScreen extends StatelessWidget {
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
                                     return Obx(() {
-                                      final isSelected = controller.selectedSizeIndex.value == index;
+                                      final isSelected =
+                                          controller.selectedSizeIndex.value ==
+                                          index;
                                       return Padding(
-                                        padding: const EdgeInsets.only(
-                                          left: 3,
-                                        ),
+                                        padding: const EdgeInsets.only(left: 3),
                                         child: GestureDetector(
                                           onTap:
-                                              () => controller.selectedSizeIndex(index),
+                                              () => controller
+                                                  .selectedSizeIndex(index),
                                           child: Container(
                                             height: 33,
                                             width: 33,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
-                                              color: isSelected
-                                                      ? Colors.black87
-                                                      : AppColor.circleColor,
+                                              color:
+                                              isSelected
+                                                  ? Colors.black87
+                                                  : AppColor.circleColor,
                                             ),
                                             child: Center(
                                               child: Text(
                                                 product.productSize[index],
                                                 style: TextStyle(
-                                                  color: isSelected
-                                                          ? Colors.white
-                                                          : Colors.black,
+                                                  color:
+                                                     isSelected
+                                                         ? Colors.white
+                                                         : Colors.black,
                                                 ),
                                               ),
                                             ),
@@ -267,9 +275,11 @@ class ProductDetailScreen extends StatelessWidget {
                                 Obx(
                                   () => Image(
                                     image:
-                                        controller.showDescription.value
-                                            ? const Svg(AppImage.arrowDownIcon)
-                                            : const Svg(AppImage.arrowForwardIcon),
+                                    controller.showDescription.value
+                                        ? const Svg(AppImage.arrowDownIcon)
+                                        : const Svg(
+                                      AppImage.arrowForwardIcon,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -325,9 +335,11 @@ class ProductDetailScreen extends StatelessWidget {
                                 Obx(
                                   () => Image(
                                     image:
-                                        controller.showReviews.value
-                                            ? const Svg(AppImage.arrowDownIcon)
-                                            : const Svg(AppImage.arrowForwardIcon),
+                                    controller.showReviews.value
+                                        ? const Svg(AppImage.arrowDownIcon)
+                                        : const Svg(
+                                      AppImage.arrowForwardIcon,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -439,9 +451,11 @@ class ProductDetailScreen extends StatelessWidget {
                                 Obx(
                                   () => Image(
                                     image:
-                                        controller.similarProduct.value
-                                            ? const Svg(AppImage.arrowDownIcon)
-                                            : const Svg(AppImage.arrowForwardIcon),
+                                    controller.similarProduct.value
+                                        ? const Svg(AppImage.arrowDownIcon)
+                                        : const Svg(
+                                      AppImage.arrowForwardIcon,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -466,7 +480,8 @@ class ProductDetailScreen extends StatelessWidget {
                                   child: SizedBox(
                                     height: 227,
                                     child: ListView.builder(
-                                      itemCount: controller.similarProducts.length,
+                                      itemCount:
+                                          controller.similarProducts.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) {
                                         return Column(
@@ -483,7 +498,8 @@ class ProductDetailScreen extends StatelessWidget {
                                                 decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
-                                                      controller.similarProducts[index]
+                                                      controller
+                                                          .similarProducts[index]
                                                           .productImage,
                                                     ),
                                                   ),
@@ -493,7 +509,8 @@ class ProductDetailScreen extends StatelessWidget {
                                             ),
 
                                             Text(
-                                              controller.similarProducts[index]
+                                              controller
+                                                  .similarProducts[index]
                                                   .productName,
                                               style:
                                                   AppTextStyles.productNameText,
@@ -512,9 +529,7 @@ class ProductDetailScreen extends StatelessWidget {
                                 ),
 
                                 const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 20,
-                                  ),
+                                  padding: EdgeInsets.symmetric(horizontal: 20),
                                   child: Divider(color: AppColor.divedertColor),
                                 ),
                               ],

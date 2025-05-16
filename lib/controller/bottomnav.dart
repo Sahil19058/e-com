@@ -1,8 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../constant/routes_name.dart';
 import '../model/app_constant.dart';
 import '../utils/appimage.dart';
+import '../view/dashboard/category_selector.dart';
+import '../view/dashboard/discover_screen.dart';
+import '../view/dashboard/my_order/my_order_screen.dart';
+import '../view/dashboard/profile/profile_screen.dart';
 
 class BottomNavController extends GetxController {
   var selectedIndex = 0.obs;
@@ -23,6 +28,13 @@ class BottomNavController extends GetxController {
     {'icon': AppImage.settingIcon, 'title': 'Setting'},
     {'icon': AppImage.emailIcon, 'title': 'Support'},
     {'icon': AppImage.aboutIcon, 'title': 'About us'},
+  ];
+
+  final List<Widget> pages = [
+    CategorySelector(),
+    const DiscoverScreen(),
+    MyOrdersScreen(),
+    ProfilePage(),
   ];
 
   // final List<String> svgIcons = [

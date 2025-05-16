@@ -8,9 +8,6 @@ import '../../utils/appcolor.dart';
 import '../../utils/appimage.dart';
 import '../../utils/apptextstyle.dart';
 import 'bottomnavbar.dart';
-import 'category_selector.dart';
-import 'discover_screen.dart';
-import 'my_order/my_order_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,15 +16,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final BottomNavController controller = Get.put(BottomNavController());
 
-
     // final DrawerControllerX drawerController = Get.put(DrawerControllerX());
-
-    final List<Widget> pages = [
-      CategorySelector(),
-      const DiscoverScreen(),
-      MyOrdersScreen(),
-      ProfilePage(),
-    ];
 
     var scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -40,39 +29,37 @@ class HomeScreen extends StatelessWidget {
         child: Obx(() {
           final index = controller.selectedIndex.value;
           return index == 0 || index == 1 || index == 2
-                ? AppBar(
-                  scrolledUnderElevation: 0.0,
-                  leading: IconButton(
-                    onPressed: () {
-                      scaffoldKey.currentState?.openDrawer();
-                    },
-                    icon: const Image(image: Svg(AppImage.drawerIcon)),
-                  ),
-                  backgroundColor: AppColor.fontWhite,
-                  title: Obx(
-                    () => Text(
-                      controller.selectedIndex.value == 0
-                          ? "Gemstore"
-                          : controller.selectedIndex.value == 1
-                          ? "Discover"
-                          : controller.selectedIndex.value == 2
-                          ? "My Orders"
-                          : "Profile ",
-                      style: AppTextStyles.onBoardingTitle,
-                    ),
-                  ),
-                  centerTitle: true,
-                  actions: [
-                    GestureDetector(
-                      onTap: () => Get.toNamed(RouteName.notificationScreen),
-                      child: const Padding(
-                        padding: EdgeInsets.only(right: 20),
-                        child: Image(image: Svg(AppImage.notificationIcon)),
-                      ),
-                    ),
-                  ],
-                )
-              : Container();
+              ? AppBar(
+            scrolledUnderElevation: 0.0,
+            leading: IconButton(
+              onPressed: () {
+                scaffoldKey.currentState?.openDrawer();
+                },
+              icon: const Image(image: Svg(AppImage.drawerIcon)),
+            ),
+            backgroundColor: AppColor.fontWhite,
+            title: Obx(() => Text(
+              controller.selectedIndex.value == 0
+                  ? "Gemstore"
+                  : controller.selectedIndex.value == 1
+                  ? "Discover"
+                  : controller.selectedIndex.value == 2
+                  ? "My Orders"
+                  : "Profile ",
+              style: AppTextStyles.onBoardingTitle,
+            ),
+            ),
+            centerTitle: true,
+            actions: [
+              GestureDetector(
+                onTap: () => Get.toNamed(RouteName.notificationScreen),
+                child: const Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Image(image: Svg(AppImage.notificationIcon)),
+                ),
+              ),
+            ],
+          ) : Container();
         }),
       ),
 
@@ -175,7 +162,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
 
-      body: Obx(() => pages[controller.selectedIndex.value]),
+      body: Obx(() => controller.pages[controller.selectedIndex.value]),
       bottomNavigationBar: BottomNavBar(),
     );
   }

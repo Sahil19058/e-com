@@ -10,8 +10,6 @@ class CategorySelector extends StatelessWidget {
 
   final CategoryController controller = Get.put(CategoryController());
 
-
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
