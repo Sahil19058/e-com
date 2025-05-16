@@ -1,5 +1,6 @@
 import 'package:GamStore/constant/routes_name.dart';
 import 'package:get/get.dart';
+import '../main.dart';
 import '../view/auth/forgotepass_screen.dart';
 import '../view/auth/login_screen.dart';
 import '../view/auth/newpass_screen.dart';

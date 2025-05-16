@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../constant/routes_name.dart';
+import '../main.dart';
 import '../model/profile_model.dart';
 import '../utils/appimage.dart';
 
@@ -39,6 +40,5 @@ class UserController extends GetxController {
       SystemNavigator.pop();
     }
   }
-
 
 }

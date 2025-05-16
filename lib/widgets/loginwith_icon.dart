@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
 import '../constant/routes_name.dart';
+import '../main.dart';
 import '../services/signinwithgoogle.dart';
 import '../services/signupwithgoogle.dart';
 import '../utils/appcolor.dart';

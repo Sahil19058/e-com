@@ -9,17 +9,18 @@ import '../../../widgets/common_appbar.dart';
 class PaymentMethodScreen extends StatelessWidget {
   PaymentMethodScreen({super.key});
 
-  final PaymentMethodeController controller =  Get.put(PaymentMethodeController());
+  final PaymentMethodeController controller = Get.put(
+    PaymentMethodeController(),
+  );
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final screenWidth = size.width;
 
-
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: commonAppBar(title: "Payment",center: true),
+      appBar: commonAppBar(title: "Payment", center: true),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
         child: Column(
@@ -27,7 +28,10 @@ class PaymentMethodScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Text("Card Management", style: AppTextStyles.productDetailText),
+                const Text(
+                  "Card Management",
+                  style: AppTextStyles.productDetailText,
+                ),
                 const Spacer(),
                 TextButton(
                   onPressed: () {
@@ -51,23 +55,27 @@ class PaymentMethodScreen extends StatelessWidget {
                 cardNumber: '1234567812345678',
                 validFrom: '01/23',
                 validThru: '01/28',
-                topLeftColor: Colors.blueAccent,
+                topLeftColor: Colors.redAccent,
                 doesSupportNfc: true,
                 placeNfcIconAtTheEnd: true,
                 cardType: CardType.debit,
                 cardProviderLogo: const FlutterLogo(),
                 cardProviderLogoPosition: CardProviderLogoPosition.right,
                 showBalance: true,
-                balance: 128.32434343,
+                balance: 140.32434343,
                 autoHideBalance: true,
                 enableFlipping: true,
                 cvvNumber: '123',
+                creditCardType: CreditCardType.amex,
               ),
             ),
 
             SizedBox(height: screenWidth * 0.1),
 
-            const Text("Or check out with", style: AppTextStyles.productNameText),
+            const Text(
+              "Or check out with",
+              style: AppTextStyles.productNameText,
+            ),
 
             SizedBox(height: screenWidth * 0.1),
 

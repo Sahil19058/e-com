@@ -5,6 +5,7 @@ import '../../controller/bottomnav.dart';
 import '../../utils/appcolor.dart';
 
 class BottomNavBar extends StatelessWidget {
+
   final BottomNavController controller = Get.put(BottomNavController());
 
   BottomNavBar({super.key});

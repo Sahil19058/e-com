@@ -16,6 +16,7 @@ class NewPassScreen extends StatefulWidget {
 }
 
 class _NewPassScreenState extends State<NewPassScreen> {
+
   final SignUpController controller = SignUpController();
 
   @override
@@ -125,6 +126,7 @@ class _NewPassScreenState extends State<NewPassScreen> {
                         context: context,
                         builder: (context) {
                           return Card(
+                            elevation: 2,
                             child: SizedBox(
                               height: 373,
                               width: Get.width,
