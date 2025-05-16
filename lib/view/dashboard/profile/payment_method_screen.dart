@@ -17,9 +17,6 @@ class PaymentMethodScreen extends StatelessWidget {
     final screenWidth = size.width;
 
 
-
-
-
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
       appBar: commonAppBar(title: "Payment",center: true),
