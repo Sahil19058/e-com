@@ -13,6 +13,7 @@ class VerificationCodeScreen extends StatefulWidget {
 }
 
 class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
+
   TextEditingController otpController = TextEditingController();
   // int remainingSeconds = 10;
   // late Timer timer;

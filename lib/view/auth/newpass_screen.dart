@@ -63,21 +63,21 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   decoration: InputDecoration(
                     hintText: 'New password',
                     suffixIcon:
-                        controller.newPassword.isNotEmpty
-                            ? IconButton(
-                              icon: Icon(
-                                controller.obscureNewPassword
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  controller.obscureNewPassword =
-                                      !controller.obscureNewPassword;
-                                });
-                              },
-                            )
-                            : null,
+                    controller.newPassword.isNotEmpty
+                        ? IconButton(
+                      icon: Icon(
+                        controller.obscureNewPassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          controller.obscureNewPassword =
+                          !controller.obscureNewPassword;
+                        });
+                        },
+                    )
+                        : null,
                   ),
                 ),
 
@@ -93,21 +93,21 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   decoration: InputDecoration(
                     hintText: 'Confirm password',
                     suffixIcon:
-                        controller.confirmPassword.isNotEmpty
-                            ? IconButton(
-                              icon: Icon(
-                                controller.obscureConfirmPassword
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  controller.obscureConfirmPassword =
-                                      !controller.obscureConfirmPassword;
-                                });
-                              },
-                            )
-                            : null,
+                    controller.confirmPassword.isNotEmpty
+                        ? IconButton(
+                      icon: Icon(
+                        controller.obscureConfirmPassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          controller.obscureConfirmPassword =
+                          !controller.obscureConfirmPassword;
+                        });
+                        },
+                    )
+                        : null,
                   ),
                 ),
 
@@ -117,9 +117,9 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   child: CommonOutlineButton(
                     text: "Confirm",
                     backgroundColor:
-                        controller.isButtonEnabled
-                            ? AppColor.fontBlack
-                            : AppColor.buttonColor.withValues(alpha: 0.4),
+                    controller.isButtonEnabled
+                        ? AppColor.fontBlack
+                        : AppColor.buttonColor.withValues(alpha: 0.4),
                     textColor: AppColor.fontWhite,
                     onTap: () {
                       showModalBottomSheet(

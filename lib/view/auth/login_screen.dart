@@ -16,13 +16,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final SignUpController controller = SignUpController();
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  final SignUpController controller = SignUpController();
 
   @override
   Widget build(BuildContext context) {

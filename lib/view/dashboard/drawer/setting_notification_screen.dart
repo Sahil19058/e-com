@@ -1,3 +1,4 @@
+import 'package:GamStore/view/dashboard/drawer/widget/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/setting_notification_screen.dart';
@@ -45,21 +46,4 @@ class SettingNotificationScreen extends StatelessWidget {
   }
 }
 
-Widget buildSwitchTile({
-  required String title,
-  required String subtitle,
-  required RxBool value,
-  required Function(bool) onChanged,
-}) {
-  return Obx(() => SwitchListTile(
-    contentPadding: EdgeInsets.zero,
-    title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
-    subtitle: Text(subtitle),
-    value: value.value,
-    onChanged: onChanged,
-    activeColor: AppColor.fontWhite,
-    activeTrackColor: AppColor.ratingStarColor,
-    inactiveThumbColor: AppColor.fontWhite,
-    inactiveTrackColor: AppColor.inActiveSwitchColor,
-  ));
-}
+

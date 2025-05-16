@@ -72,7 +72,10 @@ class ProductRatingScreen extends StatelessWidget {
                 itemSize: 45.0,
                 ratingWidget: RatingWidget(
                   full: const Icon(Icons.star, color: AppColor.ratingStarColor),
-                  half: const Icon(Icons.star_half, color: AppColor.ratingStarColor),
+                  half: const Icon(
+                    Icons.star_half,
+                    color: AppColor.ratingStarColor,
+                  ),
                   empty: const Icon(
                     Icons.star,
                     color: AppColor.feedbackStarUnselectColor,
@@ -95,7 +98,6 @@ class ProductRatingScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-
                       TextFormField(
                         cursorColor: AppColor.fontBlack,
                         controller: reviewController.textController,
@@ -159,19 +161,19 @@ class ProductRatingScreen extends StatelessWidget {
                       child: Obx(
                         () => Center(
                           child:
-                          reviewController.selectedImage.value == null
-                              ? const Image(
-                            image: Svg(AppImage.reviewGalleryIcon),
-                          )
-                              : ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.file(
-                              reviewController.selectedImage.value!,
-                              fit: BoxFit.cover,
-                              width: 64,
-                              height: 64,
-                            ),
-                          ),
+                              reviewController.selectedImage.value == null
+                                  ? const Image(
+                                    image: Svg(AppImage.reviewGalleryIcon),
+                                  )
+                                  : ClipRRect(
+                                    borderRadius: BorderRadius.circular(12),
+                                    child: Image.file(
+                                      reviewController.selectedImage.value!,
+                                      fit: BoxFit.cover,
+                                      width: 64,
+                                      height: 64,
+                                    ),
+                                  ),
                         ),
                       ),
                     ),
@@ -198,17 +200,19 @@ class ProductRatingScreen extends StatelessWidget {
                       child: Obx(
                         () => Center(
                           child:
-                          reviewController.selectedImage.value == null
-                              ? const Image(image: Svg(AppImage.reviewCameraIcon))
-                              : ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.file(
-                              reviewController.selectedImage.value!,
-                              fit: BoxFit.cover,
-                              width: 64,
-                              height: 64,
-                            ),
-                          ),
+                              reviewController.selectedImage.value == null
+                                  ? const Image(
+                                    image: Svg(AppImage.reviewCameraIcon),
+                                  )
+                                  : ClipRRect(
+                                    borderRadius: BorderRadius.circular(12),
+                                    child: Image.file(
+                                      reviewController.selectedImage.value!,
+                                      fit: BoxFit.cover,
+                                      width: 64,
+                                      height: 64,
+                                    ),
+                                  ),
                         ),
                       ),
                     ),
@@ -222,9 +226,11 @@ class ProductRatingScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: GestureDetector(
+
                 onTap: () {
                   reviewController.showThankYouDialog();
                 },
+
                 child: Container(
                   height: 48,
                   decoration: BoxDecoration(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import '../../../constant/routes_name.dart';
 import '../../../controller/settings_controller.dart';
 import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
@@ -12,6 +11,7 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final SettingsController controller = Get.put(SettingsController());
 
     return Scaffold(
@@ -30,29 +30,7 @@ class SettingScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          if (index == 0) {
-                            Get.snackbar(
-                              "Coming soon",
-                              "This Screen is not available",
-                            );
-                          } else if (index == 1) {
-                            Get.toNamed(RouteName.settingNotificationScreen);
-                          } else if (index == 2) {
-                            Get.snackbar(
-                              "Coming soon",
-                              "This Screen is not available",
-                            );
-                          } else if (index == 3) {
-                            Get.snackbar(
-                              "Coming soon",
-                              "This Screen is not available",
-                            );
-                          } else if (index == 4) {
-                            Get.snackbar(
-                              "Coming soon",
-                              "This Screen is not available",
-                            );
-                          }
+                          controller.settingsIndex(index);
                         },
                         child: ListTile(
                           leading: Image(

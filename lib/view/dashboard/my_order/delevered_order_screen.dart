@@ -13,8 +13,9 @@ class DeliveredOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final DeliveredOrderController controller = Get.put(DeliveredOrderController());
+    final DeliveredOrderController controller = Get.put(
+      DeliveredOrderController(),
+    );
 
     return Expanded(
       child: ListView.builder(
@@ -90,7 +91,7 @@ class DeliveredOrderScreen extends StatelessWidget {
                             style: AppTextStyles.tabBarSecondaryText.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 10),
@@ -102,20 +103,26 @@ class DeliveredOrderScreen extends StatelessWidget {
                           ),
                           const Spacer(),
                           GestureDetector(
-                            onTap: (){
-                              Get.toNamed(RouteName.orderDetailScreen, arguments: controller.pendingOrders[index],);
+                            onTap: () {
+                              Get.toNamed(
+                                RouteName.orderDetailScreen,
+                                arguments: controller.pendingOrders[index],
+                              );
                             },
                             child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 9),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 25,
+                                vertical: 9,
+                              ),
                               decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: AppColor.secondaryTextColor
-                                  ),
-                                  borderRadius: BorderRadius.circular(20)
+                                border: Border.all(
+                                  color: AppColor.secondaryTextColor,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
                               ),
                               child: const Text("Detail"),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ],
@@ -129,4 +136,3 @@ class DeliveredOrderScreen extends StatelessWidget {
     );
   }
 }
-

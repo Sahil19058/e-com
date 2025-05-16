@@ -16,13 +16,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final SignUpController controller = SignUpController();
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  final SignUpController controller = Get.put(SignUpController());
 
   @override
   Widget build(BuildContext context) {
@@ -127,13 +121,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onPressed: () {
                         Get.offNamed(RouteName.loginScreen);
                       },
-                      child: const Text("Login", style: AppTextStyles.textButton),
+                      child: const Text(
+                        "Login",
+                        style: AppTextStyles.textButton,
+                      ),
                     ),
                   ],
                 ),
 
                 const SizedBox(height: 20),
-
               ],
             ),
           ),

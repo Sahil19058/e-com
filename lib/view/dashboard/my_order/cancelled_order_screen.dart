@@ -12,8 +12,9 @@ class CancelledOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final CancelledOrderController controller = Get.put(CancelledOrderController());
+    final CancelledOrderController controller = Get.put(
+      CancelledOrderController(),
+    );
 
     return Expanded(
       child: ListView.builder(
@@ -37,12 +38,10 @@ class CancelledOrderScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-
                       const SizedBox(height: 20),
 
                       Row(
                         children: [
-
                           Text(
                             "Order #${controller.pendingOrders[index].orderId}",
                             style: AppTextStyles.productDetailText,
@@ -61,7 +60,6 @@ class CancelledOrderScreen extends StatelessWidget {
 
                       Row(
                         children: [
-
                           const Text(
                             "Tracking number: ",
                             style: AppTextStyles.drawerOtherText,
@@ -80,7 +78,6 @@ class CancelledOrderScreen extends StatelessWidget {
 
                       Row(
                         children: [
-
                           const Text(
                             "Quantity: ",
                             style: AppTextStyles.drawerOtherText,
@@ -105,14 +102,12 @@ class CancelledOrderScreen extends StatelessWidget {
                             style: AppTextStyles.tabBarSecondaryText.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
-
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 10),
                       Row(
                         children: [
-
                           const Text(
                             "CANCELLED",
                             style: AppTextStyles.cancelledText,
@@ -121,15 +116,18 @@ class CancelledOrderScreen extends StatelessWidget {
                           const Spacer(),
 
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 9),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 25,
+                              vertical: 9,
+                            ),
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: AppColor.secondaryTextColor
-                                ),
-                                borderRadius: BorderRadius.circular(20)
+                              border: Border.all(
+                                color: AppColor.secondaryTextColor,
+                              ),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                             child: const Text("Detail"),
-                          )
+                          ),
                         ],
                       ),
                     ],
@@ -143,4 +141,3 @@ class CancelledOrderScreen extends StatelessWidget {
     );
   }
 }
-

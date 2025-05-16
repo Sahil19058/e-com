@@ -9,6 +9,7 @@ import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
 class PendingOrderDetailScreen extends StatelessWidget {
+
   final PendingOrderModel order = Get.arguments;
   PendingOrderDetailScreen({super.key});
 

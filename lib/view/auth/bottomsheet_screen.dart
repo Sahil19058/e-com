@@ -9,7 +9,7 @@ import '../../widgets/common_button.dart';
 class ShowBottomSheet {
   get context => null;
 
-  showbottomsheet() {
+  showBottomSheet() {
     return showModalBottomSheet(
       context: context,
       builder: (context) {

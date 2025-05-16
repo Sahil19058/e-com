@@ -1,13 +1,26 @@
 // signup_controller.dart
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SignUpController {
+class SignUpController extends GetxController{
   final formKey = GlobalKey<FormState>();
 
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+
+  bool obscureNewPassword = true;
+  bool obscureConfirmPassword = true;
+
+  String newPassword = '';
+  String confirmPassword = '';
+
+  bool get isButtonEnabled =>
+      newPassword.isNotEmpty &&
+          confirmPassword.isNotEmpty &&
+          newPassword == confirmPassword;
+
 
   String? validateName(String? value) {
     if (value == null || value.isEmpty) return 'Name is required';
@@ -41,21 +54,16 @@ class SignUpController {
     return false;
   }
 
+  @override
   void dispose() {
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
+    super.dispose();
   }
 
-  bool obscureNewPassword = true;
-  bool obscureConfirmPassword = true;
 
-  String newPassword = '';
-  String confirmPassword = '';
 
-  bool get isButtonEnabled =>
-      newPassword.isNotEmpty &&
-      confirmPassword.isNotEmpty &&
-      newPassword == confirmPassword;
+
 }

@@ -17,12 +17,6 @@ class ForgatepassScreenState extends State<ForgatepassScreen> {
   final SignUpController controller = SignUpController();
 
   @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

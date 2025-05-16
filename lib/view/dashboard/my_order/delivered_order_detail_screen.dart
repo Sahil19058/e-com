@@ -118,104 +118,84 @@ class OrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            const SizedBox(height: 30),
             Card(
               elevation: 2,
               color: AppColor.fontWhite,
               child: SizedBox(
                 height: 247,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 20,
+                  ),
                   child: Column(
                     children: [
                       Row(
                         children: [
                           const Text(
-                              "Maxi Dress",
+                            "Maxi Dress",
                             style: AppTextStyles.onBoardingSubTitle,
                           ),
-                          const Spacer(
-                            flex: 2,
-                          ),
+                          const Spacer(flex: 2),
                           Text("x${order.quantity.toString()}"),
                           const Spacer(),
                           Text(
-                              order.subTotal.toDouble().toString(),
+                            order.subTotal.toDouble().toString(),
                             style: AppTextStyles.drawerSubText,
-                          )
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 10),
                       const Row(
                         children: [
-                          Text(
-                            "None",
-                            style: AppTextStyles.onBoardingSubTitle,
-                            ),
-                          Spacer(
-                            flex: 2,
-                          ),
+                          Text("None", style: AppTextStyles.onBoardingSubTitle),
+                          Spacer(flex: 2),
                           Text("x -"),
                           Spacer(),
-                          Text(
-                              "-",
-                            style: AppTextStyles.drawerSubText,
-                          )
+                          Text("-", style: AppTextStyles.drawerSubText),
                         ],
                       ),
-                      const SizedBox(
-                        height: 40,
-                      ),
+                      const SizedBox(height: 40),
                       Row(
                         children: [
                           const Text(
                             "Sub Total",
-                            style: AppTextStyles.onBoardingSubTitle,),
-                          const Spacer(
-                            flex: 2,
+                            style: AppTextStyles.onBoardingSubTitle,
                           ),
+                          const Spacer(flex: 2),
                           const Spacer(),
                           Text(
-                              order.subTotal.toDouble().toString(),
+                            order.subTotal.toDouble().toString(),
                             style: AppTextStyles.drawerText,
-                          )
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 10),
                       const Row(
                         children: [
                           Text(
-                              "Shipping",
+                            "Shipping",
                             style: AppTextStyles.onBoardingSubTitle,
                           ),
-                          Spacer(
-                            flex: 2,
-                          ),
+                          Spacer(flex: 2),
                           Spacer(),
-                          Text(
-                              "0.0",
-                            style: AppTextStyles.drawerText,
-                          )
+                          Text("0.0", style: AppTextStyles.drawerText),
                         ],
                       ),
-                      const Divider(
-                        color: AppColor.divedertColor,
-                      ),
+                      const Divider(color: AppColor.divedertColor),
                       Row(
                         children: [
                           const Text(
                             "Total",
-                            style: AppTextStyles.onBoardingSubTitle,),
-                          const Spacer(
-                            flex: 2,
+                            style: AppTextStyles.onBoardingSubTitle,
                           ),
+                          const Spacer(flex: 2),
                           const Spacer(),
                           Text(
-                              "\$${order.subTotal.toDouble().toString()}",
+                            "\$${order.subTotal.toDouble().toString()}",
                             style: AppTextStyles.drawerText,
-                          )
+                          ),
                         ],
                       ),
                     ],
@@ -223,9 +203,7 @@ class OrderDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(
@@ -240,13 +218,13 @@ class OrderDetailScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: AppColor.secondaryTextColor,
-                          width: 2
+                          width: 2,
                         ),
-                        borderRadius: BorderRadius.circular(30)
+                        borderRadius: BorderRadius.circular(30),
                       ),
                       child: const Center(
                         child: Text(
-                            "Return home",
+                          "Return home",
                           style: AppTextStyles.drawerMenuText,
                         ),
                       ),
@@ -261,21 +239,20 @@ class OrderDetailScreen extends StatelessWidget {
                       height: 44,
                       width: 119,
                       decoration: BoxDecoration(
-                          color: AppColor.productDetailButtonColor,
-                          borderRadius: BorderRadius.circular(30)
+                        color: AppColor.productDetailButtonColor,
+                        borderRadius: BorderRadius.circular(30),
                       ),
                       child: const Center(
                         child: Text(
-                            "Rate",
+                          "Rate",
                           style: AppTextStyles.rateButtonText,
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
-
+            ),
           ],
         ),
       ),

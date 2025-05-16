@@ -49,10 +49,7 @@ class SplashScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: AppColor.fontWhite.withValues(alpha: 0.5),
-                  border: Border.all(
-                    color: AppColor.fontWhite,
-                    width: 1.18,
-                  ),
+                  border: Border.all(color: AppColor.fontWhite, width: 1.18),
                 ),
                 child: const Center(
                   child: Text("Get Started", style: AppTextStyles.subtitle),

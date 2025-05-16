@@ -12,7 +12,6 @@ class PendingOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final PendingOrderController controller = Get.put(PendingOrderController());
 
     return Expanded(
@@ -37,7 +36,6 @@ class PendingOrderScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[
-
                       const SizedBox(height: 20),
                       Row(
                         children: [
@@ -90,35 +88,40 @@ class PendingOrderScreen extends StatelessWidget {
                             style: AppTextStyles.tabBarSecondaryText.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 10),
                       Row(
                         children: [
                           const Text(
-                              "PENDING",
+                            "PENDING",
                             style: AppTextStyles.pendingText,
                           ),
-                           const Spacer(),
+                          const Spacer(),
                           GestureDetector(
                             onTap: () {
-                              Get.toNamed(RouteName.pendingOrderDetailScreen,arguments: controller.pendingOrders[index]);
+                              Get.toNamed(
+                                RouteName.pendingOrderDetailScreen,
+                                arguments: controller.pendingOrders[index],
+                              );
                             },
                             child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 9),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 25,
+                                vertical: 9,
+                              ),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: AppColor.secondaryTextColor
+                                  color: AppColor.secondaryTextColor,
                                 ),
-                                borderRadius: BorderRadius.circular(20)
+                                borderRadius: BorderRadius.circular(20),
                               ),
                               child: const Text("Detail"),
                             ),
-                          )
+                          ),
                         ],
                       ),
-
                     ],
                   ),
                 ),
