@@ -16,6 +16,10 @@ class PaymentMethodScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final screenWidth = size.width;
 
+
+
+
+
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
       appBar: commonAppBar(title: "Payment",center: true),
@@ -98,7 +102,6 @@ class PaymentMethodScreen extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),
