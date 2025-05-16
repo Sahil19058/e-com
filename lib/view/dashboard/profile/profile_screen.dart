@@ -12,7 +12,6 @@ class ProfilePage extends StatelessWidget {
 
   final UserController controller = Get.put(UserController());
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +42,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                   subtitle: Obx(() => Text(controller.email.value)),
-          
+
                   trailing: GestureDetector(
                     onTap: () {
                       Get.toNamed(RouteName.settingScreen);
@@ -51,9 +50,9 @@ class ProfilePage extends StatelessWidget {
                       child: const Image(image: Svg(AppImage.settingIcon))),
                 ),
               ),
-          
+
               const SizedBox(height: 40),
-          
+
               // Card(
               //   color: AppColor.fontWhite,
               //   shape: RoundedRectangleBorder(
@@ -97,7 +96,6 @@ class ProfilePage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             controller.checkProfileIndex(index);
-
                           },
                           child: Column(
                             children: [
