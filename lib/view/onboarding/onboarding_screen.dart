@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../../constant/routes_name.dart';
 import '../../controller/onboarding_controller.dart';
 import '../../utils/appcolor.dart';
-import '../../utils/appimage.dart';
 import '../../utils/apptextstyle.dart';
 
 class OnboardingScreen extends StatelessWidget {
