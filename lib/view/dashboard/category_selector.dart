@@ -26,8 +26,10 @@ class CategorySelector extends StatelessWidget {
             separatorBuilder: (_, __) => SizedBox(width: screenWidth * 0.08),
             itemBuilder: (context, index) {
               return Obx(() {
+                /// Check if the current index is selected
                 bool isSelected = controller.selectedIndex.value == index;
 
+                /// Handle tap event
                 return GestureDetector(
                   onTap: () => controller.selectCategory(index),
                   child: Column(

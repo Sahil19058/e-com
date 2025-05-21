@@ -1,6 +1,6 @@
 class RouteName {
 
-  //define your routes name here
+  ///define your routes name here
 
   static const String splashScreen = "/";
   static const String onboardingScreen = "/onboardingScreen";
