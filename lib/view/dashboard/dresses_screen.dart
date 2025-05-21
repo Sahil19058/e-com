@@ -143,7 +143,7 @@ class DressesScreen extends StatelessWidget {
                                 itemCount: 5,
                                 itemSize: 15.0,
                                 ratingWidget: RatingWidget(
-                                  full: const Icon(Icons.star,color: AppColor.ratingStarColor,),     // full star
+                                  full: const Icon(Icons.star,color: AppColor.ratingStarColor,),  // full star
                                   empty: const Icon(Icons.star_border, color: AppColor.ratingStarColor,),
                                   half: const Image(image: Svg(AppImage.outlineStarIcon)), // outlined star
                                 ),

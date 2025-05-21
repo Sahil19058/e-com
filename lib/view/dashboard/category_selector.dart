@@ -82,7 +82,7 @@ class CategorySelector extends StatelessWidget {
           child: Obx(() {
             switch (controller.selectedIndex.value) {
               case 0:
-                return WomenCateGoryScreen();
+                return const WomenCateGoryScreen();
               case 1:
                 return const Center(child: Text("Men", style: TextStyle(fontSize: 18)));
               case 2:

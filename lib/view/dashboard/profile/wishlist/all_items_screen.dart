@@ -17,10 +17,8 @@ class AllItemsScreen extends StatelessWidget {
     final DressesController controller = Get.put(DressesController());
 
     final screenWidth = MediaQuery.of(context).size.width;
-
     final crossAxisCount = (screenWidth / 180).floor().clamp(2, 4);
-
-    final childAspectRatio = screenWidth < 600 ? 0.6 : 0.65;
+    final childAspectRatio = screenWidth < 600 ? 0.55 : 0.65;
 
     return Flexible(
       child: Padding(
@@ -48,11 +46,16 @@ class AllItemsScreen extends StatelessWidget {
                   Expanded(
                     child: Stack(
                       children: [
-                        Image(
-                          image: AssetImage(
-                              controller.allProducts[index].productImage),
-                          fit: BoxFit.cover, // Ensure image scales properly
-                          width: double.infinity,
+                        Container(height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                              image: AssetImage(
+                                  controller.allProducts[index].productImage),
+                              fit: BoxFit.cover, // Ensure image scales properly
+                            )
+                          ),
                         ),
                         Positioned(
                           right: screenWidth * 0.02,

@@ -5,6 +5,7 @@ import '../view/auth/login_screen.dart';
 import '../view/auth/newpass_screen.dart';
 import '../view/auth/otp_screen.dart';
 import '../view/auth/signup_screen.dart';
+import '../view/dashboard/catagory_pages/womencategory_binding.dart';
 import '../view/dashboard/drawer/setting_notification_screen.dart';
 import '../view/dashboard/drawer/setting_screen.dart';
 import '../view/dashboard/dresses_screen.dart';
@@ -55,7 +56,8 @@ class AppRoutes {
     ),
     GetPage(
         name: RouteName.homeScreen,
-        page: () => const HomeScreen()
+        page: () => const HomeScreen(),
+        binding: WomenCategory()
     ),
     GetPage(
         name: RouteName.dressesScreen,

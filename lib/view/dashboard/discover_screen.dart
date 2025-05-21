@@ -263,10 +263,9 @@ class DiscoverScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            final category =
-                                filterController
-                                    .discoverProducts[index]
-                                    .productCategory;
+                            final category = filterController
+                                .discoverProducts[index]
+                                .productCategory;
                             if (category == "Dresses") {
                               Get.toNamed(RouteName.dressesScreen);
                             } else {

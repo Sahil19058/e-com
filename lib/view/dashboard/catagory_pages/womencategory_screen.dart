@@ -6,10 +6,10 @@ import '../../../utils/appcolor.dart';
 import '../../../utils/appimage.dart';
 import '../../../utils/apptextstyle.dart';
 
-class WomenCateGoryScreen extends StatelessWidget {
-  WomenCateGoryScreen({super.key});
+class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
-  final WomenCategoryController controller = Get.put(WomenCategoryController());
+  const WomenCateGoryScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
