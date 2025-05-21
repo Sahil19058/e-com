@@ -19,7 +19,7 @@ class BottomNavBar extends StatelessWidget {
         borderRadius: const BorderRadius.vertical(top: Radius.circular(40)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05,), // Light shadow
+            color: AppColor.fontBlack.withValues(alpha: 0.05,), // Light shadow
             offset: const Offset(0, -4),
             blurRadius: 10,
             spreadRadius: 1,

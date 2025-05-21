@@ -109,8 +109,7 @@ class DressesScreen extends StatelessWidget {
                                         color: isFav ? AppColor.likeColor : AppColor.notLikeColor,
                                       ),
                                     );
-                                  })
-                                  ,
+                                  }),
                                 ),
                               ),
                             ],
@@ -159,7 +158,6 @@ class DressesScreen extends StatelessWidget {
                               )
                             ],
                           ),
-
                         ],
                       ),
                     ),

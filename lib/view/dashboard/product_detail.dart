@@ -13,6 +13,7 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final ProductDetailController controller = Get.put(
       ProductDetailController(),
     );
@@ -208,6 +209,8 @@ class ProductDetailScreen extends StatelessWidget {
                                 child: ListView.builder(
                                   itemCount: product.productSize.length,
                                   scrollDirection: Axis.horizontal,
+                                  shrinkWrap: false,
+                                  physics: const NeverScrollableScrollPhysics(),
                                   itemBuilder: (context, index) {
                                     return Obx(() {
                                       final isSelected =
