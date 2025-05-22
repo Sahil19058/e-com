@@ -1,7 +1,6 @@
 // lib/controller/onboarding_controller.dart
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-
 import '../model/onBoarding_model.dart';
 import '../utils/appimage.dart';
 

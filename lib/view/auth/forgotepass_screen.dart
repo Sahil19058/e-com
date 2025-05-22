@@ -7,12 +7,10 @@ import '../../widgets/common_button.dart';
 import '../../widgets/common_textfield.dart';
 
 class ForgotPassScreen extends GetView<SignUpController> {
-   const ForgotPassScreen({super.key});
+  const ForgotPassScreen({super.key});
 
   @override
-
   // final SignUpController controller = SignUpController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

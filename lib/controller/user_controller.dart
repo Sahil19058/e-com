@@ -23,21 +23,19 @@ class UserController extends GetxController {
     ProfileModel(icon: AppImage.logOutIcon, label: 'Log out'),
   ];
 
-
-  void checkProfileIndex(int menu){
-    if(menu == 0){
+  void checkProfileIndex(int menu) {
+    if (menu == 0) {
       Get.toNamed(RouteName.addressScreen);
-    }else if(menu == 1){
+    } else if (menu == 1) {
       Get.toNamed(RouteName.paymentMethodScreen);
-    }else if(menu == 2){
+    } else if (menu == 2) {
       Get.toNamed(RouteName.voucherScreen);
-    }else if(menu == 3){
+    } else if (menu == 3) {
       Get.toNamed(RouteName.myWishlistScreen);
-    }else if(menu == 4){
+    } else if (menu == 4) {
       Get.toNamed(RouteName.rateThisAppScreen);
-    }else if(menu == 5){
+    } else if (menu == 5) {
       SystemNavigator.pop();
     }
   }
-
 }

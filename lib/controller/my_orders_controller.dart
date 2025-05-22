@@ -6,6 +6,5 @@ class OrderTabController extends GetxController {
   void changeTab(int index) {
     selectedIndex.value = index;
   }
-
   final List<String> tabs = ["Pending", "Delivered", "Cancelled"];
 }

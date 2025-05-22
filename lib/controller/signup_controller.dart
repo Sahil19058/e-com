@@ -17,8 +17,8 @@ class SignUpController extends GetxController {
 
   bool get isButtonEnabled =>
       newPassword.value.isNotEmpty &&
-          confirmPassword.value.isNotEmpty &&
-          newPassword.value == confirmPassword.value;
+      confirmPassword.value.isNotEmpty &&
+      newPassword.value == confirmPassword.value;
 
   String? validateName(String? value) {
     if (value == null || value.isEmpty) return 'Name is required';
@@ -46,9 +46,9 @@ class SignUpController extends GetxController {
 
   bool submitForm(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Form is valid')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Form is valid')));
       return true;
     }
     return false;

@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
-
 import '../model/discover_product_model.dart';
-
 
 class FilterDiscoverController extends GetxController {
   var isDrawerOpen = false.obs;
@@ -23,5 +21,4 @@ class FilterDiscoverController extends GetxController {
     DiscoverProductModel("T-Shirts", 12),
     DiscoverProductModel("Pants", 9),
   ];
-
 }

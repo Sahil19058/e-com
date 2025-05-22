@@ -23,8 +23,7 @@ class ReviewController extends GetxController {
   void onInit() {
     super.onInit();
     textController.addListener(() {
-      remainingChars.value =
-          maxLength - textController.text.length;
+      remainingChars.value = maxLength - textController.text.length;
     });
   }
 
@@ -52,7 +51,11 @@ class ReviewController extends GetxController {
                   shape: BoxShape.circle,
                   color: Colors.green.withOpacity(0.1),
                 ),
-                child: const Icon(Icons.check_circle, color: AppColor.ratingStarColor, size: 54),
+                child: const Icon(
+                  Icons.check_circle,
+                  color: AppColor.ratingStarColor,
+                  size: 54,
+                ),
               ),
               const SizedBox(height: 20),
               const Text(
@@ -79,9 +82,9 @@ class ReviewController extends GetxController {
                 ),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-                  child: Text("Done", style: AppTextStyles.tabBarText,),
+                  child: Text("Done", style: AppTextStyles.tabBarText),
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -1,10 +1,8 @@
 import 'package:get/get.dart';
-
 import '../model/similar_product_model.dart';
 import '../utils/appimage.dart';
 
 class ProductDetailController extends GetxController {
-
   var selectedColorIndex = 0.obs;
   var selectedSizeIndex = 0.obs;
 
@@ -24,15 +22,13 @@ class ProductDetailController extends GetxController {
     similarProduct.value = !similarProduct.value;
   }
 
-
   List<SimilarProduct> similarProducts = [
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 39),
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 49),
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 32),
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 99),
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 79),
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 74),
-  SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 69),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 39),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 49),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 32),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 99),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 79),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 74),
+    SimilarProduct(AppImage.similarProductImage, "Rise Crop Hoodie", 69),
   ];
-
 }

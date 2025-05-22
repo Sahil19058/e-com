@@ -6,5 +6,6 @@ class TabControllerX extends GetxController {
   void changeTab(int index) {
     selectedIndex.value = index;
   }
+
   final List<String> tabs = ["All items", "Boards"];
 }

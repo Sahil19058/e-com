@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../utils/appimage.dart';
 
 class PaymentMethodeController extends GetxController{
