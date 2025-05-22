@@ -10,7 +10,6 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
   const WomenCateGoryScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     // final screenHeight = MediaQuery.of(context).size.height;
@@ -19,7 +18,7 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          // Header Banner
+          /// Header Banner
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
@@ -51,7 +50,7 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
           const SizedBox(height: 20),
 
-          // Featured Products
+          /// Featured Products
           sectionHeader("Feature Products", onTap: () {}),
 
           SizedBox(
@@ -68,7 +67,7 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
           const SizedBox(height: 20),
 
-          // Middle Promotional Banner
+          /// Middle Promotional Banner
           promoBanner(
             AppImage.decorationImage,
             "| NEW COLLECTION",
@@ -78,7 +77,7 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
           const SizedBox(height: 20),
 
-          // Recommended
+          /// Recommended
           sectionHeader("Recommended", onTap: () {}),
           SizedBox(
             height: 80,
@@ -94,7 +93,7 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
           const SizedBox(height: 20),
 
-          // Top Collection
+          /// Top Collection
           sectionHeader("Top Collection", onTap: () {}),
           promoBanner(
             AppImage.modelImage,
@@ -105,7 +104,7 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
 
           const SizedBox(height: 20),
 
-          // Full-Width Promo
+          /// Full-Width Promo
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
@@ -155,21 +154,12 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
               ),
             ),
           ),
-
-          // const SizedBox(height: 20),
-
-          // NavigationBar(
-          //   selectedIndex: 0,
-          //   destinations: [
-          //     const NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          //     const NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
-          //   ],
-          // )
         ],
       ),
     );
   }
 
+  /// Common widget for card
   Widget sectionHeader(String title, {required VoidCallback onTap}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),

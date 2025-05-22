@@ -6,13 +6,13 @@ import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends GetView<SettingsController> {
   const SettingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    final SettingsController controller = Get.put(SettingsController());
+    // final SettingsController controller = Get.put(SettingsController());
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,

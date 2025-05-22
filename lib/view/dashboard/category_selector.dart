@@ -5,10 +5,10 @@ import '../../controller/catagoty_controller.dart';
 import '../../utils/appcolor.dart';
 import 'catagory_pages/womencategory_screen.dart';
 
-class CategorySelector extends StatelessWidget {
-  CategorySelector({super.key});
+class CategorySelector extends GetView<CategoryController> {
+   const CategorySelector({super.key});
 
-  final CategoryController controller = Get.put(CategoryController());
+  // final CategoryController controller = Get.put(CategoryController());
 
   @override
   Widget build(BuildContext context) {

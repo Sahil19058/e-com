@@ -8,12 +8,12 @@ import '../../utils/appimage.dart';
 import '../../utils/apptextstyle.dart';
 import 'bottomnavbar.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<BottomNavController> {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final BottomNavController controller = Get.put(BottomNavController());
+    // final BottomNavController controller = Get.put(BottomNavController());
 
     // final DrawerControllerX drawerController = Get.put(DrawerControllerX());
 
@@ -161,7 +161,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       body: Obx(() => controller.pages[controller.selectedIndex.value]),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

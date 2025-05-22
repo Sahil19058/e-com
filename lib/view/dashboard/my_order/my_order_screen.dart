@@ -7,9 +7,9 @@ import '../../../utils/apptextstyle.dart';
 import 'cancelled_order_screen.dart';
 import 'delevered_order_screen.dart';
 
-class MyOrdersScreen extends StatelessWidget {
-  MyOrdersScreen({super.key});
-  final OrderTabController controller = Get.put(OrderTabController());
+class MyOrdersScreen extends GetView<OrderTabController> {
+  const MyOrdersScreen({super.key});
+  // final OrderTabController controller = Get.put(OrderTabController());
 
 
   @override

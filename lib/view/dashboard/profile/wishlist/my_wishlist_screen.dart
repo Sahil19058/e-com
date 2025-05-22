@@ -7,17 +7,17 @@ import '../../../../widgets/common_appbar.dart';
 import 'all_items_screen.dart';
 import 'board_screen.dart';
 
-class MyWishlistScreen extends StatelessWidget {
+class MyWishlistScreen extends GetView<TabControllerX> {
   const MyWishlistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    final TabControllerX controller = Get.put(TabControllerX());
+    // final TabControllerX controller = Get.put(TabControllerX());
+
     final size = MediaQuery.of(context).size;
     final screenWidth = size.width;
     final screenHeight = size.height;
-
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,

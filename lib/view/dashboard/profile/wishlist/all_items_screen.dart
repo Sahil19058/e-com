@@ -9,12 +9,12 @@ import '../../../../utils/appimage.dart';
 import '../../../../utils/apptextstyle.dart';
 import '../../dresses_screen.dart';
 
-class AllItemsScreen extends StatelessWidget {
+class AllItemsScreen extends GetView<DressesController> {
   const AllItemsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final DressesController controller = Get.put(DressesController());
+    // final DressesController controller = Get.put(DressesController());
 
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount = (screenWidth / 180).floor().clamp(2, 4);

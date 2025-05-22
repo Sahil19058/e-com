@@ -11,12 +11,12 @@ import '../../../utils/appimage.dart';
 import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
-class ProductRatingScreen extends StatelessWidget {
+class ProductRatingScreen extends GetView<ReviewController> {
   const ProductRatingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ReviewController reviewController = Get.put(ReviewController());
+    // final ReviewController reviewController = Get.put(ReviewController());
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
@@ -65,7 +65,7 @@ class ProductRatingScreen extends StatelessWidget {
               () => RatingBar(
                 glow: false,
                 tapOnlyMode: true,
-                initialRating: reviewController.selectedRating.value,
+                initialRating: controller.selectedRating.value,
                 direction: Axis.horizontal,
                 minRating: 1,
                 itemCount: 5,
@@ -82,7 +82,7 @@ class ProductRatingScreen extends StatelessWidget {
                   ),
                 ),
                 onRatingUpdate: (rating) {
-                  reviewController.updateRating(rating);
+                  controller.updateRating(rating);
                 },
               ),
             ),
@@ -100,9 +100,9 @@ class ProductRatingScreen extends StatelessWidget {
                     children: [
                       TextFormField(
                         cursorColor: AppColor.fontBlack,
-                        controller: reviewController.textController,
+                        controller: controller.textController,
                         maxLines: 8,
-                        maxLength: reviewController.maxLength,
+                        maxLength: controller.maxLength,
                         decoration: const InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide.none,
@@ -121,8 +121,8 @@ class ProductRatingScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 20),
                         child: Obx(() {
                           final remaining =
-                              reviewController.remainingChars.value;
-                          return remaining == reviewController.maxLength
+                              controller.remainingChars.value;
+                          return remaining == controller.maxLength
                               ? const Text("50 Characters") // Hide when empty
                               : Padding(
                                 padding: const EdgeInsets.only(bottom: 8.0),
@@ -144,10 +144,10 @@ class ProductRatingScreen extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () async {
-                      final XFile? image = await reviewController.picker
+                      final XFile? image = await controller.picker
                           .pickImage(source: ImageSource.gallery);
                       if (image != null) {
-                        reviewController.selectedImage.value = File(image.path);
+                        controller.selectedImage.value = File(image.path);
                       }
                     },
                     child: Container(
@@ -161,14 +161,14 @@ class ProductRatingScreen extends StatelessWidget {
                       child: Obx(
                         () => Center(
                           child:
-                              reviewController.selectedImage.value == null
+                              controller.selectedImage.value == null
                                   ? const Image(
                                     image: Svg(AppImage.reviewGalleryIcon),
                                   )
                                   : ClipRRect(
                                     borderRadius: BorderRadius.circular(12),
                                     child: Image.file(
-                                      reviewController.selectedImage.value!,
+                                      controller.selectedImage.value!,
                                       fit: BoxFit.cover,
                                       width: 64,
                                       height: 64,
@@ -183,10 +183,10 @@ class ProductRatingScreen extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () async {
-                      final XFile? image = await reviewController.picker
+                      final XFile? image = await controller.picker
                           .pickImage(source: ImageSource.camera);
                       if (image != null) {
-                        reviewController.selectedImage.value = File(image.path);
+                        controller.selectedImage.value = File(image.path);
                       }
                     },
                     child: Container(
@@ -200,14 +200,14 @@ class ProductRatingScreen extends StatelessWidget {
                       child: Obx(
                         () => Center(
                           child:
-                              reviewController.selectedImage.value == null
+                              controller.selectedImage.value == null
                                   ? const Image(
                                     image: Svg(AppImage.reviewCameraIcon),
                                   )
                                   : ClipRRect(
                                     borderRadius: BorderRadius.circular(12),
                                     child: Image.file(
-                                      reviewController.selectedImage.value!,
+                                      controller.selectedImage.value!,
                                       fit: BoxFit.cover,
                                       width: 64,
                                       height: 64,
@@ -228,7 +228,7 @@ class ProductRatingScreen extends StatelessWidget {
               child: GestureDetector(
 
                 onTap: () {
-                  reviewController.showThankYouDialog();
+                  controller.showThankYouDialog();
                 },
 
                 child: Container(

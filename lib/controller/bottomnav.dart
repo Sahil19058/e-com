@@ -31,10 +31,10 @@ class BottomNavController extends GetxController {
   ];
 
   final List<Widget> pages = [
-    CategorySelector(),
+     const CategorySelector(),
     const DiscoverScreen(),
-    MyOrdersScreen(),
-    ProfilePage(),
+    const MyOrdersScreen(),
+    const ProfilePage(),
   ];
 
   // final List<String> svgIcons = [

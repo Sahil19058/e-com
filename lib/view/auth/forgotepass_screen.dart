@@ -6,15 +6,12 @@ import '../../utils/appcolor.dart';
 import '../../widgets/common_button.dart';
 import '../../widgets/common_textfield.dart';
 
-class ForgatepassScreen extends StatefulWidget {
-  const ForgatepassScreen({super.key});
+class ForgotPassScreen extends GetView<SignUpController> {
+   const ForgotPassScreen({super.key});
 
   @override
-  State<ForgatepassScreen> createState() => ForgatepassScreenState();
-}
 
-class ForgatepassScreenState extends State<ForgatepassScreen> {
-  final SignUpController controller = SignUpController();
+  // final SignUpController controller = SignUpController();
 
   @override
   Widget build(BuildContext context) {

@@ -7,14 +7,14 @@ import 'package:intl/intl.dart';
 import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
 
-class CancelledOrderScreen extends StatelessWidget {
+class CancelledOrderScreen extends GetView<CancelledOrderController> {
   const CancelledOrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final CancelledOrderController controller = Get.put(
-      CancelledOrderController(),
-    );
+    // final CancelledOrderController controller = Get.put(
+    //   CancelledOrderController(),
+    // );
 
     return Expanded(
       child: ListView.builder(

@@ -10,13 +10,13 @@ import '../../utils/appimage.dart';
 import '../../utils/apptextstyle.dart';
 import '../../widgets/common_appbar.dart';
 
-class DressesScreen extends StatelessWidget {
+class DressesScreen extends GetView<DressesController> {
   const DressesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    final DressesController controller =  Get.put(DressesController());
+    // final DressesController controller =  Get.put(DressesController());
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,

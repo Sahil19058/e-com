@@ -6,13 +6,13 @@ import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
-class AddressScreen extends StatelessWidget {
+class AddressScreen extends GetView<AddressController> {
   const AddressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    final controller = Get.put(AddressController());
+    // final controller = Get.put(AddressController());
 
     return Scaffold(
       appBar: commonAppBar(title: "Delivery Address", center: true),

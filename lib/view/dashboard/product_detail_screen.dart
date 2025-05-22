@@ -8,15 +8,15 @@ import '../../utils/appcolor.dart';
 import '../../utils/appimage.dart';
 import '../../utils/apptextstyle.dart';
 
-class ProductDetailScreen extends StatelessWidget {
+class ProductDetailScreen extends GetView<ProductDetailController> {
   const ProductDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    final ProductDetailController controller = Get.put(
-      ProductDetailController(),
-    );
+    // final ProductDetailController controller = Get.put(
+    //   ProductDetailController(),
+    // );
 
     final AllProductModel product = Get.arguments as AllProductModel;
 

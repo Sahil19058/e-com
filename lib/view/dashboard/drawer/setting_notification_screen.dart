@@ -5,12 +5,12 @@ import '../../../controller/setting_notification_screen.dart';
 import '../../../utils/appcolor.dart';
 import '../../../widgets/common_appbar.dart';
 
-class SettingNotificationScreen extends StatelessWidget {
+class SettingNotificationScreen extends GetView<SettingsNotificationController> {
   const SettingNotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final SettingsNotificationController controller = Get.put(SettingsNotificationController());
+    // final SettingsNotificationController controller = Get.put(SettingsNotificationController());
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
       appBar: commonAppBar(title: 'Notification', center: true),

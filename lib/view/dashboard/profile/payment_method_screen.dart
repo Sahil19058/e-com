@@ -6,12 +6,12 @@ import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
-class PaymentMethodScreen extends StatelessWidget {
-  PaymentMethodScreen({super.key});
+class PaymentMethodScreen extends GetView<PaymentMethodeController> {
+  const PaymentMethodScreen({super.key});
 
-  final PaymentMethodeController controller = Get.put(
-    PaymentMethodeController(),
-  );
+  // final PaymentMethodeController controller = Get.put(
+  //   PaymentMethodeController(),
+  // );
 
   @override
   Widget build(BuildContext context) {

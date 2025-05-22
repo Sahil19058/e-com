@@ -8,16 +8,10 @@ import '../../widgets/common_button.dart';
 import '../../widgets/common_textfield.dart';
 import '../../widgets/loginwith_icon.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends GetView<SignUpController> {
   const LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-
-  final SignUpController controller = SignUpController();
+  // final SignUpController controller = Get.put(SignUpController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
             key: controller.formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: <Widget>[
                 const SizedBox(height: 60),
 
                 const Text(
@@ -105,7 +99,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 26),
 
-                /// Login with icon ex:- google, facebook, apple
                 const LoginWithIcon(id: 2),
 
                 const SizedBox(height: 80),

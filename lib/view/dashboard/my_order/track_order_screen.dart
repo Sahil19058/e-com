@@ -9,16 +9,16 @@ import '../../../utils/appimage.dart';
 import '../../../utils/apptextstyle.dart';
 import '../../../widgets/common_appbar.dart';
 
-class TrackOrderScreen extends StatelessWidget {
+class TrackOrderScreen extends GetView<TrackingOrderController> {
   final String? trackingNumber = Get.arguments as String?;
   TrackOrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final TrackingOrderController controller = Get.put(
-      TrackingOrderController(),
-    );
-    final ReviewController reviewController = Get.put(ReviewController());
+    // final TrackingOrderController controller = Get.put(
+    //   TrackingOrderController(),
+    // );
+    final ReviewController reviewController = Get.find<ReviewController>();
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,

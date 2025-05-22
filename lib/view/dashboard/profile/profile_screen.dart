@@ -7,10 +7,10 @@ import '../../../utils/appcolor.dart';
 import '../../../utils/appimage.dart';
 import '../../../utils/apptextstyle.dart';
 
-class ProfilePage extends StatelessWidget {
-  ProfilePage({super.key});
+class ProfilePage extends GetView<UserController> {
+  const ProfilePage({super.key});
 
-  final UserController controller = Get.put(UserController());
+  // final UserController controller = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {

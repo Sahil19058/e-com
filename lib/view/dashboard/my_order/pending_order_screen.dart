@@ -7,12 +7,12 @@ import 'package:intl/intl.dart';
 import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
 
-class PendingOrderScreen extends StatelessWidget {
+class PendingOrderScreen extends GetView<PendingOrderController> {
   const PendingOrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final PendingOrderController controller = Get.put(PendingOrderController());
+    // final PendingOrderController controller = Get.put(PendingOrderController());
 
     return Expanded(
       child: ListView.builder(

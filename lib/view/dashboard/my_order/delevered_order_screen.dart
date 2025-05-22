@@ -8,14 +8,14 @@ import 'package:intl/intl.dart';
 import '../../../utils/appcolor.dart';
 import '../../../utils/apptextstyle.dart';
 
-class DeliveredOrderScreen extends StatelessWidget {
+class DeliveredOrderScreen extends GetView<DeliveredOrderController> {
   const DeliveredOrderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final DeliveredOrderController controller = Get.put(
-      DeliveredOrderController(),
-    );
+    // final DeliveredOrderController controller = Get.put(
+    //   DeliveredOrderController(),
+    // );
 
     return Expanded(
       child: ListView.builder(

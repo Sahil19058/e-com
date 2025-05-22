@@ -8,26 +8,12 @@ import '../../utils/apptextstyle.dart';
 import '../../widgets/common_button.dart';
 import '../../constant/routes_name.dart';
 
-class NewPassScreen extends StatefulWidget {
-  const NewPassScreen({super.key});
+class NewPassScreen extends GetView<SignUpController> {
+   const NewPassScreen({super.key});
 
-  @override
-  State<NewPassScreen> createState() => _NewPassScreenState();
-}
 
-class _NewPassScreenState extends State<NewPassScreen> {
+  // final SignUpController controller = SignUpController();
 
-  final SignUpController controller = SignUpController();
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
-  void updateState() {
-    setState(() {}); // triggers rebuild
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +40,10 @@ class _NewPassScreenState extends State<NewPassScreen> {
                 const SizedBox(height: 32),
 
                 // New Password Field
-                TextFormField(
+                 TextFormField(
                   obscureText: controller.obscureNewPassword,
                   onChanged: (value) {
                     controller.newPassword = value;
-                    updateState();
                   },
                   decoration: InputDecoration(
                     hintText: 'New password',
@@ -71,11 +56,9 @@ class _NewPassScreenState extends State<NewPassScreen> {
                             : Icons.visibility,
                       ),
                       onPressed: () {
-                        setState(() {
-                          controller.obscureNewPassword =
-                          !controller.obscureNewPassword;
-                        });
-                        },
+                        controller.obscureNewPassword =
+                        !controller.obscureNewPassword;
+                      },
                     )
                         : null,
                   ),
@@ -88,7 +71,6 @@ class _NewPassScreenState extends State<NewPassScreen> {
                   obscureText: controller.obscureConfirmPassword,
                   onChanged: (value) {
                     controller.confirmPassword = value;
-                    updateState();
                   },
                   decoration: InputDecoration(
                     hintText: 'Confirm password',
@@ -101,15 +83,14 @@ class _NewPassScreenState extends State<NewPassScreen> {
                             : Icons.visibility,
                       ),
                       onPressed: () {
-                        setState(() {
-                          controller.obscureConfirmPassword =
-                          !controller.obscureConfirmPassword;
-                        });
-                        },
+                        controller.obscureConfirmPassword =
+                        !controller.obscureConfirmPassword;
+                      },
                     )
                         : null,
                   ),
                 ),
+
 
                 const SizedBox(height: 180),
 

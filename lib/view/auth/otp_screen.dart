@@ -2,24 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import '../../constant/routes_name.dart';
+import '../../controller/otp_controller.dart';
 import '../../utils/appcolor.dart';
 import '../../widgets/common_button.dart';
 
-class VerificationCodeScreen extends StatefulWidget {
+class VerificationCodeScreen extends GetView<OtpController> {
   const VerificationCodeScreen({super.key});
 
   @override
-  State<VerificationCodeScreen> createState() => _VerificationCodeScreenState();
-}
-
-class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
-
-  TextEditingController otpController = TextEditingController();
-  // int remainingSeconds = 10;
-  // late Timer timer;
-
-  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -29,7 +21,7 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GestureDetector(
-            onTap: () => Get.back(), // or Navigator.pop(context)
+            onTap: () => Get.back(),
             child: Card(
               color: AppColor.fontWhite,
               shape: RoundedRectangleBorder(
@@ -65,9 +57,8 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
               PinCodeTextField(
                 appContext: context,
                 length: 4,
-                controller: otpController,
+                controller: controller.otpController,
                 keyboardType: TextInputType.number,
-                obscureText: false,
                 animationType: AnimationType.fade,
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.circle,
@@ -83,13 +74,9 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
               const SizedBox(height: 12),
               const Text(
                 "Resend in 00",
-
-                ///${remainingSeconds.toString().padLeft(2, '0')}
                 style: TextStyle(color: AppColor.liteTextColor),
               ),
-
               const SizedBox(height: 250),
-
               Center(
                 child: CommonOutlineButton(
                   text: "VERIFY CODE",

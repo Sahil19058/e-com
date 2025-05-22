@@ -4,11 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../controller/bottomnav.dart';
 import '../../utils/appcolor.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends GetView<BottomNavController> {
 
-  final BottomNavController controller = Get.put(BottomNavController());
+  // final BottomNavController controller = Get.put(BottomNavController());
 
-  BottomNavBar({super.key});
+  const BottomNavBar({super.key});
 
   @override
   Widget build(BuildContext context) {

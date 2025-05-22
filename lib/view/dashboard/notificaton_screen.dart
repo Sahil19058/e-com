@@ -4,13 +4,13 @@ import '../../controller/notification_controller.dart';
 import '../../utils/appcolor.dart';
 import '../../utils/apptextstyle.dart';
 
-class NotificationScreen extends StatelessWidget {
+class NotificationScreen extends GetView<NotificationController> {
   const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     
-    final NotificationController controller = Get.put(NotificationController());
+    // final NotificationController controller = Get.put(NotificationController());
     
     return Scaffold(
       backgroundColor: AppColor.fontWhite,

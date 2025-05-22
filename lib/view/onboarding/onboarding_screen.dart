@@ -5,10 +5,10 @@ import '../../controller/onboarding_controller.dart';
 import '../../utils/appcolor.dart';
 import '../../utils/apptextstyle.dart';
 
-class OnboardingScreen extends StatelessWidget {
-  OnboardingScreen({super.key});
+class OnboardingScreen extends GetView<OnboardingController> {
+  const OnboardingScreen({super.key});
 
-  final OnboardingController controller = Get.put(OnboardingController());
+  // final OnboardingController controller = Get.put(OnboardingController());
 
 
   @override
