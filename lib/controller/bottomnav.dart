@@ -31,7 +31,7 @@ class BottomNavController extends GetxController {
   ];
 
   final List<Widget> pages = [
-     const CategorySelector(),
+    const CategorySelector(),
     const DiscoverScreen(),
     const MyOrdersScreen(),
     const ProfilePage(),
@@ -57,16 +57,13 @@ class BottomNavController extends GetxController {
     }
   }
 
-  void otherItemCheckIndex(int index){
-    if(index == 0){
+  void otherItemCheckIndex(int index) {
+    if (index == 0) {
       Get.toNamed(RouteName.settingScreen);
-    }else if(index == 1){
+    } else if (index == 1) {
       Get.snackbar("Coming soon", "This Screen is not available");
-    }else if(index == 2){
+    } else if (index == 2) {
       Get.snackbar("Coming soon", "This Screen is not available");
     }
-
-
   }
-
 }

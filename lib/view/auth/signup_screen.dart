@@ -76,8 +76,8 @@ class SignUpScreen extends GetView<SignUpController> {
                   child: CommonOutlineButton(
                     text: "SIGN UP",
                     backgroundColor: AppColor.primaryButtonColor,
-                    width: 147,
-                    height: 51,
+                    // width: 147,
+                    // height: 51,
                     textColor: AppColor.fontWhite,
                     onTap: () {
                       if (controller.submitForm(context)) {

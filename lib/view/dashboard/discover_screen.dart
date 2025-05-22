@@ -273,8 +273,7 @@ class DiscoverScreen extends StatelessWidget {
                                 "Coming Soon",
                                 "this screen are not available ",
                               );
-                            }
-                            },
+                            }},
                           child: Column(
                             children: [
                               ListTile(
@@ -295,7 +294,7 @@ class DiscoverScreen extends StatelessWidget {
                             ],
                           ),
                         );
-                        },
+                      },
                     ),
                   ),
                 ),
@@ -491,8 +490,7 @@ class DiscoverScreen extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          ),
+          ),),
         ),
       ),
     );

@@ -81,8 +81,8 @@ class VerificationCodeScreen extends GetView<OtpController> {
                 child: CommonOutlineButton(
                   text: "VERIFY CODE",
                   backgroundColor: AppColor.primaryButtonColor,
-                  width: 147,
-                  height: 51,
+                  // width: 147,
+                  // height: 51,
                   textColor: AppColor.fontWhite,
                   onTap: () {
                     Get.toNamed(RouteName.newPassScreen);

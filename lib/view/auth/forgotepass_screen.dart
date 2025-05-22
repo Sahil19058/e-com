@@ -73,8 +73,8 @@ class ForgotPassScreen extends GetView<SignUpController> {
                   child: CommonOutlineButton(
                     text: "SEND CODE",
                     backgroundColor: AppColor.primaryButtonColor,
-                    width: 147,
-                    height: 51,
+                    // width: 147,
+                    // height: 51,
                     textColor: AppColor.fontWhite,
                     onTap: () {
                       if (!controller.formKey.currentState!.validate()) {
