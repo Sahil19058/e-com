@@ -14,9 +14,9 @@ class ForgotPassScreen extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.fontWhite,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.fontWhite,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),

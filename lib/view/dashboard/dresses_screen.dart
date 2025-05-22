@@ -97,11 +97,11 @@ class DressesScreen extends GetView<DressesController> {
                                         if (controller.allProducts[index].isFavorite.value) {
                                           if (!wishListProduct.contains(controller.allProducts[index])) {
                                             wishListProduct.add(controller.allProducts[index]);
-                                            print(wishListProduct.length);
+                                            // print(wishListProduct.length);
                                           }
                                         } else {
                                           wishListProduct.remove(controller.allProducts[index]);
-                                          print(wishListProduct.length);
+                                          // print(wishListProduct.length);
                                         }
                                       },
                                       child: Image(

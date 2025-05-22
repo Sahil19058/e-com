@@ -11,7 +11,7 @@ class UserController extends GetxController {
   void logout() {
     // Placeholder for logout logic
     Get.snackbar('Logout', 'You have been logged out');
-    // You can add navigation to login here
+
   }
 
   final List<ProfileModel> menuItems = [

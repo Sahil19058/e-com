@@ -1,5 +1,3 @@
-
-
 class CategoryItem {
   final String icon;
   final String label;

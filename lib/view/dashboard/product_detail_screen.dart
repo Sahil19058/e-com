@@ -239,8 +239,8 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                                 style: TextStyle(
                                                   color:
                                                      isSelected
-                                                         ? Colors.white
-                                                         : Colors.black,
+                                                         ? AppColor.fontWhite
+                                                         : AppColor.fontBlack,
                                                 ),
                                               ),
                                             ),

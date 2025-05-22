@@ -29,36 +29,38 @@ class HomeScreen extends GetView<BottomNavController> {
           final index = controller.selectedIndex.value;
           return index == 0 || index == 1 || index == 2
               ? AppBar(
-            scrolledUnderElevation: 0.0,
-            leading: IconButton(
-              onPressed: () {
-                scaffoldKey.currentState?.openDrawer();
-                },
-              icon: const Image(image: Svg(AppImage.drawerIcon)),
-            ),
-            backgroundColor: AppColor.fontWhite,
-            title: Obx(() => Text(
-              controller.selectedIndex.value == 0
-                  ? "Gemstore"
-                  : controller.selectedIndex.value == 1
-                  ? "Discover"
-                  : controller.selectedIndex.value == 2
-                  ? "My Orders"
-                  : "Profile ",
-              style: AppTextStyles.onBoardingTitle,
-            ),
-            ),
-            centerTitle: true,
-            actions: [
-              GestureDetector(
-                onTap: () => Get.toNamed(RouteName.notificationScreen),
-                child: const Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: Image(image: Svg(AppImage.notificationIcon)),
+                scrolledUnderElevation: 0.0,
+                leading: IconButton(
+                  onPressed: () {
+                    scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: const Image(image: Svg(AppImage.drawerIcon)),
                 ),
-              ),
-            ],
-          ) : Container();
+                backgroundColor: AppColor.fontWhite,
+                title: Obx(
+                  () => Text(
+                    controller.selectedIndex.value == 0
+                        ? "Gemstore"
+                        : controller.selectedIndex.value == 1
+                        ? "Discover"
+                        : controller.selectedIndex.value == 2
+                        ? "My Orders"
+                        : "Profile ",
+                    style: AppTextStyles.onBoardingTitle,
+                  ),
+                ),
+                centerTitle: true,
+                actions: [
+                  GestureDetector(
+                    onTap: () => Get.toNamed(RouteName.notificationScreen),
+                    child: const Padding(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Image(image: Svg(AppImage.notificationIcon)),
+                    ),
+                  ),
+                ],
+              )
+              : Container();
         }),
       ),
 
@@ -95,18 +97,20 @@ class HomeScreen extends GetView<BottomNavController> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SizedBox(
                   height: 250,
-                    child: ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: BottomNavController.menuItems.length,
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          borderRadius: BorderRadius.circular(20),
-                          onTap: (){
-                            controller.checkIndex(index);
-                          },
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: BottomNavController.menuItems.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        borderRadius: BorderRadius.circular(20),
+                        onTap: () {
+                          controller.checkIndex(index);
+                        },
                         child: ListTile(
                           leading: Image(
-                            image: Svg(BottomNavController.menuItems[index].icon??""),
+                            image: Svg(
+                              BottomNavController.menuItems[index].icon ?? "",
+                            ),
                             color: AppColor.secondaryTextColor,
                           ),
                           title: Text(
@@ -119,14 +123,14 @@ class HomeScreen extends GetView<BottomNavController> {
                   ),
                 ),
               ),
-          
+
               const SizedBox(height: 40),
-          
+
               const Padding(
                 padding: EdgeInsets.only(left: 50),
                 child: Text("OTHER", style: AppTextStyles.drawerOtherText),
               ),
-          
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: SizedBox(

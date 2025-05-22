@@ -13,10 +13,10 @@ class VerificationCodeScreen extends GetView<OtpController> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColor.fontWhite,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.fontWhite,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -64,8 +64,8 @@ class VerificationCodeScreen extends GetView<OtpController> {
                   shape: PinCodeFieldShape.circle,
                   fieldHeight: 60,
                   fieldWidth: 60,
-                  activeColor: Colors.black,
-                  selectedColor: Colors.black,
+                  activeColor: AppColor.fontBlack,
+                  selectedColor: AppColor.fontBlack,
                   inactiveColor: Colors.grey.shade300,
                 ),
                 animationDuration: const Duration(milliseconds: 300),

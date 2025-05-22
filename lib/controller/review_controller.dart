@@ -49,7 +49,7 @@ class ReviewController extends GetxController {
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.green.withOpacity(0.1),
+                  color: Colors.green.withValues(alpha: 0.1),
                 ),
                 child: const Icon(
                   Icons.check_circle,
