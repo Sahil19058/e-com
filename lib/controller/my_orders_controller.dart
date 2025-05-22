@@ -8,5 +8,4 @@ class OrderTabController extends GetxController {
   }
 
   final List<String> tabs = ["Pending", "Delivered", "Cancelled"];
-
 }

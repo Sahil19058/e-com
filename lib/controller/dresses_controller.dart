@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../model/all_product_model.dart';
 import '../utils/appcolor.dart';
 import '../utils/appimage.dart';

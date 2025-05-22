@@ -157,6 +157,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
                             children: [
+
                               /// This is the color part of the product
                               SizedBox(
                                 height: 34,

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import '../model/pending_order_model.dart';
 
 class CancelledOrderController extends GetxController{

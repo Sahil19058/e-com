@@ -72,7 +72,7 @@ class ReviewController extends GetxController {
                   Get.back(); // Close dialog
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: AppColor.fontBlack,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-
 import '../constant/routes_name.dart';
 import '../model/app_constant.dart';
 import '../utils/appimage.dart';
