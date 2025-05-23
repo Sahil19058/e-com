@@ -10,7 +10,7 @@ class VoucherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: commonAppBar(title: "Voucher",center: true),
+      appBar: commonAppBar(title: "Voucher", center: true),
 
       body: const Column(
         children: [
