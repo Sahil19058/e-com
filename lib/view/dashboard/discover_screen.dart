@@ -73,9 +73,9 @@ class DiscoverScreen extends StatelessWidget {
                         inactiveColor: AppColor.divedertColor,
                         endThumbIcon: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppColor.fontWhite,
                             shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(color: AppColor.fontBlack),
                           ),
                         ),
                         onChanged: (SfRangeValues newRange) {
@@ -83,9 +83,9 @@ class DiscoverScreen extends StatelessWidget {
                           },
                         startThumbIcon: Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: AppColor.fontWhite,
                             shape: BoxShape.circle,
-                            border: Border.all(color: Colors.black),
+                            border: Border.all(color: AppColor.fontBlack),
                           ),
                         ),
                       ),
@@ -162,8 +162,7 @@ class DiscoverScreen extends StatelessWidget {
                     const SizedBox(width: 12),
                     // Filter button
                     GestureDetector(
-                      onTap:
-                          () => scaffoldKey.currentState?.openEndDrawer(),
+                      onTap: () => scaffoldKey.currentState?.openEndDrawer(),
                       child: Container(
                         height: 48,
                         width: 48,
@@ -211,9 +210,7 @@ class DiscoverScreen extends StatelessWidget {
                                   width: 105,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color:
-                                    AppColor
-                                        .discoverCard1Shadow1Color,
+                                    color: AppColor.discoverCard1Shadow1Color,
                                   ),
                                 ),
                               ),
@@ -225,9 +222,7 @@ class DiscoverScreen extends StatelessWidget {
                                   width: 70,
                                   decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color:
-                                    AppColor
-                                        .discoverCard1Shadow2Color,
+                                    color: AppColor.discoverCard1Shadow2Color,
                                   ),
                                 ),
                               ),
@@ -263,24 +258,13 @@ class DiscoverScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            final category = filterController
-                                .discoverProducts[index]
-                                .productCategory;
-                            if (category == "Dresses") {
-                              Get.toNamed(RouteName.dressesScreen);
-                            } else {
-                              Get.snackbar(
-                                "Coming Soon",
-                                "this screen are not available ",
-                              );
-                            }},
+                            filterController.functionForClick(index);
+                            },
                           child: Column(
                             children: [
                               ListTile(
                                 title: Text(
-                                  filterController
-                                      .discoverProducts[index]
-                                      .productCategory,
+                                  filterController.discoverProducts[index].productCategory,
                                   style: AppTextStyles.onBoardingSubTitle,
                                 ),
                                 trailing: Text(

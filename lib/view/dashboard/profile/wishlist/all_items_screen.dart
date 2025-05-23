@@ -7,7 +7,6 @@ import '../../../../controller/dresses_controller.dart';
 import '../../../../utils/appcolor.dart';
 import '../../../../utils/appimage.dart';
 import '../../../../utils/apptextstyle.dart';
-import '../../dresses_screen.dart';
 
 class AllItemsScreen extends GetView<DressesController> {
   const AllItemsScreen({super.key});
@@ -37,8 +36,7 @@ class AllItemsScreen extends GetView<DressesController> {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
-                Get.toNamed(RouteName.productDetailScreen,
-                    arguments: controller.allProducts[index]);
+                Get.toNamed(RouteName.productDetailScreen, arguments: controller.allProducts[index]);
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,19 +70,7 @@ class AllItemsScreen extends GetView<DressesController> {
                                   .allProducts[index].isFavorite.value;
                               return GestureDetector(
                                 onTap: () {
-                                  controller.allProducts[index].isFavorite
-                                      .toggle();
-                                  if (controller
-                                      .allProducts[index].isFavorite.value) {
-                                    if (!wishListProduct.contains(
-                                        controller.allProducts[index])) {
-                                      wishListProduct
-                                          .add(controller.allProducts[index]);
-                                    }
-                                  } else {
-                                    wishListProduct
-                                        .remove(controller.allProducts[index]);
-                                  }
+                                  controller.functionForAddToFav(index);
                                 },
                                 child: Image(
                                   image: const Svg(AppImage.favoriteIcon),
@@ -132,9 +118,7 @@ class AllItemsScreen extends GetView<DressesController> {
                     children: [
                       RatingBar(
                         ignoreGestures: true,
-                        initialRating: controller
-                            .allProducts[index].productRating
-                            .toDouble(),
+                        initialRating: controller.allProducts[index].productRating.toDouble(),
                         direction: Axis.horizontal,
                         itemCount: 5,
                         itemSize: screenWidth < 600 ? 15.0 : 18.0, // Responsive

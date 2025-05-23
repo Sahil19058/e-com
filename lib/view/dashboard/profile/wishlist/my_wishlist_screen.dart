@@ -32,7 +32,7 @@ class MyWishlistScreen extends GetView<TabControllerX> {
               width: screenWidth * 0.8,
               decoration: BoxDecoration(
                 // borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.black),
+                border: Border.all(color: AppColor.fontBlack),
               ),
               child: Obx(
                     () => Row(

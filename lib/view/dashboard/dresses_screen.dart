@@ -77,7 +77,7 @@ class DressesScreen extends GetView<DressesController> {
                         children: [
                           Stack(
                             children: [
-                              Image(image : AssetImage(controller.allProducts[index].productImage), ),
+                              Image(image : AssetImage(controller.allProducts[index].productImage)),
                               // Image(image: AssetImage(AppImage.product1Image)),
                               Positioned(
                                 right: 10,
@@ -93,16 +93,7 @@ class DressesScreen extends GetView<DressesController> {
                                     final isFav = controller.allProducts[index].isFavorite.value;
                                     return GestureDetector(
                                       onTap: () {
-                                        controller.allProducts[index].isFavorite.toggle();
-                                        if (controller.allProducts[index].isFavorite.value) {
-                                          if (!wishListProduct.contains(controller.allProducts[index])) {
-                                            wishListProduct.add(controller.allProducts[index]);
-                                            // print(wishListProduct.length);
-                                          }
-                                        } else {
-                                          wishListProduct.remove(controller.allProducts[index]);
-                                          // print(wishListProduct.length);
-                                        }
+                                        controller.functionForAddToFav(index);
                                       },
                                       child: Image(
                                         image: const Svg(AppImage.favoriteIcon),

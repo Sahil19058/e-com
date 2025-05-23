@@ -57,7 +57,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                     color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 0,
                     blurRadius: 6,
-                    offset: const Offset(0, -4,), // negative Y offset for top shadow
+                    offset: const Offset(0, -4), // negative Y offset for top shadow
                   ),
                 ],
                 color: AppColor.fontWhite,
@@ -148,7 +148,6 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                 "Size",
                                 style: AppTextStyles.drawerOtherText,
                               ),
-                              Spacer(),
                             ],
                           ),
                         ),
@@ -167,15 +166,11 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
                                     return Obx(() {
-                                      final isSelected =
-                                          controller.selectedColorIndex.value ==
-                                          index;
+                                      final isSelected = controller.selectedColorIndex.value == index;
                                       return Padding(
                                         padding: const EdgeInsets.only(left: 5),
                                         child: GestureDetector(
-                                          onTap:
-                                              () => controller
-                                                  .selectedColorIndex(index),
+                                          onTap: () => controller.selectedColorIndex(index),
                                           child: Container(
                                             height: 33,
                                             width: 33,
@@ -183,15 +178,11 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                               shape: BoxShape.circle,
                                               color:
                                                   product.productColor[index],
-                                              border:
-                                              isSelected
-                                                  ? Border.all(
+                                              border: isSelected ? Border.all(
                                                 color:
-                                                AppColor
-                                                    .notLikeColor,
+                                                AppColor.notLikeColor,
                                                 width: 4,
-                                              )
-                                                  : null,
+                                              ) : null,
                                             ),
                                           ),
                                         ),
@@ -214,15 +205,11 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                   physics: const NeverScrollableScrollPhysics(),
                                   itemBuilder: (context, index) {
                                     return Obx(() {
-                                      final isSelected =
-                                          controller.selectedSizeIndex.value ==
-                                          index;
+                                      final isSelected = controller.selectedSizeIndex.value == index;
                                       return Padding(
                                         padding: const EdgeInsets.only(left: 3),
                                         child: GestureDetector(
-                                          onTap:
-                                              () => controller
-                                                  .selectedSizeIndex(index),
+                                          onTap: () => controller.selectedSizeIndex(index),
                                           child: Container(
                                             height: 33,
                                             width: 33,
@@ -230,7 +217,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                               shape: BoxShape.circle,
                                               color:
                                               isSelected
-                                                  ? Colors.black87
+                                                  ? AppColor.fontBlack
                                                   : AppColor.circleColor,
                                             ),
                                             child: Center(
@@ -238,9 +225,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                                 product.productSize[index],
                                                 style: TextStyle(
                                                   color:
-                                                     isSelected
-                                                         ? AppColor.fontWhite
-                                                         : AppColor.fontBlack,
+                                                     isSelected ? AppColor.fontWhite : AppColor.fontBlack,
                                                 ),
                                               ),
                                             ),
@@ -303,8 +288,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                     vertical: 10,
                                   ),
                                   child: Text(
-                                    product
-                                        .productDescription, // or hardcoded text for now
+                                    product.productDescription, // or hardcoded text for now
                                     style: AppTextStyles.drawerOtherText,
                                   ),
                                 ),
@@ -338,8 +322,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                 const Spacer(),
                                 Obx(
                                   () => Image(
-                                    image:
-                                    controller.showReviews.value
+                                    image: controller.showReviews.value
                                         ? const Svg(AppImage.arrowDownIcon)
                                         : const Svg(
                                       AppImage.arrowForwardIcon,
@@ -365,12 +348,8 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                   Row(
                                     children: [
                                       Text(
-                                        product.productRating
-                                            .toDouble()
-                                            .toString(),
-                                        style:
-                                            AppTextStyles
-                                                .productDetailReviewText,
+                                        product.productRating.toDouble().toString(),
+                                        style: AppTextStyles.productDetailReviewText,
                                       ),
                                       const SizedBox(width: 5),
                                       const Text(
@@ -386,8 +365,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                             ignoreGestures:
                                                 true, // Makes it read-only
                                             initialRating:
-                                                product.productRating
-                                                    .toDouble(),
+                                                product.productRating.toDouble(),
                                             direction: Axis.horizontal,
                                             itemCount: 5,
                                             itemSize: 18.0,
@@ -406,10 +384,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                                 ),
                                               ), // outlined star
                                             ),
-                                            onRatingUpdate:
-                                                (
-                                                  rating,
-                                                ) {}, // Required, even if not used
+                                            onRatingUpdate: (rating,) {}, // Required, even if not used
                                           ),
 
                                           const SizedBox(width: 5),
@@ -418,6 +393,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                             "${product.ratingCount} ratings",
                                             style: AppTextStyles.womenCardText,
                                           ),
+
                                         ],
                                       ),
                                     ],
@@ -484,8 +460,7 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                   child: SizedBox(
                                     height: 227,
                                     child: ListView.builder(
-                                      itemCount:
-                                          controller.similarProducts.length,
+                                      itemCount: controller.similarProducts.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) {
                                         return Column(
@@ -513,17 +488,13 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                             ),
 
                                             Text(
-                                              controller
-                                                  .similarProducts[index]
-                                                  .productName,
-                                              style:
-                                                  AppTextStyles.productNameText,
+                                              controller.similarProducts[index].productName,
+                                              style: AppTextStyles.productNameText,
                                             ),
 
                                             Text(
                                               "\$ ${controller.similarProducts[index].productPrice.toDouble().toString()}",
-                                              style:
-                                                  AppTextStyles.drawerSubText,
+                                              style: AppTextStyles.drawerSubText,
                                             ),
                                           ],
                                         );
@@ -531,7 +502,6 @@ class ProductDetailScreen extends GetView<ProductDetailController> {
                                     ),
                                   ),
                                 ),
-
                                 const Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20),
                                   child: Divider(color: AppColor.divedertColor),
