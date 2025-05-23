@@ -13,6 +13,7 @@ class HomeScreen extends GetView<BottomNavController> {
 
   @override
   Widget build(BuildContext context) {
+
     // final BottomNavController controller = Get.put(BottomNavController());
 
     // final DrawerControllerX drawerController = Get.put(DrawerControllerX());
@@ -60,7 +61,7 @@ class HomeScreen extends GetView<BottomNavController> {
                   ),
                 ],
               )
-              : Container();
+              : const SizedBox();
         }),
       ),
 
@@ -137,7 +138,7 @@ class HomeScreen extends GetView<BottomNavController> {
                   height: 240,
                   child: ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: controller.otherItem.length,
+                    itemCount: controller.otherItems.length,
                     itemBuilder: (context, index) {
                       return InkWell(
                         borderRadius: BorderRadius.circular(20),
@@ -146,11 +147,12 @@ class HomeScreen extends GetView<BottomNavController> {
                         },
                         child: ListTile(
                           leading: Image(
-                            image: Svg(controller.otherItem[index]['icon']),
+                            image: Svg(
+                              controller.otherItems.elementAt(index).iconImage ?? "",
+                            ),
                             color: AppColor.secondaryTextColor,
                           ),
-                          title: Text(
-                            controller.otherItem[index]['title'],
+                          title: Text(controller.otherItems.elementAt(index).iconName ?? "",
                             style: AppTextStyles.drawerMenuText,
                           ),
                         ),
@@ -163,7 +165,6 @@ class HomeScreen extends GetView<BottomNavController> {
           ),
         ),
       ),
-
       body: Obx(() => controller.pages[controller.selectedIndex.value]),
       bottomNavigationBar: const BottomNavBar(),
     );

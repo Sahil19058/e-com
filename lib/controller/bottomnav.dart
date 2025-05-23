@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../constant/routes_name.dart';
 import '../model/app_constant.dart';
+import '../model/other_item_model.dart';
 import '../utils/appimage.dart';
 import '../view/dashboard/category_selector.dart';
 import '../view/dashboard/discover_screen.dart';
@@ -23,10 +24,10 @@ class BottomNavController extends GetxController {
     AppConstant(icon: AppImage.profileIcon, title: 'My profile'),
   ];
 
-  final List<Map<String, dynamic>> otherItem = [
-    {'icon': AppImage.settingIcon, 'title': 'Setting'},
-    {'icon': AppImage.emailIcon, 'title': 'Support'},
-    {'icon': AppImage.aboutIcon, 'title': 'About us'},
+  final List<OtherItem> otherItems = [
+    OtherItem(iconImage: AppImage.settingIcon, iconName: 'Setting'),
+    OtherItem(iconImage: AppImage.emailIcon, iconName: 'Support'),
+    OtherItem(iconImage: AppImage.aboutIcon, iconName: 'About us'),
   ];
 
   final List<Widget> pages = [
