@@ -45,7 +45,9 @@ class ShowBottomSheet {
                 const SizedBox(height: 20),
                 CommonOutlineButton(
                   text: "Browse home",
-                  onTap: () {},
+                  onTap: () {
+                    /// Add your logic here
+                  },
                   backgroundColor: AppColor.fontBlack,
                   textColor: AppColor.fontWhite,
                 ),

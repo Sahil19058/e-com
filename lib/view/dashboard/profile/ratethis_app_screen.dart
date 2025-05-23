@@ -1,10 +1,8 @@
-import 'dart:io';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 import '../../../controller/review_controller.dart';
 import '../../../utils/appcolor.dart';
 import '../../../utils/appimage.dart';
@@ -20,7 +18,7 @@ class RateThisAppScreen extends GetView<ReviewController> {
 
     return Scaffold(
       backgroundColor: AppColor.fontWhite,
-      appBar: commonAppBar(title: "Share Your Feedback",center: true),
+      appBar: commonAppBar(title: "Share Your Feedback", center: true),
 
       body: SingleChildScrollView(
         child: Column(
@@ -45,7 +43,10 @@ class RateThisAppScreen extends GetView<ReviewController> {
                 itemSize: 45.0,
                 ratingWidget: RatingWidget(
                   full: const Icon(Icons.star, color: AppColor.fontBlack),
-                  half: const Icon(Icons.star_half, color: AppColor.ratingStarColor),
+                  half: const Icon(
+                    Icons.star_half,
+                    color: AppColor.ratingStarColor,
+                  ),
                   empty: const Icon(
                     Icons.star,
                     color: AppColor.feedbackStarUnselectColor,
@@ -90,8 +91,7 @@ class RateThisAppScreen extends GetView<ReviewController> {
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
                         child: Obx(() {
-                          final remaining =
-                              controller.remainingChars.value;
+                          final remaining = controller.remainingChars.value;
                           return remaining == controller.maxLength
                               ? const Text("50 Characters") // Hide when empty
                               : Padding(
@@ -113,12 +113,8 @@ class RateThisAppScreen extends GetView<ReviewController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () async {
-                      final XFile? image = await controller.picker
-                          .pickImage(source: ImageSource.gallery);
-                      if (image != null) {
-                        controller.selectedImage.value = File(image.path);
-                      }
+                    onTap: () {
+                      controller.functionForImagePic();
                     },
                     child: Container(
                       height: 64,
@@ -128,32 +124,32 @@ class RateThisAppScreen extends GetView<ReviewController> {
                         shape: Shape.box,
                         color: AppColor.feedbackStarUnselectColor,
                       ),
-                      child: Obx(() => Center(
-                        child:
-                        controller.selectedImage.value == null
-                            ? const Image(image: Svg(AppImage.reviewGalleryIcon))
-                            : ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.file(
-                            controller.selectedImage.value!,
-                            fit: BoxFit.cover,
-                            width: 64,
-                            height: 64,
+                      child: Obx(
+                        () => Center(
+                          child:
+                          controller.selectedImage.value == null
+                              ? const Image(
+                            image: Svg(AppImage.reviewGalleryIcon),
+                          )
+                              : ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.file(
+                              controller.selectedImage.value!,
+                              fit: BoxFit.cover,
+                              width: 64,
+                              height: 64,
+                            ),
                           ),
                         ),
-                      ),),
+                      ),
                     ),
                   ),
 
                   const SizedBox(width: 20),
 
                   GestureDetector(
-                    onTap: () async {
-                      final XFile? image = await controller.picker
-                          .pickImage(source: ImageSource.camera);
-                      if (image != null) {
-                        controller.selectedImage.value = File(image.path);
-                      }
+                    onTap: () {
+                      controller.functionForCameraPic();
                     },
                     child: Container(
                       height: 64,
@@ -163,20 +159,24 @@ class RateThisAppScreen extends GetView<ReviewController> {
                         shape: Shape.box,
                         color: AppColor.feedbackStarUnselectColor,
                       ),
-                      child: Obx(() => Center(
-                        child:
-                        controller.selectedImage.value == null
-                            ? const Image(image: Svg(AppImage.reviewCameraIcon))
-                            : ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.file(
-                            controller.selectedImage.value!,
-                            fit: BoxFit.cover,
-                            width: 64,
-                            height: 64,
+                      child: Obx(
+                        () => Center(
+                          child:
+                          controller.selectedImage.value == null
+                              ? const Image(
+                            image: Svg(AppImage.reviewCameraIcon),
+                          )
+                              : ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.file(
+                              controller.selectedImage.value!,
+                              fit: BoxFit.cover,
+                              width: 64,
+                              height: 64,
+                            ),
                           ),
                         ),
-                      ),)
+                      ),
                     ),
                   ),
                 ],
@@ -188,7 +188,7 @@ class RateThisAppScreen extends GetView<ReviewController> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: GestureDetector(
-                onTap:() {
+                onTap: () {
                   controller.showThankYouDialog();
                 },
                 child: Container(
@@ -203,7 +203,6 @@ class RateThisAppScreen extends GetView<ReviewController> {
                 ),
               ),
             ),
-
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../constant/routes_name.dart';
 import '../model/app_constant.dart';
@@ -10,6 +10,24 @@ import '../view/dashboard/my_order/my_order_screen.dart';
 import '../view/dashboard/profile/profile_screen.dart';
 
 class BottomNavController extends GetxController {
+
+  String getAppBarTitle(int index) {
+    switch (index) {
+      case 0:
+        return "Gemstore";
+      case 1:
+        return "Discover";
+      case 2:
+        return "My Orders";
+      case 3:
+        return "Profile";
+      default:
+        return "Gemstore";
+    }
+  }
+
+  var scaffoldKey = GlobalKey<ScaffoldState>();
+
   var selectedIndex = 0.obs;
 
   void changeTabIndex(int index) {

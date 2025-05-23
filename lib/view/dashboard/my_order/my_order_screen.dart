@@ -28,18 +28,14 @@ class MyOrdersScreen extends GetView<OrderTabController> {
                   margin: const EdgeInsets.symmetric(horizontal: 8),
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   decoration: BoxDecoration(
-                    color:
-                        isSelected
-                            ? AppColor.tabBarButtonColor
-                            : Colors.transparent,
+                    color: isSelected ? AppColor.tabBarButtonColor
+                        : Colors.transparent,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
                     controller.tabs[index],
-                    style:
-                        isSelected
-                            ? AppTextStyles.tabBarText
-                            : AppTextStyles.tabBarSecondaryText,
+                    style: isSelected ? AppTextStyles.tabBarText
+                        : AppTextStyles.tabBarSecondaryText,
                   ),
                 ),
               );

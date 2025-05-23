@@ -1,10 +1,8 @@
-import 'dart:io';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 import '../../../controller/review_controller.dart';
 import '../../../utils/appcolor.dart';
 import '../../../utils/appimage.dart';
@@ -120,8 +118,7 @@ class ProductRatingScreen extends GetView<ReviewController> {
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
                         child: Obx(() {
-                          final remaining =
-                              controller.remainingChars.value;
+                          final remaining = controller.remainingChars.value;
                           return remaining == controller.maxLength
                               ? const Text("50 Characters") // Hide when empty
                               : Padding(
@@ -143,12 +140,8 @@ class ProductRatingScreen extends GetView<ReviewController> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: () async {
-                      final XFile? image = await controller.picker
-                          .pickImage(source: ImageSource.gallery);
-                      if (image != null) {
-                        controller.selectedImage.value = File(image.path);
-                      }
+                    onTap: () {
+                      controller.functionForImagePic();
                     },
                     child: Container(
                       height: 64,
@@ -160,8 +153,7 @@ class ProductRatingScreen extends GetView<ReviewController> {
                       ),
                       child: Obx(
                         () => Center(
-                          child:
-                              controller.selectedImage.value == null
+                          child: controller.selectedImage.value == null
                                   ? const Image(
                                     image: Svg(AppImage.reviewGalleryIcon),
                                   )
@@ -182,12 +174,8 @@ class ProductRatingScreen extends GetView<ReviewController> {
                   const SizedBox(width: 20),
 
                   GestureDetector(
-                    onTap: () async {
-                      final XFile? image = await controller.picker
-                          .pickImage(source: ImageSource.camera);
-                      if (image != null) {
-                        controller.selectedImage.value = File(image.path);
-                      }
+                    onTap: () {
+                      controller.functionForCameraPic();
                     },
                     child: Container(
                       height: 64,
@@ -226,7 +214,6 @@ class ProductRatingScreen extends GetView<ReviewController> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: GestureDetector(
-
                 onTap: () {
                   controller.showThankYouDialog();
                 },

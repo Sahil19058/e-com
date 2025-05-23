@@ -51,7 +51,9 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
           const SizedBox(height: 20),
 
           /// Featured Products
-          sectionHeader("Feature Products", onTap: () {}),
+          sectionHeader("Feature Products", onTap: () {
+            /// Add your logic here
+          }),
 
           SizedBox(
             height: 230,
@@ -78,7 +80,9 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
           const SizedBox(height: 20),
 
           /// Recommended
-          sectionHeader("Recommended", onTap: () {}),
+          sectionHeader("Recommended", onTap: () {
+            ///Add your logic here
+          }),
           SizedBox(
             height: 80,
             child: ListView.builder(
@@ -94,7 +98,9 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
           const SizedBox(height: 20),
 
           /// Top Collection
-          sectionHeader("Top Collection", onTap: () {}),
+          sectionHeader("Top Collection", onTap: () {
+            /// Add your logic here
+          }),
           promoBanner(
             AppImage.modelImage,
             "| Sale up to 40%",
@@ -168,7 +174,9 @@ class WomenCateGoryScreen extends GetView<WomenCategoryController> {
         children: [
           Text(title, style: AppTextStyles.onBoardingTitle),
           TextButton(
-            onPressed: onTap,
+            onPressed:(){
+              /// Add your logic here
+          },
             child: const Text("Show all", style: AppTextStyles.textButtonText),
           ),
         ],

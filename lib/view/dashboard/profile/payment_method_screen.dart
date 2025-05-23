@@ -55,7 +55,7 @@ class PaymentMethodScreen extends GetView<PaymentMethodeController> {
                 cardNumber: '1234567812345678',
                 validFrom: '01/23',
                 validThru: '01/28',
-                topLeftColor: Colors.redAccent,
+                topLeftColor: Colors.blueAccent,
                 doesSupportNfc: true,
                 placeNfcIconAtTheEnd: true,
                 cardType: CardType.debit,

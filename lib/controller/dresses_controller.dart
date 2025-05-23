@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import '../model/all_product_model.dart';
 import '../utils/appcolor.dart';
 import '../utils/appimage.dart';
+import '../view/dashboard/dresses_screen.dart';
 
 class DressesController extends GetxController {
   List<AllProductModel> allProducts = [
@@ -171,4 +172,18 @@ class DressesController extends GetxController {
       15,
     ),
   ];
+
+    void functionForAddToFav(int index){
+    allProducts[index].isFavorite.toggle();
+    if (allProducts[index].isFavorite.value) {
+      if (!wishListProduct.contains(allProducts[index])) {
+        wishListProduct.add(allProducts[index]);
+        // print(wishListProduct.length);
+      }
+    } else {
+      wishListProduct.remove(allProducts[index]);
+      // print(wishListProduct.length);
+    }
+  }
+
 }

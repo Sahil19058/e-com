@@ -18,10 +18,8 @@ class HomeScreen extends GetView<BottomNavController> {
 
     // final DrawerControllerX drawerController = Get.put(DrawerControllerX());
 
-    var scaffoldKey = GlobalKey<ScaffoldState>();
-
     return Scaffold(
-      key: scaffoldKey,
+      key: controller.scaffoldKey,
       backgroundColor: AppColor.fontWhite,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
@@ -33,20 +31,14 @@ class HomeScreen extends GetView<BottomNavController> {
                 scrolledUnderElevation: 0.0,
                 leading: IconButton(
                   onPressed: () {
-                    scaffoldKey.currentState?.openDrawer();
+                    controller.scaffoldKey.currentState?.openDrawer();
                   },
                   icon: const Image(image: Svg(AppImage.drawerIcon)),
                 ),
                 backgroundColor: AppColor.fontWhite,
                 title: Obx(
                   () => Text(
-                    controller.selectedIndex.value == 0
-                        ? "Gemstore"
-                        : controller.selectedIndex.value == 1
-                        ? "Discover"
-                        : controller.selectedIndex.value == 2
-                        ? "My Orders"
-                        : "Profile ",
+                    controller.getAppBarTitle(index),
                     style: AppTextStyles.onBoardingTitle,
                   ),
                 ),

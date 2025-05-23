@@ -3,6 +3,7 @@ import '../model/similar_product_model.dart';
 import '../utils/appimage.dart';
 
 class ProductDetailController extends GetxController {
+
   var selectedColorIndex = 0.obs;
   var selectedSizeIndex = 0.obs;
 

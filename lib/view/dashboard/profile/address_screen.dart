@@ -32,7 +32,6 @@ class AddressScreen extends GetView<AddressController> {
                       elevation: 2,
                       color: AppColor.fontWhite,
                       child: SizedBox(
-
                         height: 110,
                         child: Column(
                           children: [
@@ -68,19 +67,13 @@ class AddressScreen extends GetView<AddressController> {
                                   ],
                                 ),
                                 const Spacer(),
-                                TextButton(
-                                    onPressed: () {
-                                      
-                                    },
-                                    child: Text(
-                                        "Edit",
-                                      style: AppTextStyles.editButtonText.copyWith(
-                                        decoration: TextDecoration.underline,
-                                        decorationColor: AppColor.cancelledTextColor
-                                      ),
-
-                                    )
-                                )
+                                TextButton(onPressed: () {}, child: Text(
+                                  "Edit",
+                                  style: AppTextStyles.editButtonText.copyWith(
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: AppColor.cancelledTextColor
+                                  ),
+                                ))
                               ],
                             ),
                             const SizedBox(height: 20,),

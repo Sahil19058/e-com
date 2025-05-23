@@ -79,8 +79,7 @@ class NewPassScreen extends GetView<SignUpController> {
                       ),
                       onPressed: () {
                         controller.obscureConfirmPassword.value =
-                        !controller
-                            .obscureConfirmPassword.value;
+                        !controller.obscureConfirmPassword.value;
                       },
                     )
                         : null,
@@ -93,7 +92,7 @@ class NewPassScreen extends GetView<SignUpController> {
                   text: "Confirm",
                   backgroundColor: controller.isButtonEnabled
                       ? AppColor.fontBlack
-                      : AppColor.buttonColor.withOpacity(0.4),
+                      : AppColor.buttonColor.withValues(alpha: 0.4),
                   textColor: AppColor.fontWhite,
                   onTap: controller.isButtonEnabled
                       ? () {
@@ -117,8 +116,7 @@ class NewPassScreen extends GetView<SignUpController> {
                                   width: 100,
                                   decoration: const BoxDecoration(
                                     image: DecorationImage(
-                                      image: Svg(
-                                          AppImage.bottomSheetIcon),
+                                      image: Svg(AppImage.bottomSheetIcon),
                                     ),
                                   ),
                                 ),
@@ -126,8 +124,7 @@ class NewPassScreen extends GetView<SignUpController> {
                               const SizedBox(height: 40),
                               const Text(
                                 "Your password has been changed",
-                                style:
-                                AppTextStyles.onBoardingTitle,
+                                style: AppTextStyles.onBoardingTitle,
                               ),
                               const SizedBox(height: 20),
                               const Text(
@@ -136,8 +133,7 @@ class NewPassScreen extends GetView<SignUpController> {
                               CommonOutlineButton(
                                 text: "Browse home",
                                 onTap: () {
-                                  Get.offAllNamed(
-                                      RouteName.homeScreen);
+                                  Get.offAllNamed(RouteName.homeScreen);
                                 },
                                 backgroundColor: AppColor.fontBlack,
                                 textColor: AppColor.fontWhite,
@@ -147,8 +143,7 @@ class NewPassScreen extends GetView<SignUpController> {
                         );
                       },
                     );
-                  }
-                      : null,
+                  } : null,
                 )),
               ],
             ),

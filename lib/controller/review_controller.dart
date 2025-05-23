@@ -33,6 +33,23 @@ class ReviewController extends GetxController {
     super.onClose();
   }
 
+  functionForImagePic() async{
+    final XFile? image = await picker
+        .pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      selectedImage.value = File(image.path);
+    }
+  }
+
+  functionForCameraPic() async{
+    final XFile? image = await picker
+        .pickImage(source: ImageSource.camera);
+    if (image != null) {
+      selectedImage.value = File(image.path);
+    }
+  }
+
+
   void showThankYouDialog() {
     Get.dialog(
       Dialog(
